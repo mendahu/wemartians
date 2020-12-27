@@ -1,5 +1,6 @@
 import styles from './styles/EpisodeCarousel.module.css';
 import { episodes as episodesCopy } from '../../../copy/copy.json';
+import Button from '../Button/Button';
 
 export type Episode = {
   number: number;
@@ -28,7 +29,7 @@ export default function EpisodeCarousel({
         })}
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button}>{episodesCopy.more}</button>
+        <Button color="dark" label={episodesCopy.more} />
       </div>
     </>
   );

@@ -18,9 +18,5 @@
 .buttonContainer {
   display: flex;
   justify-content: flex-end;
-}
-
-.button {
-  background-color: var(--col-grey-8);
   margin-bottom: 2rem;
 }
