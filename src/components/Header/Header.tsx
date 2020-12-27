@@ -1,6 +1,7 @@
 import styles from './styles/Header.module.css';
 import classNames from 'classnames';
 import Image from 'next/image';
+import { header as headerCopy } from '../../../copy/copy.json';
 
 export default function Header(props) {
   return (
@@ -15,16 +16,16 @@ export default function Header(props) {
         />
       </div>
       <div className={styles.headerTextContainer}>
-        <h1 className={styles.title}>WeMartians Podcast</h1>
-        <h2 className={styles.subtitle}>Exploring the Solar System together</h2>
+        <h1 className={styles.title}>{headerCopy.title}</h1>
+        <h2 className={styles.subtitle}>{headerCopy.subtitle}</h2>
       </div>
       <div className={styles.subscribeContainer}>
         <ul className={styles.subscriptionList}>
-          <li className={styles.subscriptionListItem}>iTunes</li>
-          <li className={styles.subscriptionListItem}>Spotify</li>
-          <li className={styles.subscriptionListItem}>Google</li>
-          <li className={styles.subscriptionListItem}>Stitcher</li>
-          <li className={styles.subscriptionListItem}>RSS</li>
+          {headerCopy.subscriptions.map((sub, index) => (
+            <li key={index} className={styles.subscriptionListItem}>
+              {sub.label}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

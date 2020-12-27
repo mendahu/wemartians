@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "WeMartians Podcast",
+    "subtitle": "Exploring the solar system together",
+    "subscriptions": [
+      {
+        "label": "Apple Podcasts"
+      },
+      {
+        "label": "Spotify"
+      },
+      {
+        "label": "Google Podcasts"
+      },
+      {
+        "label": "Stitcher"
+      },
+      {
+        "label": "RSS"
+      }
+    ]
+  }
+}
