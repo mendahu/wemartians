@@ -77,13 +77,3 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
-.subscriptionListItem {
-  text-align: center;
-  min-width: 100px;
-  color: var(--col-grey-11);
-  background-color: var(--col-grey-2);
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 2px;
-}

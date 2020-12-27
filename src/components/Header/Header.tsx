@@ -2,6 +2,7 @@ import styles from './styles/Header.module.css';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { header as headerCopy } from '../../../copy/copy.json';
+import Button from '../Button/Button';
 
 export default function Header(props) {
   return (
@@ -22,8 +23,8 @@ export default function Header(props) {
       <div className={styles.subscribeContainer}>
         <ul className={styles.subscriptionList}>
           {headerCopy.subscriptions.map((sub, index) => (
-            <li key={index} className={styles.subscriptionListItem}>
-              {sub.label}
+            <li key={index}>
+              <Button label={sub.label} color="light" />
             </li>
           ))}
         </ul>
