@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 
 export default function Header(props) {
   return (
-    <div className={classNames(styles.container, styles.lightText)}>
+    <div className={styles.container}>
       <div className={styles.logoContainer}>
         <Image
           src="/2021_logo-dark.png"

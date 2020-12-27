@@ -1,0 +1,27 @@
+.socialContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--col-grey-10);
+}
+
+.socialCard {
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--col-grey-6);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.socialProfileImage {
+  border-radius: 50%;
+}
+
+.socialHandleContainer {
+  margin-left: 1rem;
+}
+
+.socialHandleContainer h3 {
+  font-size: 1.6rem;
+}

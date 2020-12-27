@@ -2,6 +2,7 @@ import Head from 'next/head';
 import EpisodeCarousel, {
   Episode,
 } from '../src/components/EpisodeCarousel/EpisodeCarousel';
+import Footer from '../src/components/Footer/Footer';
 import Header from '../src/components/Header/Header';
 import Section from '../src/components/Section/Section';
 
@@ -44,7 +45,7 @@ export default function Home() {
         <Section background="light">Shop</Section>
       </main>
       <Section component="footer" background="dark">
-        Footer
+        <Footer />
       </Section>
     </>
   );

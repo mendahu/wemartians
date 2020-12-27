@@ -4,20 +4,24 @@
 }
 
 .flexContainer {
+  padding: 2rem;
   display: flex;
 }
 
 .lightBackground {
   background-color: var(--col-grey-2);
+  color: var(--col-grey-11);
 }
 
 .darkBackground {
   background-color: var(--col-grey-11);
+  color: var(--col-grey-2);
 }
 
 .mapBackground {
   background-image: url('../../../../public/header_wallpaper.jpg');
   background-color: var(--col-grey-12);
+  color: var(--col-grey-2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

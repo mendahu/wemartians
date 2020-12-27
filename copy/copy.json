@@ -23,5 +23,20 @@
   "episodes": {
     "title": "Recent Episodes",
     "more": "See more"
+  },
+  "footer": {
+    "title": "Follow Us",
+    "twitterAccounts": [
+      {
+        "handle": "We_Martians",
+        "name": "WeMartians Podcast",
+        "profileImage": "/2021_logo-dark.png"
+      },
+      {
+        "handle": "JakeOnOrbit",
+        "name": "Jake Robins (he/him)",
+        "profileImage": "https://pbs.twimg.com/profile_images/1199552790541946880/8amz5UPa_400x400.jpg"
+      }
+    ]
   }
 }
