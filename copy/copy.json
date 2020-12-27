@@ -19,5 +19,9 @@
         "label": "RSS"
       }
     ]
+  },
+  "episodes": {
+    "title": "Recent Episodes",
+    "more": "See more"
   }
 }

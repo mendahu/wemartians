@@ -1,10 +1,26 @@
+.title {
+  margin-top: 3rem;
+}
+
 .episodeCardContainer {
   display: flex;
+  justify-content: space-between;
 }
 
 .episodeCard {
-  margin: 4rem 1rem;
+  width: 32%;
+  margin: 2rem 0rem 2rem 0rem;
   padding: 1rem;
   background-color: var(--col-grey-5);
   border-radius: 2px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  background-color: var(--col-grey-8);
+  margin-bottom: 2rem;
 }
