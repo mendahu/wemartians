@@ -1,9 +1,42 @@
+:root {
+  --col-orange: #ed713c;
+  --col-grey-1: #faf9f9;
+  --col-grey-2: #f0edec;
+  --col-grey-3: #e5e0dd;
+  --col-grey-4: #d9d1ce;
+  --col-grey-5: #ccc2bd;
+  --col-grey-6: #beb0ab;
+  --col-grey-7: #ad9c95;
+  --col-grey-8: #97857e;
+  --col-grey-9: #776963;
+  --col-grey-10: #463e3a;
+  --col-grey-11: #211f19;
+  --col-grey-12: #181512;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: var(--grey-900);
+  font-size: 10px;
+  line-height: 1.5;
+  height: 100%;
+}
+
+p,
+li {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
 }
 
 a {

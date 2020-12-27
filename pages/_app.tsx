@@ -1,4 +1,5 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router';
+import '../styles/reset.css';
 import '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
