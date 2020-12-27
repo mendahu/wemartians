@@ -37,6 +37,10 @@
         "name": "Jake Robins (he/him)",
         "profileImage": "https://pbs.twimg.com/profile_images/1199552790541946880/8amz5UPa_400x400.jpg"
       }
-    ]
+    ],
+    "copyright": {
+      "year": "2021",
+      "name": "Jake Robins"
+    }
   }
 }

@@ -25,3 +25,9 @@
 .socialHandleContainer h3 {
   font-size: 1.6rem;
 }
+
+.copyright {
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--col-grey-8);
+}

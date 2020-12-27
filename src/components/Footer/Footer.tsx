@@ -35,6 +35,10 @@ export default function Footer(props: FooterProps) {
           );
         })}
       </div>
+      <p className={styles.copyright}>
+        {String.fromCharCode(169)} {footerCopy.copyright.year}{' '}
+        {footerCopy.copyright.name}
+      </p>
     </div>
   );
 }
