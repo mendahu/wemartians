@@ -16,7 +16,7 @@
 }
 
 .mapBackground {
-  background-image: url('../../../../public/header_wallpaper.png');
+  background-image: url('../../../../public/header_wallpaper.jpg');
 }
 
 @media screen and (min-width: 900px) {
