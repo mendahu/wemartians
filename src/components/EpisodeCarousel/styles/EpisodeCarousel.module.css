@@ -4,13 +4,13 @@
 
 .episodeCardContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .episodeCard {
-  width: 32%;
-  margin: 2rem 0rem 2rem 0rem;
-  padding: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
   background-color: var(--col-grey-5);
   border-radius: 2px;
 }
@@ -19,4 +19,20 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+  .episodeCardContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .episodeCard {
+    margin-right: 1.5rem;
+    flex: 1 1 30%;
+  }
+
+  .episodeCard:last-child {
+    margin-right: 0rem;
+  }
 }
