@@ -1,0 +1,31 @@
+.container {
+  margin: auto;
+  width: 100%;
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.lightBackground {
+  background-color: var(--col-grey-2);
+}
+
+.darkBackground {
+  background-color: var(--col-grey-11);
+}
+
+.mapBackground {
+  background-image: url('../../../../public/header_wallpaper.png');
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    max-width: 836px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .container {
+    max-width: 1036px;
+  }
+}
