@@ -1,0 +1,89 @@
+.container {
+  margin: 4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lightText {
+  color: var(--col-grey-2);
+}
+
+/* LOGO */
+
+.logoContainer {
+  max-width: 300px;
+  padding: 4rem;
+  margin: auto;
+}
+
+/* HEADER TEXT */
+
+.headerTextContainer {
+  align-self: flex-end;
+  text-align: center;
+  margin: auto;
+}
+
+.title {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 420px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .title {
+    font-size: 5rem;
+  }
+
+  .subtitle {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .title {
+    font-size: 6rem;
+  }
+
+  .subtitle {
+    font-size: 3.2rem;
+  }
+}
+
+/* SUBSCRIBE BOX */
+
+.subscribeContainer {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.subscriptionList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.subscriptionListItem {
+  text-align: center;
+  min-width: 100px;
+  color: var(--col-grey-11);
+  background-color: var(--col-grey-2);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1px;
+}

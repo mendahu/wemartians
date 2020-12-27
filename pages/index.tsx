@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../src/components/Header/Header';
 import Section from '../src/components/Section/Section';
 
 export default function Home() {
@@ -8,14 +9,7 @@ export default function Home() {
         <title>WeMartians Podcast</title>
       </Head>
       <Section component="header" background="map">
-        <img src="2021_logo-dark.png" width="300px" />
-        <h1>WeMartians Podcast</h1>
-        <h2>Explore the Solar System together</h2>
-        <ul>
-          <li>iTunes</li>
-          <li>Google</li>
-          <li>Spotify</li>
-        </ul>
+        <Header />
       </Section>
       <main>
         <Section background="light">Episodes</Section>

@@ -17,6 +17,10 @@
 
 .mapBackground {
   background-image: url('../../../../public/header_wallpaper.jpg');
+  background-color: var(--col-grey-12);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (min-width: 900px) {
