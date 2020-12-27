@@ -1,0 +1,10 @@
+.episodeCardContainer {
+  display: flex;
+}
+
+.episodeCard {
+  margin: 4rem 1rem;
+  padding: 1rem;
+  background-color: var(--col-grey-5);
+  border-radius: 2px;
+}
