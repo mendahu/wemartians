@@ -6,12 +6,17 @@ export type ButtonProps = {
   label: string;
   href?: string;
   icon?: string;
+  className?: string;
 };
 
 export default function Button(props: ButtonProps) {
   return (
     <a
-      className={classNames(styles.button, styles[props.color])}
+      className={classNames(
+        styles.button,
+        styles[props.color],
+        props.className
+      )}
       href={props.href}
     >
       {props.icon}

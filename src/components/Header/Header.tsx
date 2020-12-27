@@ -23,7 +23,7 @@ export default function Header(props) {
       <div className={styles.subscribeContainer}>
         <ul className={styles.subscriptionList}>
           {headerCopy.subscriptions.map((sub, index) => (
-            <li key={index}>
+            <li key={index} className={styles.button}>
               <Button label={sub.label} color="light" />
             </li>
           ))}
