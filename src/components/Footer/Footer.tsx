@@ -28,7 +28,15 @@ export default function Footer(props: FooterProps) {
               <div className={styles.socialHandleContainer}>
                 <a target="_blank" href={`${twitterBaseUrl}${account.handle}`}>
                   <h2>{account.name}</h2>
-                  <h3>@{account.handle}</h3>
+                  <div className={styles.handleContainer}>
+                    <Image
+                      src="/Twitter_Social_Icon_Rounded_Square_Color.png"
+                      width={20}
+                      height={20}
+                      layout="fixed"
+                    />
+                    <h3>@{account.handle}</h3>
+                  </div>
                 </a>
               </div>
             </div>

@@ -8,12 +8,14 @@ export type ShopSectionProps = {};
 export default function ShopSection(props: ShopSectionProps) {
   return (
     <div className={styles.container}>
-      <Image
-        src="/shop_ad.png"
-        height={350}
-        width={350}
-        className={styles.shopImage}
-      />
+      <a href={shopCopy.cta.link} target="_blank">
+        <Image
+          src="/shop_ad.png"
+          height={350}
+          width={350}
+          className={styles.shopImage}
+        />
+      </a>
       <div className={styles.shopTextContainer}>
         <h1>{shopCopy.title}</h1>
         <p>{shopCopy.description}</p>
