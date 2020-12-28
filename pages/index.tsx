@@ -43,10 +43,8 @@ export default function Home() {
         <Section background="light">
           <EpisodeCarousel episodes={mockEpisodeData} />
         </Section>
-        <Section background="dark">
+        <Section background="dark" className={styles.ctaContainer}>
           <PatreonCallToAction />
-        </Section>
-        <Section background="dark">
           <MailingListCallToAction />
         </Section>
         <Section background="light">Shop</Section>

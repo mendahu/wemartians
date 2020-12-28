@@ -7,6 +7,7 @@ export type MailchimpFormProps = {};
 
 export default function MailchimpForm(props: MailchimpFormProps) {
   const [email, setEmail] = useState('');
+  const [falseForm, setFalseForm] = useState('');
 
   return (
     <div className={styles.formContainer}>
@@ -37,7 +38,8 @@ export default function MailchimpForm(props: MailchimpFormProps) {
               type="text"
               name="b_5b308fe85dae4499e221bae6e_3393e4d487"
               tabIndex={-1}
-              value=""
+              onChange={(e) => setFalseForm(e.target.value)}
+              value={falseForm}
             />
           </div>
           <div>

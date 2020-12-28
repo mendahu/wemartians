@@ -14,15 +14,16 @@ export default function Section({
   children,
   className,
 }: SectionProps) {
-  const container = <div className={styles.container}>{children}</div>;
+  const container = (
+    <div className={classNames(styles.container, className)}>{children}</div>
+  );
   const Element = component;
 
   return (
     <Element
       className={classNames(
         styles.flexContainer,
-        styles[`${background}Background`],
-        className
+        styles[`${background}Background`]
       )}
     >
       {container}

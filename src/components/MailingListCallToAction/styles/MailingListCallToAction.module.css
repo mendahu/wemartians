@@ -1,21 +1,14 @@
-.title {
-  margin-top: 4rem;
+.container {
+  margin: 4rem 0rem;
+  width: 100%;
 }
 
 .mtop {
   margin-top: 2rem;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 900px) {
   .container {
-    max-width: 80%;
-    margin: auto;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .container {
-    max-width: 60%;
-    margin: auto;
+    max-width: 48%;
   }
 }
