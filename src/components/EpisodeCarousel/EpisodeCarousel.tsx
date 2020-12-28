@@ -1,11 +1,13 @@
 import styles from './styles/EpisodeCarousel.module.css';
 import { episodes as episodesCopy } from '../../../copy/copy.json';
 import Button from '../Button/Button';
+import Image from 'next/image';
 
 export type Episode = {
-  number: number;
+  slug: string;
   title: string;
   description: string;
+  image?: string;
 };
 
 export type EpisodeCarouselProps = {
@@ -22,6 +24,11 @@ export default function EpisodeCarousel({
         {episodes.map((episode, index) => {
           return (
             <div key={index} className={styles.episodeCard}>
+              <Image
+                src={episode.image || '/album_Art_2021-01_400.png'}
+                width={250}
+                height={250}
+              />
               <h2>{episode.title}</h2>
               <p>{episode.description}</p>
             </div>

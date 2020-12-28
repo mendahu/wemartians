@@ -10,28 +10,7 @@ import Section from '../src/components/Section/Section';
 import ShopSection from '../src/components/ShopSection/ShopSection';
 import styles from '../styles/Home.module.css';
 
-const mockEpisodeData: Episode[] = [
-  {
-    number: 1,
-    title: 'Episode 1',
-    description:
-      'The first episode. The first episode. The first episode. The first episode. The first episode.',
-  },
-  {
-    number: 2,
-    title: 'Episode 2',
-    description:
-      'The second episode. The second episode. The second episode. The second episode. The second episode.',
-  },
-  {
-    number: 3,
-    title: 'Episode 3',
-    description:
-      'The third episode. The third episode. The third episode. The third episode.The third episode.',
-  },
-];
-
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -42,7 +21,7 @@ export default function Home() {
       </Section>
       <main>
         <Section background="light">
-          <EpisodeCarousel episodes={mockEpisodeData} />
+          <EpisodeCarousel episodes={props.episodes} />
         </Section>
         <Section background="dark" className={styles.ctaContainer}>
           <PatreonCallToAction />
@@ -57,4 +36,39 @@ export default function Home() {
       </Section>
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const url = `https://${process.env.SIMPLECAST_API_URL}/podcasts/${process.env.PODCAST_ID}/episodes?limit=6`;
+
+  const res = await fetch(url, {
+    headers: new Headers({
+      Authorization: `Bearer ${process.env.SIMPLECAST_TOKEN}`,
+    }),
+  });
+  const data = await res.json();
+
+  if (!data || !data.collection) {
+    return {
+      notFound: true,
+    };
+  } else {
+    const episodes = data.collection
+      .filter((episode) => episode.status === 'published')
+      .map((episode) => {
+        return {
+          slug: episode.slug,
+          title: episode.title,
+          description:
+            episode.description?.slice(0, 100) + '...' || 'No Description',
+          image: episode.image_url,
+        };
+      });
+
+    return {
+      props: {
+        episodes: episodes.slice(0, 3),
+      },
+    };
+  }
 }
