@@ -15,7 +15,7 @@ export default function Footer(props: FooterProps) {
           return (
             <div key={index} className={styles.socialCard}>
               <div>
-                <a href={`${twitterBaseUrl}${account.handle}`}>
+                <a target="_blank" href={`${twitterBaseUrl}${account.handle}`}>
                   <Image
                     layout={'fixed'}
                     src={account.profileImage}
@@ -26,7 +26,7 @@ export default function Footer(props: FooterProps) {
                 </a>
               </div>
               <div className={styles.socialHandleContainer}>
-                <a href={`${twitterBaseUrl}${account.handle}`}>
+                <a target="_blank" href={`${twitterBaseUrl}${account.handle}`}>
                   <h2>{account.name}</h2>
                   <h3>@{account.handle}</h3>
                 </a>
