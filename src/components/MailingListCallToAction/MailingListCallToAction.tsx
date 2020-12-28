@@ -8,7 +8,7 @@ export default function MailingListCallToAction(
   props: MailingListCallToActionProps
 ) {
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className={styles.title}>{mailingListCopy.title}</h1>
       <p className={styles.mtop}>{mailingListCopy.description}</p>
       <MailchimpForm />

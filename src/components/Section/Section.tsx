@@ -5,12 +5,14 @@ export type SectionProps = {
   component?: 'header' | 'footer' | 'section';
   background: 'light' | 'dark' | 'map';
   children?: React.ReactNode;
+  className?: string;
 };
 
 export default function Section({
   component = 'section',
   background,
   children,
+  className,
 }: SectionProps) {
   const container = <div className={styles.container}>{children}</div>;
   const Element = component;
@@ -19,7 +21,8 @@ export default function Section({
     <Element
       className={classNames(
         styles.flexContainer,
-        styles[`${background}Background`]
+        styles[`${background}Background`],
+        className
       )}
     >
       {container}

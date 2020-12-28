@@ -6,7 +6,7 @@ export type PatreonCallToActionProps = {};
 
 export default function PatreonCallToAction(props: PatreonCallToActionProps) {
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className={styles.title}>{patreonCopy.title}</h1>
       <p className={styles.mtop}>{patreonCopy.description}</p>
       <ul className={styles.mtop}>

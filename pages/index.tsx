@@ -7,6 +7,7 @@ import Header from '../src/components/Header/Header';
 import MailingListCallToAction from '../src/components/MailingListCallToAction/MailingListCallToAction';
 import PatreonCallToAction from '../src/components/PatreonCallToAction/PatreonCallToAction';
 import Section from '../src/components/Section/Section';
+import styles from '../styles/Home.module.css';
 
 const mockEpisodeData: Episode[] = [
   {
