@@ -2,9 +2,9 @@ import styles from './styles/PatreonCallToAction.module.css';
 import Image from 'next/image';
 import { patreon as patreonCopy } from '../../../copy/copy.json';
 
-export type PatreonCallToActionTypes = {};
+export type PatreonCallToActionProps = {};
 
-export default function PatreonCallToAction(props: PatreonCallToActionTypes) {
+export default function PatreonCallToAction(props: PatreonCallToActionProps) {
   return (
     <div>
       <h1 className={styles.title}>{patreonCopy.title}</h1>

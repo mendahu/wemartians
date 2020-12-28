@@ -1,0 +1,40 @@
+.formContainer {
+  margin: 4rem 0rem 2rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 80%;
+}
+
+.inputContainer {
+  display: flex;
+}
+
+.formInput {
+  padding: 1rem;
+  flex-grow: 1;
+  border: none;
+  border-radius: 5px;
+}
+
+.subscribeButton {
+  padding: 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  border: none;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  color: var(--col-grey-11);
+  background-color: var(--col-grey-3);
+  cursor: pointer;
+}
+
+.subscribeButton:hover {
+  background-color: var(--col-grey-6);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}

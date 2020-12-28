@@ -37,6 +37,20 @@
       "href": "https://www.patreon.com/wemartians"
     }
   },
+  "mailingList": {
+    "title": "Get Updates",
+    "description": "Get just enough updates on podcasts, products, and news without cluttering your inbox.",
+    "cta": {
+      "label": "Subscribe"
+    }
+  },
+  "mailchimpForm": {
+    "formPlaceholder": "email address",
+    "cta": {
+      "label": "Subscribe",
+      "action": "https://wemartians.us18.list-manage.com/subscribe/post?u=5b308fe85dae4499e221bae6e&amp;id=3393e4d487"
+    }
+  },
   "footer": {
     "title": "Follow Us",
     "twitterAccounts": [

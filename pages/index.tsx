@@ -4,6 +4,7 @@ import EpisodeCarousel, {
 } from '../src/components/EpisodeCarousel/EpisodeCarousel';
 import Footer from '../src/components/Footer/Footer';
 import Header from '../src/components/Header/Header';
+import MailingListCallToAction from '../src/components/MailingListCallToAction/MailingListCallToAction';
 import PatreonCallToAction from '../src/components/PatreonCallToAction/PatreonCallToAction';
 import Section from '../src/components/Section/Section';
 
@@ -44,7 +45,9 @@ export default function Home() {
         <Section background="dark">
           <PatreonCallToAction />
         </Section>
-        <Section background="dark">Mailing List</Section>
+        <Section background="dark">
+          <MailingListCallToAction />
+        </Section>
         <Section background="light">Shop</Section>
       </main>
       <Section component="footer" background="dark">
