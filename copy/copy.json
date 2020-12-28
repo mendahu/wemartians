@@ -51,6 +51,14 @@
       "action": "https://wemartians.us18.list-manage.com/subscribe/post?u=5b308fe85dae4499e221bae6e&amp;id=3393e4d487"
     }
   },
+  "shop": {
+    "title": "Get Space Merch",
+    "description": "Get WeMartians-branded and other space merchandise at our shop.",
+    "cta": {
+      "label": "Shop now",
+      "link": "https://shop.wemartians.com"
+    }
+  },
   "footer": {
     "title": "Follow Us",
     "twitterAccounts": [

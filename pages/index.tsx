@@ -7,6 +7,7 @@ import Header from '../src/components/Header/Header';
 import MailingListCallToAction from '../src/components/MailingListCallToAction/MailingListCallToAction';
 import PatreonCallToAction from '../src/components/PatreonCallToAction/PatreonCallToAction';
 import Section from '../src/components/Section/Section';
+import ShopSection from '../src/components/ShopSection/ShopSection';
 import styles from '../styles/Home.module.css';
 
 const mockEpisodeData: Episode[] = [
@@ -47,7 +48,9 @@ export default function Home() {
           <PatreonCallToAction />
           <MailingListCallToAction />
         </Section>
-        <Section background="light">Shop</Section>
+        <Section background="light">
+          <ShopSection />
+        </Section>
       </main>
       <Section component="footer" background="dark">
         <Footer />
