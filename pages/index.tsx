@@ -4,6 +4,7 @@ import EpisodeCarousel, {
 } from '../src/components/EpisodeCarousel/EpisodeCarousel';
 import Footer from '../src/components/Footer/Footer';
 import Header from '../src/components/Header/Header';
+import PatreonCallToAction from '../src/components/PatreonCallToAction/PatreonCallToAction';
 import Section from '../src/components/Section/Section';
 
 const mockEpisodeData: Episode[] = [
@@ -40,7 +41,9 @@ export default function Home() {
         <Section background="light">
           <EpisodeCarousel episodes={mockEpisodeData} />
         </Section>
-        <Section background="dark">Patreon</Section>
+        <Section background="dark">
+          <PatreonCallToAction />
+        </Section>
         <Section background="dark">Mailing List</Section>
         <Section background="light">Shop</Section>
       </main>

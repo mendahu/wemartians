@@ -1,0 +1,28 @@
+.mtop {
+  margin-top: 2rem;
+}
+
+.bullet {
+  margin-left: 1.8rem;
+  margin-top: 0.6rem;
+}
+
+.patreonCTAContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.patreonCTAButton {
+  margin-top: 4rem;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff424d;
+  text-transform: uppercase;
+  padding: 1.6rem;
+}
+
+.patreonCTA {
+  margin-left: 1.6rem;
+}

@@ -24,6 +24,16 @@
     "title": "Recent Episodes",
     "more": "See more"
   },
+  "patreon": {
+    "title": "Support WeMartians",
+    "description": "WeMartians is an ad-free, listener-funded podcast that depends on the generous support of its patreon subscribers. Join today for as little as $3/month and get access to many perks, including:",
+    "benefits": [
+      "Access to the exclusive Off-Nominal Discord Community",
+      "Red Planet Review, the short weekly podcast covering Mars and space headlines",
+      "Advanced notice of interviews and a chance to contribute questions"
+    ],
+    "cta": "Subscribe"
+  },
   "footer": {
     "title": "Follow Us",
     "twitterAccounts": [

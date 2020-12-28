@@ -21,12 +21,10 @@ export default function EpisodeCarousel({
       <div className={styles.episodeCardContainer}>
         {episodes.map((episode, index) => {
           return (
-            <>
-              <div key={index} className={styles.episodeCard}>
-                <h2>{episode.title}</h2>
-                <p>{episode.description}</p>
-              </div>
-            </>
+            <div key={index} className={styles.episodeCard}>
+              <h2>{episode.title}</h2>
+              <p>{episode.description}</p>
+            </div>
           );
         })}
       </div>
