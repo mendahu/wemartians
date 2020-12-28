@@ -7,7 +7,7 @@ export type PatreonCallToActionTypes = {};
 export default function PatreonCallToAction(props: PatreonCallToActionTypes) {
   return (
     <div>
-      <h1>{patreonCopy.title}</h1>
+      <h1 className={styles.title}>{patreonCopy.title}</h1>
       <p className={styles.mtop}>{patreonCopy.description}</p>
       <ul className={styles.mtop}>
         {patreonCopy.benefits.map((benefit, index) => {
@@ -19,14 +19,18 @@ export default function PatreonCallToAction(props: PatreonCallToActionTypes) {
         })}
       </ul>
       <div className={styles.patreonCTAContainer}>
-        <a className={styles.patreonCTAButton}>
+        <a
+          href={patreonCopy.cta.href}
+          target="_blank"
+          className={styles.patreonCTAButton}
+        >
           <Image
             src="/Digital-Patreon-Logo_White.png"
             width={26}
             height={26}
             layout="fixed"
           />
-          <h2 className={styles.patreonCTA}>{patreonCopy.cta}</h2>
+          <h2 className={styles.patreonCTA}>{patreonCopy.cta.label}</h2>
         </a>
       </div>
     </div>

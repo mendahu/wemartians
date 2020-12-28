@@ -32,7 +32,10 @@
       "Red Planet Review, the short weekly podcast covering Mars and space headlines",
       "Advanced notice of interviews and a chance to contribute questions"
     ],
-    "cta": "Subscribe"
+    "cta": {
+      "label": "Subscribe",
+      "href": "https://www.patreon.com/wemartians"
+    }
   },
   "footer": {
     "title": "Follow Us",
