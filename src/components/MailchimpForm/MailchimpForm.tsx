@@ -25,7 +25,6 @@ export default function MailchimpForm(props: MailchimpFormProps) {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             name="EMAIL"
-            id="mce-EMAIL"
             placeholder={mailchimpFormCopy.formPlaceholder}
             required
             className={styles.formInput}
@@ -42,13 +41,12 @@ export default function MailchimpForm(props: MailchimpFormProps) {
               value={falseForm}
             />
           </div>
-          <div>
+          <div className={styles.subscribeButtonContainer}>
             <input
               className={styles.subscribeButton}
               type="submit"
               value={mailchimpFormCopy.cta.label}
               name="subscribe"
-              id="mc-embedded-subscribe"
             />
           </div>
         </div>
