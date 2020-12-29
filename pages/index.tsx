@@ -55,15 +55,18 @@ export async function getStaticProps(context) {
   } else {
     const episodes = data.collection
       .filter((episode) => episode.status === 'published')
-      .map((episode) => {
-        return {
-          slug: episode.slug,
-          title: episode.title,
-          description:
-            episode.description?.slice(0, 100) + '...' || 'No Description',
-          image: episode.image_url,
-        };
-      });
+      .map(
+        (episode): Episode => {
+          return {
+            slug: episode.slug,
+            title: episode.title,
+            description:
+              episode.description?.slice(0, 100) + '...' || 'No Description',
+            image: episode.image_url,
+            publishDate: episode.published_at,
+          };
+        }
+      );
 
     return {
       props: {
