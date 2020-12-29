@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { getShows } from '../lib/getShows';
 import EpisodeCarousel, {
   Episode,
 } from '../src/components/EpisodeCarousel/EpisodeCarousel';
@@ -39,39 +40,11 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-  const url = `https://${process.env.SIMPLECAST_API_URL}/podcasts/${process.env.PODCAST_ID}/episodes?limit=6`;
+  const shows = await getShows();
 
-  const res = await fetch(url, {
-    headers: new Headers({
-      Authorization: `Bearer ${process.env.SIMPLECAST_TOKEN}`,
-    }),
-  });
-  const data = await res.json();
-
-  if (!data || !data.collection) {
-    return {
-      notFound: true,
-    };
-  } else {
-    const episodes = data.collection
-      .filter((episode) => episode.status === 'published')
-      .map(
-        (episode): Episode => {
-          return {
-            slug: episode.slug,
-            title: episode.title,
-            description:
-              episode.description?.slice(0, 100) + '...' || 'No Description',
-            image: episode.image_url,
-            publishDate: episode.published_at,
-          };
-        }
-      );
-
-    return {
-      props: {
-        episodes: episodes.slice(0, 3),
-      },
-    };
-  }
+  return {
+    props: {
+      episodes: shows.slice(0, 3),
+    },
+  };
 }
