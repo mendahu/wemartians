@@ -1,10 +1,9 @@
+import { getShows } from '../../lib/getShows';
 import Footer from '../../src/components/Footer/Footer';
 import Section from '../../src/components/Section/Section';
 import styles from './styles/PodcastsPage.module.css';
 
-export type PodcastsPageProps = {};
-
-export default function PodcastsPage(props: PodcastsPageProps) {
+export default function PodcastsPage(props) {
   return (
     <>
       <Section component="header" background="dark">
@@ -12,7 +11,15 @@ export default function PodcastsPage(props: PodcastsPageProps) {
       </Section>
       <main>
         <Section component="section" background="light">
-          Podcasts
+          <ul>
+            {props.episodes.map((episode) => {
+              return (
+                <li>
+                  {episode.slug} - {episode.title}
+                </li>
+              );
+            })}
+          </ul>
         </Section>
       </main>
       <Section component="footer" background="dark">
@@ -20,4 +27,14 @@ export default function PodcastsPage(props: PodcastsPageProps) {
       </Section>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const shows = await getShows(3);
+
+  return {
+    props: {
+      episodes: shows,
+    },
+  };
 }

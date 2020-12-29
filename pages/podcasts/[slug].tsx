@@ -1,41 +1,37 @@
+import { getShow, getShows } from '../../lib/getShows';
 import styles from './styles/Podcast.module.css';
 
-export type Episode = {
-  slug: string;
-  id: string;
-};
-
-export type PodcastProps = {
-  episodes: Episode[];
-};
-
-export default function Podcast(props: PodcastProps) {
+export default function Podcast({ episode }) {
   return (
     <div>
-      <ul>
-        {props.episodes.map((episode) => {
-          return (
-            <li>
-              {episode.id} - {episode.slug}
-            </li>
-          );
-        })}
-      </ul>
+      {episode.id} - {episode.slug}
     </div>
   );
 }
 
 export async function getStaticProps({ params }) {
+  const show = await getShow(params.slug);
+
   return {
     props: {
-      episodes: [{ slug: params.slug, id: '1' }],
+      episode: show,
     },
   };
 }
 
 export async function getStaticPaths() {
+  const shows = await getShows(3);
+
+  const paths = shows.map((show) => {
+    return {
+      params: {
+        slug: show.slug,
+      },
+    };
+  });
+
   return {
-    paths: [{ params: { slug: 'slug' } }],
+    paths,
     fallback: false,
   };
 }
