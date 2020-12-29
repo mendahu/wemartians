@@ -1,11 +1,19 @@
 import { getShow, getShows } from '../../lib/getShows';
+import Footer from '../../src/components/Footer/Footer';
+import Section from '../../src/components/Section/Section';
 import styles from './styles/Podcast.module.css';
 
 export default function Podcast({ episode }) {
   return (
-    <div>
+    <>
+      <Section component="header" background="dark">
+        Header
+      </Section>
       {episode.id} - {episode.slug}
-    </div>
+      <Section component="footer" background="dark">
+        <Footer />
+      </Section>
+    </>
   );
 }
 

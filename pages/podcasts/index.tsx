@@ -15,7 +15,7 @@ export default function PodcastsPage(props) {
             {props.episodes.map((episode) => {
               return (
                 <li>
-                  {episode.slug} - {episode.title}
+                  <a href={`/podcasts/${episode.slug}`}>{episode.title}</a>
                 </li>
               );
             })}
