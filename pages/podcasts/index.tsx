@@ -12,9 +12,9 @@ export default function PodcastsPage(props) {
       <main>
         <Section component="section" background="light">
           <ul>
-            {props.episodes.map((episode) => {
+            {props.episodes.map((episode, index) => {
               return (
-                <li>
+                <li key={index}>
                   <a href={`/podcasts/${episode.slug}`}>{episode.title}</a>
                 </li>
               );

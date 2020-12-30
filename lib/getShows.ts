@@ -3,18 +3,25 @@ let shows;
 async function fetchShows() {
   // Use Cache if Available
   if (shows) {
-    console.log('used cache');
+    console.log('Episodes fetched from cache.');
     return shows;
   }
 
   let url = `https://${process.env.SIMPLECAST_API_URL}/podcasts/${process.env.PODCAST_ID}/episodes?limit=6`;
 
-  const res = await fetch(url, {
-    headers: new Headers({
-      Authorization: `Bearer ${process.env.SIMPLECAST_TOKEN}`,
-    }),
-  });
-  const data = await res.json();
+  let data;
+
+  try {
+    const res = await fetch(url, {
+      headers: new Headers({
+        Authorization: `Bearer ${process.env.SIMPLECAST_TOKEN}`,
+      }),
+    });
+    data = await res.json();
+  } catch (err) {
+    console.error('Failed to fetch data from API.');
+    console.error(err);
+  }
 
   if (!data || !data.collection) {
     return {
@@ -23,6 +30,8 @@ async function fetchShows() {
   }
 
   shows = data.collection.filter((episode) => episode.status === 'published');
+
+  console.log('Episodes fetched from API.');
 
   return shows;
 }

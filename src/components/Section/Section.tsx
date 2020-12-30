@@ -2,7 +2,7 @@ import styles from './styles/Section.module.css';
 import classNames from 'classnames';
 
 export type SectionProps = {
-  component?: 'header' | 'footer' | 'section';
+  component?: 'header' | 'footer' | 'section' | 'main';
   background: 'light' | 'dark' | 'map';
   children?: React.ReactNode;
   className?: string;

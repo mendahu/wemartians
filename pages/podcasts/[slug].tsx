@@ -6,10 +6,12 @@ import styles from './styles/Podcast.module.css';
 export default function Podcast({ episode }) {
   return (
     <>
-      <Section component="header" background="dark">
+      <Section component="header" background="map">
         Header
       </Section>
-      {episode.id} - {episode.slug}
+      <Section component="main" background="light">
+        {episode.id} - {episode.slug}
+      </Section>
       <Section component="footer" background="dark">
         <Footer />
       </Section>
