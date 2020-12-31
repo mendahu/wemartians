@@ -37,6 +37,10 @@
   text-transform: uppercase;
 }
 
+.accentTitle {
+  color: var(--col-orange);
+}
+
 .subtitle {
   font-size: 1.6rem;
 }

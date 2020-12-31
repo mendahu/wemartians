@@ -17,7 +17,10 @@ export default function Header(props) {
         />
       </div>
       <div className={styles.headerTextContainer}>
-        <h1 className={styles.title}>{headerCopy.title}</h1>
+        <h1 className={styles.title}>
+          <span className={styles.accentTitle}>{headerCopy.titleA}</span>
+          {headerCopy.titleB}
+        </h1>
         <h2 className={styles.subtitle}>{headerCopy.subtitle}</h2>
       </div>
       <div className={styles.subscribeContainer}>

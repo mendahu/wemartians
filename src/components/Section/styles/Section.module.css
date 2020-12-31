@@ -19,8 +19,8 @@
 }
 
 .mapBackground {
-  background-image: url('../../../../public/header_wallpaper.jpg');
-  background-color: var(--col-grey-12);
+  background-image: url('../../../../public/header_wallpaper.png');
+  background-color: var(--col-grey-11);
   color: var(--col-grey-2);
   background-position: center;
   background-repeat: no-repeat;

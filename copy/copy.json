@@ -1,6 +1,7 @@
 {
   "header": {
-    "title": "WeMartians Podcast",
+    "titleA": "We",
+    "titleB": "Martians Podcast",
     "subtitle": "Exploring the solar system together",
     "subscriptions": [
       {

@@ -1,18 +1,19 @@
-# Orange
+# Colours
 
-#ED713C
+## Orange
 
-# Greys
+#d15d27
+
+## Greys
 
 #faf9f9
 #f0edec
-#e5e0dd
-#d9d1ce
-#ccc2bd
-#beb0ab
-#ad9c95
-#97857e
-#776963
-#463e3a
-#211f19
-#181512
+#e5e0de
+#d8d2cf
+#cbc2be
+#bdb1ab
+#ac9d96
+#98857d
+#7b6860
+#564942
+#2e2927
