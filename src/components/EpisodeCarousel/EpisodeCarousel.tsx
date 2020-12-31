@@ -49,7 +49,7 @@ export default function EpisodeCarousel({
         })}
       </div>
       <div className={styles.buttonContainer}>
-        <Button color="dark" label={episodesCopy.more} />
+        <Button color="dark" label={episodesCopy.more} href="/podcasts/" />
       </div>
     </>
   );
