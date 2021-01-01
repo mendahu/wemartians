@@ -49,8 +49,8 @@ export default function EpisodeCarousel({
                 )}
               >
                 <h2 className={styles.mtop}>{episode.title}</h2>
-                <p className={styles.mtop}>
-                  {episode.description.slice(0, 100) + '...'}
+                <p className={classNames(styles.mtop, styles.description)}>
+                  {episode.description.slice(0, 120) + '...'}
                 </p>
                 <p className={styles.date}>
                   {formatDistanceToNow(date, { addSuffix: true })}
