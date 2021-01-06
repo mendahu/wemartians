@@ -46,6 +46,7 @@ export async function getShows(limit?: number) {
       description: episode.description,
       image: episode.image_url,
       publishDate: episode.published_at,
+      id: episode.id,
     };
   });
 

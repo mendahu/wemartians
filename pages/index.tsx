@@ -1,17 +1,21 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import { getShows } from '../lib/getShows';
-import EpisodeCarousel, {
-  Episode,
-} from '../src/components/EpisodeCarousel/EpisodeCarousel';
+import EpisodeCarousel from '../src/components/EpisodeCarousel/EpisodeCarousel';
 import Footer from '../src/components/Footer/Footer';
 import Header from '../src/components/Header/Header';
 import MailingListCallToAction from '../src/components/MailingListCallToAction/MailingListCallToAction';
 import PatreonCallToAction from '../src/components/PatreonCallToAction/PatreonCallToAction';
 import Section from '../src/components/Section/Section';
 import ShopSection from '../src/components/ShopSection/ShopSection';
+import WebPlayer from '../src/components/WebPlayer/WebPlayer';
 import styles from '../styles/Home.module.css';
 
 export default function Home(props) {
+  const [playerShowId, setPlayerShowId] = useState<string>(
+    props.episodes[0].id
+  );
+
   return (
     <>
       <Head>
@@ -22,7 +26,10 @@ export default function Home(props) {
       </Section>
       <main>
         <Section background="light">
-          <EpisodeCarousel episodes={props.episodes} />
+          <EpisodeCarousel
+            episodes={props.episodes}
+            setPlayerShowId={setPlayerShowId}
+          />
         </Section>
         <Section background="dark" className={styles.ctaContainer}>
           <PatreonCallToAction />
@@ -35,6 +42,7 @@ export default function Home(props) {
       <Section component="footer" background="dark">
         <Footer />
       </Section>
+      <WebPlayer id={playerShowId} />
     </>
   );
 }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import classes from './styles/EpisodeCarousel.module.css';
 import classNames from 'classnames';
+import { Dispatch, SetStateAction } from 'react';
 
 export type Episode = {
   slug: string;
@@ -12,14 +13,17 @@ export type Episode = {
   description: string;
   image?: string;
   publishDate: string;
+  id: string;
 };
 
 export type EpisodeCarouselProps = {
   episodes: Episode[];
+  setPlayerShowId: Dispatch<SetStateAction<string>>;
 };
 
 export default function EpisodeCarousel({
   episodes = [],
+  setPlayerShowId,
 }: EpisodeCarouselProps) {
   return (
     <>
@@ -52,6 +56,7 @@ export default function EpisodeCarousel({
                 <p className={classNames(styles.mtop, styles.description)}>
                   {episode.description.slice(0, 120) + '...'}
                 </p>
+                <a onClick={() => setPlayerShowId(episode.id)}>Play</a>
                 <p className={styles.date}>
                   {formatDistanceToNow(date, { addSuffix: true })}
                 </p>
