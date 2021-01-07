@@ -7,16 +7,22 @@ export type ButtonProps = {
   href?: string;
   icon?: string;
   className?: string;
+  onClick?: () => void;
+  size?: 'lg' | 'sm';
 };
 
 export default function Button(props: ButtonProps) {
+  const size = props.size || 'lg';
+
   return (
     <a
       className={classNames(
         styles.button,
         styles[props.color],
-        props.className
+        props.className,
+        styles[size]
       )}
+      onClick={props.onClick}
       href={props.href}
     >
       {props.icon}

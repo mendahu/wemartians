@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import { getShows } from '../lib/getShows';
 import EpisodeCarousel from '../src/components/EpisodeCarousel/EpisodeCarousel';
 import Footer from '../src/components/Footer/Footer';

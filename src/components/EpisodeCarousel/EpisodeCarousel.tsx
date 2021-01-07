@@ -3,9 +3,7 @@ import { episodes as episodesCopy } from '../../../copy/copy.json';
 import Button from '../Button/Button';
 import Image from 'next/image';
 import { formatDistanceToNow, parseISO } from 'date-fns';
-import classes from './styles/EpisodeCarousel.module.css';
 import classNames from 'classnames';
-import { Dispatch, SetStateAction } from 'react';
 
 export type Episode = {
   slug: string;
@@ -42,8 +40,8 @@ export default function EpisodeCarousel({
               >
                 <Image
                   src={episode.image || '/album_Art_2021-01_400.png'}
-                  width={510}
-                  height={510}
+                  width={515}
+                  height={515}
                 />
               </div>
               <div
@@ -56,10 +54,18 @@ export default function EpisodeCarousel({
                 <p className={classNames(styles.mtop, styles.description)}>
                   {episode.description.slice(0, 120) + '...'}
                 </p>
-                <a onClick={() => handleClick(episode.id)}>Play</a>
-                <p className={styles.date}>
-                  {formatDistanceToNow(date, { addSuffix: true })}
-                </p>
+
+                <div className={styles.footerContainer}>
+                  <Button
+                    onClick={() => handleClick(episode.id)}
+                    color="dark"
+                    label="Play"
+                    size="sm"
+                  />
+                  <p className={styles.date}>
+                    {formatDistanceToNow(date, { addSuffix: true })}
+                  </p>
+                </div>
               </div>
             </div>
           );
