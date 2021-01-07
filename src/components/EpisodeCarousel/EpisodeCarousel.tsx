@@ -59,7 +59,7 @@ export default function EpisodeCarousel({
                   <Button
                     onClick={() => handleClick(episode.id)}
                     color="dark"
-                    label="Play"
+                    label={String.fromCharCode(9658) + ' Play'}
                     size="sm"
                   />
                   <p className={styles.date}>

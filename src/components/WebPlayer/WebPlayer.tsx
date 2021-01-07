@@ -48,9 +48,7 @@ export default function WebPlayer(props: WebPlayerProps) {
           {generateDrawerCopy()}
         </div>
       </div>
-      <div
-        className={classNames(styles.containerWidth, styles.playerContainer)}
-      >
+      <div className={styles.containerWidth}>
         <iframe
           height="200px"
           width="100%"

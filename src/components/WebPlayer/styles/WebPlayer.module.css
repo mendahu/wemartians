@@ -17,25 +17,20 @@
 }
 
 .toggleButton {
-  color: var(--col-grey-3);
+  color: var(--col-grey-2);
   padding: 0.5rem 1rem;
-  background-color: var(--col-grey-11);
+  background-color: var(--col-grey-9);
   border-radius: 5px 5px 0px 0px;
   min-width: 80px;
   text-align: center;
 }
 
-.playerContainer {
-  padding: 1rem;
-  background-color: var(--col-grey-11);
-}
-
 .drawerVisible {
-  bottom: 0px;
+  bottom: -5px;
 }
 
 .drawerInvisible {
-  bottom: -224px;
+  bottom: -205px;
 }
 
 .drawerSlidingUp {
@@ -50,19 +45,19 @@
 
 @keyframes slidingDown {
   from {
-    bottom: 0;
+    bottom: -5px;
   }
   to {
-    bottom: -224px;
+    bottom: -205px;
   }
 }
 
 @keyframes slidingUp {
   from {
-    bottom: -224px;
+    bottom: -205px;
   }
   to {
-    bottom: 0;
+    bottom: -5px;
   }
 }
 
