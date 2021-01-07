@@ -18,12 +18,12 @@ export type Episode = {
 
 export type EpisodeCarouselProps = {
   episodes: Episode[];
-  setPlayerShowId: Dispatch<SetStateAction<string>>;
+  handleClick: (epId: string) => void;
 };
 
 export default function EpisodeCarousel({
   episodes = [],
-  setPlayerShowId,
+  handleClick,
 }: EpisodeCarouselProps) {
   return (
     <>
@@ -56,7 +56,7 @@ export default function EpisodeCarousel({
                 <p className={classNames(styles.mtop, styles.description)}>
                   {episode.description.slice(0, 120) + '...'}
                 </p>
-                <a onClick={() => setPlayerShowId(episode.id)}>Play</a>
+                <a onClick={() => handleClick(episode.id)}>Play</a>
                 <p className={styles.date}>
                   {formatDistanceToNow(date, { addSuffix: true })}
                 </p>

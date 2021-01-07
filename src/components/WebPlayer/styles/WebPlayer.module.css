@@ -21,6 +21,8 @@
   padding: 0.5rem 1rem;
   background-color: var(--col-grey-11);
   border-radius: 5px 5px 0px 0px;
+  min-width: 80px;
+  text-align: center;
 }
 
 .playerContainer {
@@ -28,12 +30,40 @@
   background-color: var(--col-grey-11);
 }
 
-.visible {
-  visibility: visible;
+.drawerVisible {
+  bottom: 0px;
 }
 
-.invisible {
-  visibility: hidden;
+.drawerInvisible {
+  bottom: -224px;
+}
+
+.drawerSlidingUp {
+  animation-name: slidingUp;
+  animation-duration: 500ms;
+}
+
+.drawerSlidingDown {
+  animation-name: slidingDown;
+  animation-duration: 500ms;
+}
+
+@keyframes slidingDown {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -224px;
+  }
+}
+
+@keyframes slidingUp {
+  from {
+    bottom: -224px;
+  }
+  to {
+    bottom: 0;
+  }
 }
 
 @media screen and (min-width: 550px) {

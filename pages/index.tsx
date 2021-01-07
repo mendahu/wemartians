@@ -10,11 +10,24 @@ import Section from '../src/components/Section/Section';
 import ShopSection from '../src/components/ShopSection/ShopSection';
 import WebPlayer from '../src/components/WebPlayer/WebPlayer';
 import styles from '../styles/Home.module.css';
+import usePlayerDrawer, {
+  DisplayStatus,
+} from '../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer';
 
 export default function Home(props) {
-  const [playerShowId, setPlayerShowId] = useState<string>(
-    props.episodes[0].id
-  );
+  const {
+    episodeId,
+    setEpisodeId,
+    displayStatus,
+    toggleDrawer,
+  } = usePlayerDrawer(props.episodes[0].id);
+
+  const handleEpisodeClick = (epId: string) => {
+    setEpisodeId(epId);
+    if (displayStatus === DisplayStatus.invisible) {
+      toggleDrawer();
+    }
+  };
 
   return (
     <>
@@ -28,7 +41,7 @@ export default function Home(props) {
         <Section background="light">
           <EpisodeCarousel
             episodes={props.episodes}
-            setPlayerShowId={setPlayerShowId}
+            handleClick={handleEpisodeClick}
           />
         </Section>
         <Section background="dark" className={styles.ctaContainer}>
@@ -42,7 +55,11 @@ export default function Home(props) {
       <Section component="footer" background="dark">
         <Footer />
       </Section>
-      <WebPlayer id={playerShowId} />
+      <WebPlayer
+        id={episodeId}
+        toggleDrawer={toggleDrawer}
+        displayStatus={displayStatus}
+      />
     </>
   );
 }
