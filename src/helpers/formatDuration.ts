@@ -18,10 +18,10 @@ export const formatDuration = (seconds: number): string => {
   }
 
   if (hrs || mins) {
-    returnDuration += `${mins}:`;
+    returnDuration += `0${mins}:`.slice(-3);
   }
 
-  returnDuration += secs;
+  returnDuration += `0${secs}`.slice(-2);
 
   return returnDuration;
 };

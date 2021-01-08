@@ -46,7 +46,7 @@ export async function getShows(limit?: number) {
       slug: episode.slug,
       title: episode.title,
       description: episode.description,
-      image: episode.image_url,
+      image: episode.image_url || "/album_Art_2021_500-01.png",
       publishDate: episode.published_at,
       id: episode.id,
       duration: episode.duration,
