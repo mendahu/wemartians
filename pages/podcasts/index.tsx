@@ -56,7 +56,7 @@ export default function PodcastsPage(props) {
 export async function getStaticProps() {
   let shows = [];
   try {
-    shows = await getShows(6);
+    shows = await getShows();
   } catch (err) {
     console.error(err);
   }

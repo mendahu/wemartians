@@ -79,7 +79,7 @@ export async function getStaticPaths() {
   let shows = [];
 
   try {
-    shows = await getShows(3);
+    shows = await getShows(7);
   } catch (err) {
     console.error(err);
   }
