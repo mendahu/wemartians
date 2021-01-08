@@ -24,7 +24,7 @@ export default function Breadcrumbs(props: BreadcrumbsProps) {
           </li>
         );
       })}
-      <li>{props.currentLocation}</li>;
+      <li>{props.currentLocation}</li>
     </ul>
   );
 }

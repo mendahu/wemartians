@@ -15,7 +15,12 @@ export default function CommonHeader(props: CommonHeaderProps) {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.logoContainer}>
-        <Image src={"/2021_logo-dark.png"} width={100} height={100} />
+        <Image
+          src={"/2021_logo-dark.png"}
+          width={100}
+          height={100}
+          layout="fixed"
+        />
       </div>
       <div className={styles.headerTitleContainer}>
         <h1 className={styles.title}>{props.title}</h1>
