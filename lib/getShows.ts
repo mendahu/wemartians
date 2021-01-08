@@ -1,3 +1,5 @@
+import { Episode } from '../src/types/common';
+
 let shows;
 
 async function fetchShows() {
@@ -39,7 +41,7 @@ async function fetchShows() {
 export async function getShows(limit?: number) {
   const shows = await fetchShows();
 
-  const formattedShows = shows.map((episode) => {
+  const formattedShows: Episode[] = shows.map((episode) => {
     return {
       slug: episode.slug,
       title: episode.title,

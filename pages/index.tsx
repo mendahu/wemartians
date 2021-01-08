@@ -12,8 +12,13 @@ import styles from '../styles/Home.module.css';
 import usePlayerDrawer, {
   DisplayStatus,
 } from '../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer';
+import { Episode } from '../src/types/common';
 
-export default function Home(props) {
+export type HomeProps = {
+  episodes: Episode[];
+};
+
+export default function Home(props: HomeProps) {
   const {
     episodeId,
     setEpisodeId,

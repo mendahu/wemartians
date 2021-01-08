@@ -4,15 +4,8 @@ import Button from '../Button/Button';
 import Image from 'next/image';
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import classNames from 'classnames';
-
-export type Episode = {
-  slug: string;
-  title: string;
-  description: string;
-  image?: string;
-  publishDate: string;
-  id: string;
-};
+import { Episode } from '../../types/common';
+import Link from 'next/link';
 
 export type EpisodeCarouselProps = {
   episodes: Episode[];
@@ -38,11 +31,15 @@ export default function EpisodeCarousel({
                   styles.albumArtContainer
                 )}
               >
-                <Image
-                  src={episode.image || '/album_Art_2021-01_400.png'}
-                  width={515}
-                  height={515}
-                />
+                <Link href={`/podcasts/${episode.slug}`}>
+                  <a>
+                    <Image
+                      src={episode.image || '/album_Art_2021-01_400.png'}
+                      width={515}
+                      height={515}
+                    />
+                  </a>
+                </Link>
               </div>
               <div
                 className={classNames(
@@ -50,7 +47,11 @@ export default function EpisodeCarousel({
                   styles.episodeContent
                 )}
               >
-                <h2 className={styles.mtop}>{episode.title}</h2>
+                <Link href={`/podcasts/${episode.slug}`}>
+                  <a>
+                    <h2 className={styles.mtop}>{episode.title}</h2>
+                  </a>
+                </Link>
                 <p className={classNames(styles.mtop, styles.description)}>
                   {episode.description.slice(0, 120) + '...'}
                 </p>
