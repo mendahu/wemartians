@@ -4,6 +4,8 @@ import classNames from "classnames";
 export type PlayIconProps = {
   color: "orange" | "dark" | "light";
   size: number;
+  className?: string;
+  onClick?: () => void;
 };
 
 export default function PlayIcon(props: PlayIconProps) {
@@ -15,8 +17,9 @@ export default function PlayIcon(props: PlayIconProps) {
       viewBox="0 0 500 500"
       height={props.size}
       width={props.size}
+      className={classNames(props.className, styles.container)}
+      onClick={props.onClick}
     >
-      <defs></defs>
       <circle
         className={classNames(styles["cls-1"], styles[`${props.color}Stroke`])}
         cx="250"

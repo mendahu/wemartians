@@ -6,14 +6,62 @@
   margin-top: 1rem;
 }
 
+.playIconContainer {
+  flex-basis: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.duration {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: var(--col-grey-10);
+  text-align: center;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: stretch;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
 .titleContainer {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.episodeTitle {
-  margin: 1rem 0rem 0rem 1rem;
+.timeAgo {
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--col-grey-9);
 }
 
-.playButton {
-  color: var(--col-orange);
+.description {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .textContainer {
+    margin-left: 1rem;
+  }
+
+  .playIconContainer {
+    order: 2;
+  }
+
+  .headerContainer {
+    margin-top: 0;
+  }
+
+  .imageContainer {
+    flex: 0 0 185px;
+  }
 }

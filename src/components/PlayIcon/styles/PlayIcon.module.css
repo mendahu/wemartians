@@ -1,8 +1,14 @@
+.container {
+  cursor: pointer;
+}
+
 .cls-1 {
   fill: none;
   stroke-miterlimit: 10;
   stroke-width: 50px;
 }
+
+/* Orange Options */
 
 .orangeStroke {
   stroke: var(--col-orange);
@@ -12,6 +18,8 @@
   fill: var(--col-orange);
 }
 
+/* Dark Options */
+
 .darkStroke {
   stroke: var(--col-grey-11);
 }
@@ -19,6 +27,8 @@
 .darkFill {
   fill: var(--col-grey-11);
 }
+
+/* Light Options */
 
 .lightStroke {
   stroke: var(--col-light-4);

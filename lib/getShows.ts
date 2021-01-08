@@ -1,11 +1,11 @@
-import { Episode } from '../src/types/common';
+import { Episode } from "../src/types/common";
 
 let shows;
 
 async function fetchShows() {
   // Use Cache if Available
   if (shows) {
-    console.log('Episodes fetched from cache.');
+    console.log("Episodes fetched from cache.");
     return shows;
   }
 
@@ -21,7 +21,7 @@ async function fetchShows() {
     });
     data = await res.json();
   } catch (err) {
-    console.error('Failed to fetch data from API.');
+    console.error("Failed to fetch data from API.");
     console.error(err);
   }
 
@@ -31,9 +31,9 @@ async function fetchShows() {
     };
   }
 
-  shows = data.collection.filter((episode) => episode.status === 'published');
+  shows = data.collection.filter((episode) => episode.status === "published");
 
-  console.log('Episodes fetched from API.');
+  console.log("Episodes fetched from API.");
 
   return shows;
 }
@@ -49,6 +49,7 @@ export async function getShows(limit?: number) {
       image: episode.image_url,
       publishDate: episode.published_at,
       id: episode.id,
+      duration: episode.duration,
     };
   });
 

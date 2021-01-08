@@ -42,7 +42,9 @@ export default function PodcastsPage(props) {
                 slug={episode.slug}
                 title={episode.title}
                 imageUrl={episode.image}
-                description={episode.description.slice(0, 90) + "..."}
+                description={episode.description.slice(0, 160) + "..."}
+                duration={episode.duration}
+                publishDate={episode.publishDate}
                 handlePlay={() => handleEpisodeClick(episode.id)}
               />
             );

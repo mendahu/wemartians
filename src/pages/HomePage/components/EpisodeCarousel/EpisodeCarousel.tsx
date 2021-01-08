@@ -1,11 +1,11 @@
 import styles from "./styles/EpisodeCarousel.module.css";
 import { episodes as episodesCopy } from "../../../../../copy/Home/index.json";
 import Button from "../../../../components/Button/Button";
-import Image from "next/image";
-import { formatDistanceToNow, parseISO } from "date-fns";
+import { formatTimeAgo } from "../../../../helpers/formatTimeAgo";
 import classNames from "classnames";
 import { Episode } from "../../../../types/common";
 import Link from "next/link";
+import Image from "next/image";
 
 export type EpisodeCarouselProps = {
   episodes: Episode[];
@@ -21,8 +21,6 @@ export default function EpisodeCarousel({
       <h1 className={styles.title}>{episodesCopy.title}</h1>
       <div className={styles.carouselContainer}>
         {episodes.map((episode, index) => {
-          const date = parseISO(episode.publishDate);
-
           return (
             <div key={index} className={styles.episodeCard}>
               <div
@@ -64,7 +62,7 @@ export default function EpisodeCarousel({
                     size="sm"
                   />
                   <p className={styles.date}>
-                    {formatDistanceToNow(date, { addSuffix: true })}
+                    {formatTimeAgo(episode.publishDate)}
                   </p>
                 </div>
               </div>
