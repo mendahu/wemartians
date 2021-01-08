@@ -1,0 +1,29 @@
+.cls-1 {
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke-width: 50px;
+}
+
+.orangeStroke {
+  stroke: var(--col-orange);
+}
+
+.orangeFill {
+  fill: var(--col-orange);
+}
+
+.darkStroke {
+  stroke: var(--col-grey-11);
+}
+
+.darkFill {
+  fill: var(--col-grey-11);
+}
+
+.lightStroke {
+  stroke: var(--col-light-4);
+}
+
+.lightFill {
+  fill: var(--col-light-4);
+}

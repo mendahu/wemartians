@@ -42,6 +42,7 @@ export default function PodcastsPage(props) {
                 slug={episode.slug}
                 title={episode.title}
                 imageUrl={episode.image}
+                description={episode.description.slice(0, 90) + "..."}
                 handlePlay={() => handleEpisodeClick(episode.id)}
               />
             );

@@ -9,9 +9,7 @@ import Section from "../src/components/Section/Section";
 import ShopSection from "../src/components/ShopSection/ShopSection";
 import WebPlayer from "../src/components/WebPlayer/WebPlayer";
 import styles from "../src/pages/HomePage/styles/Home.module.css";
-import usePlayerDrawer, {
-  DisplayStatus,
-} from "../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
+import usePlayerDrawer from "../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
 import { Episode } from "../src/types/common";
 
 export type HomeProps = {
