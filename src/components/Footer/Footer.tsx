@@ -1,8 +1,8 @@
-import { footer as footerCopy } from '../../../copy/copy.json';
-import Image from 'next/image';
-import styles from './styles/Footer.module.css';
+import { footer as footerCopy } from "../../../copy/index.json";
+import Image from "next/image";
+import styles from "./styles/Footer.module.css";
 
-const twitterBaseUrl = 'https://www.twitter.com/';
+const twitterBaseUrl = "https://www.twitter.com/";
 
 export type FooterProps = {};
 
@@ -17,7 +17,7 @@ export default function Footer(props: FooterProps) {
               <div>
                 <a target="_blank" href={`${twitterBaseUrl}${account.handle}`}>
                   <Image
-                    layout={'fixed'}
+                    layout={"fixed"}
                     src={account.profileImage}
                     width={75}
                     height={75}
@@ -44,7 +44,7 @@ export default function Footer(props: FooterProps) {
         })}
       </div>
       <p className={styles.copyright}>
-        {String.fromCharCode(169)} {footerCopy.copyright.year}{' '}
+        {String.fromCharCode(169)} {footerCopy.copyright.year}{" "}
         {footerCopy.copyright.name}
       </p>
     </div>

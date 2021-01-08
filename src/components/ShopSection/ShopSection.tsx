@@ -1,7 +1,7 @@
-import styles from './styles/ShopSection.module.css';
-import { shop as shopCopy } from '../../../copy/copy.json';
-import Image from 'next/image';
-import Button from '../Button/Button';
+import styles from "./styles/ShopSection.module.css";
+import { shop as shopCopy } from "../../../copy/Home/index.json";
+import Image from "next/image";
+import Button from "../Button/Button";
 
 export type ShopSectionProps = {};
 

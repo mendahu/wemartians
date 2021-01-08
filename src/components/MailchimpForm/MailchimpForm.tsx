@@ -1,13 +1,12 @@
-import styles from './styles/MailchimpForm.module.css';
-import { mailchimpForm as mailchimpFormCopy } from '../../../copy/copy.json';
-import Button from '../Button/Button';
-import { useState } from 'react';
+import styles from "./styles/MailchimpForm.module.css";
+import { mailchimpForm as mailchimpFormCopy } from "../../../copy/Home/index.json";
+import { useState } from "react";
 
 export type MailchimpFormProps = {};
 
 export default function MailchimpForm(props: MailchimpFormProps) {
-  const [email, setEmail] = useState('');
-  const [falseForm, setFalseForm] = useState('');
+  const [email, setEmail] = useState("");
+  const [falseForm, setFalseForm] = useState("");
 
   return (
     <div className={styles.formContainer}>
@@ -30,7 +29,7 @@ export default function MailchimpForm(props: MailchimpFormProps) {
             className={styles.formInput}
           />
           <div
-            style={{ position: 'absolute', left: '-5000px' }}
+            style={{ position: "absolute", left: "-5000px" }}
             aria-hidden="true"
           >
             <input

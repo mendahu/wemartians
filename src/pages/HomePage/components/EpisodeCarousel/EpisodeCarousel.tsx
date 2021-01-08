@@ -1,11 +1,11 @@
-import styles from './styles/EpisodeCarousel.module.css';
-import { episodes as episodesCopy } from '../../../copy/copy.json';
-import Button from '../Button/Button';
-import Image from 'next/image';
-import { formatDistanceToNow, parseISO } from 'date-fns';
-import classNames from 'classnames';
-import { Episode } from '../../types/common';
-import Link from 'next/link';
+import styles from "./styles/EpisodeCarousel.module.css";
+import { episodes as episodesCopy } from "../../../../../copy/Home/index.json";
+import Button from "../../../../components/Button/Button";
+import Image from "next/image";
+import { formatDistanceToNow, parseISO } from "date-fns";
+import classNames from "classnames";
+import { Episode } from "../../../../types/common";
+import Link from "next/link";
 
 export type EpisodeCarouselProps = {
   episodes: Episode[];
@@ -34,7 +34,7 @@ export default function EpisodeCarousel({
                 <Link href={`/podcasts/${episode.slug}`}>
                   <a>
                     <Image
-                      src={episode.image || '/album_Art_2021-01_400.png'}
+                      src={episode.image || "/album_Art_2021-01_400.png"}
                       width={515}
                       height={515}
                     />
@@ -53,14 +53,14 @@ export default function EpisodeCarousel({
                   </a>
                 </Link>
                 <p className={classNames(styles.mtop, styles.description)}>
-                  {episode.description.slice(0, 120) + '...'}
+                  {episode.description.slice(0, 120) + "..."}
                 </p>
 
                 <div className={styles.footerContainer}>
                   <Button
                     onClick={() => handleClick(episode.id)}
                     color="dark"
-                    label={String.fromCharCode(9658) + ' Play'}
+                    label={String.fromCharCode(9658) + " Play"}
                     size="sm"
                   />
                   <p className={styles.date}>

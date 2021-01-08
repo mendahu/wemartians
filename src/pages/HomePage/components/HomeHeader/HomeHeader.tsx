@@ -1,8 +1,7 @@
-import styles from './styles/Header.module.css';
-import classNames from 'classnames';
-import Image from 'next/image';
-import { header as headerCopy } from '../../../copy/copy.json';
-import Button from '../Button/Button';
+import styles from "./styles/HomeHeader.module.css";
+import Image from "next/image";
+import { header as headerCopy } from "../../../../../copy/Home/index.json";
+import Button from "../../../../components/Button/Button";
 
 export default function Header(props) {
   return (

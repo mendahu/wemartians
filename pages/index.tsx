@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import { getShows } from '../lib/getShows';
-import EpisodeCarousel from '../src/components/EpisodeCarousel/EpisodeCarousel';
-import Footer from '../src/components/Footer/Footer';
-import Header from '../src/components/Header/Header';
-import MailingListCallToAction from '../src/components/MailingListCallToAction/MailingListCallToAction';
-import PatreonCallToAction from '../src/components/PatreonCallToAction/PatreonCallToAction';
-import Section from '../src/components/Section/Section';
-import ShopSection from '../src/components/ShopSection/ShopSection';
-import WebPlayer from '../src/components/WebPlayer/WebPlayer';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import { getShows } from "../lib/getShows";
+import EpisodeCarousel from "../src/pages/HomePage/components/EpisodeCarousel/EpisodeCarousel";
+import Footer from "../src/components/Footer/Footer";
+import Header from "../src/pages/HomePage/components/HomeHeader/HomeHeader";
+import MailingListCallToAction from "../src/components/MailingListCallToAction/MailingListCallToAction";
+import PatreonCallToAction from "../src/components/PatreonCallToAction/PatreonCallToAction";
+import Section from "../src/components/Section/Section";
+import ShopSection from "../src/components/ShopSection/ShopSection";
+import WebPlayer from "../src/components/WebPlayer/WebPlayer";
+import styles from "../src/pages/HomePage/styles/Home.module.css";
 import usePlayerDrawer, {
   DisplayStatus,
-} from '../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer';
-import { Episode } from '../src/types/common';
+} from "../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
+import { Episode } from "../src/types/common";
 
 export type HomeProps = {
   episodes: Episode[];

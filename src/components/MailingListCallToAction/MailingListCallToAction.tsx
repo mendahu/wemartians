@@ -1,6 +1,6 @@
-import styles from './styles/MailingListCallToAction.module.css';
-import { mailingList as mailingListCopy } from '../../../copy/copy.json';
-import MailchimpForm from '../MailchimpForm/MailchimpForm';
+import styles from "./styles/MailingListCallToAction.module.css";
+import { mailingList as mailingListCopy } from "../../../copy/Home/index.json";
+import MailchimpForm from "../MailchimpForm/MailchimpForm";
 
 export type MailingListCallToActionProps = {};
 

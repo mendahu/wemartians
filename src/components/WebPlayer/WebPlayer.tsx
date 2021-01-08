@@ -1,6 +1,6 @@
-import styles from './styles/WebPlayer.module.css';
-import classNames from 'classnames';
-import { DisplayStatus } from './usePlayerDrawer/usePlayerDrawer';
+import styles from "./styles/WebPlayer.module.css";
+import classNames from "classnames";
+import { DisplayStatus } from "./usePlayerDrawer/usePlayerDrawer";
 
 export type WebPlayerProps = {
   id: string;
@@ -14,9 +14,9 @@ export default function WebPlayer(props: WebPlayerProps) {
       props.displayStatus === DisplayStatus.visible ||
       props.displayStatus === DisplayStatus.slidingDown
     ) {
-      return 'Hide Player';
+      return "Hide Player";
     } else {
-      return 'Show Player';
+      return "Show Player";
     }
   };
 

@@ -1,7 +1,7 @@
-import { getShow, getShows } from '../../lib/getShows';
-import Footer from '../../src/components/Footer/Footer';
-import Section from '../../src/components/Section/Section';
-import styles from './styles/Podcast.module.css';
+import { getShow, getShows } from "../../lib/getShows";
+import Footer from "../../src/components/Footer/Footer";
+import Section from "../../src/components/Section/Section";
+import styles from "./styles/Podcast.module.css";
 
 export default function Podcast({ episode }) {
   return (

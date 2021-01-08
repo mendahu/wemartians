@@ -1,0 +1,34 @@
+/* HEADER */
+
+.headerContainer {
+  display: flex;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.headerTitleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.breadcrumbsContainer {
+  list-style-type: none;
+  display: flex;
+}
+
+.breadcrumbsContainer li {
+  margin-left: 0.5rem;
+}
+
+.breadcrumbsContainer li:first-of-type {
+  margin-left: 0rem;
+}

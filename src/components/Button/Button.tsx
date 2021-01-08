@@ -1,18 +1,18 @@
-import styles from './styles/Button.module.css';
-import classNames from 'classnames';
+import styles from "./styles/Button.module.css";
+import classNames from "classnames";
 
 export type ButtonProps = {
-  color: 'light' | 'dark';
+  color: "light" | "dark";
   label: string;
   href?: string;
   icon?: string;
   className?: string;
   onClick?: () => void;
-  size?: 'lg' | 'sm';
+  size?: "lg" | "sm";
 };
 
 export default function Button(props: ButtonProps) {
-  const size = props.size || 'lg';
+  const size = props.size || "lg";
 
   return (
     <a

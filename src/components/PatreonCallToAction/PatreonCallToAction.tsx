@@ -1,6 +1,6 @@
-import styles from './styles/PatreonCallToAction.module.css';
-import Image from 'next/image';
-import { patreon as patreonCopy } from '../../../copy/copy.json';
+import styles from "./styles/PatreonCallToAction.module.css";
+import Image from "next/image";
+import { patreon as patreonCopy } from "../../../copy/Home/index.json";
 
 export type PatreonCallToActionProps = {};
 
