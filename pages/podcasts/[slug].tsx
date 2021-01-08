@@ -10,12 +10,22 @@ import MailingListCallToAction from "../../src/components/MailingListCallToActio
 import ShopSection from "../../src/components/ShopSection/ShopSection";
 import { formatPublishDate } from "../../src/helpers/formatPublishDate";
 import { formatTimeAgo } from "../../src/helpers/formatTimeAgo";
+import { useEffect } from "react";
+import { useWebPlayer } from "../../src/contexts/webPlayerContext";
 
 export type PodcastPageProps = {
   episode: Episode;
 };
 
 export default function PodcastPage({ episode }: PodcastPageProps) {
+  const { episodeId, setEpisodeId } = useWebPlayer();
+
+  useEffect(() => {
+    if (!episodeId) {
+      setEpisodeId(episode.id);
+    }
+  }, []);
+
   const breadcrumbs = {
     crumbs: [
       {

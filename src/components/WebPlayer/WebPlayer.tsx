@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { DisplayStatus } from "./usePlayerDrawer/usePlayerDrawer";
 
 export type WebPlayerProps = {
-  id: string;
+  id?: string;
   displayStatus: DisplayStatus;
   toggleDrawer: () => void;
 };
@@ -49,14 +49,16 @@ export default function WebPlayer(props: WebPlayerProps) {
         </div>
       </div>
       <div className={styles.containerWidth}>
-        <iframe
-          height="200px"
-          width="100%"
-          frameBorder="no"
-          scrolling="no"
-          seamless
-          src={`https://player.simplecast.com/${props.id}?dark=true`}
-        ></iframe>
+        {props.id && (
+          <iframe
+            height="200px"
+            width="100%"
+            frameBorder="no"
+            scrolling="no"
+            seamless
+            src={`https://player.simplecast.com/${props.id}?dark=true`}
+          ></iframe>
+        )}
       </div>
     </div>
   );

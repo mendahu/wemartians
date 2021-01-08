@@ -7,22 +7,24 @@ import MailingListCallToAction from "../src/components/MailingListCallToAction/M
 import PatreonCallToAction from "../src/components/PatreonCallToAction/PatreonCallToAction";
 import Section from "../src/components/Section/Section";
 import ShopSection from "../src/components/ShopSection/ShopSection";
-import WebPlayer from "../src/components/WebPlayer/WebPlayer";
+
 import styles from "../src/pages/HomePage/styles/Home.module.css";
-import usePlayerDrawer from "../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
 import { Episode } from "../src/types/common";
+import { useWebPlayer } from "../src/contexts/webPlayerContext";
+import { useEffect } from "react";
 
 export type HomeProps = {
   episodes: Episode[];
 };
 
 export default function Home(props: HomeProps) {
-  const {
-    episodeId,
-    displayStatus,
-    toggleDrawer,
-    handleEpisodeClick,
-  } = usePlayerDrawer(props.episodes[0].id);
+  const { episodeId, setEpisodeId, handleEpisodeClick } = useWebPlayer();
+
+  useEffect(() => {
+    if (!episodeId) {
+      setEpisodeId(props.episodes[0].id);
+    }
+  }, []);
 
   return (
     <>
@@ -50,11 +52,6 @@ export default function Home(props: HomeProps) {
       <Section component="footer" background="dark">
         <Footer />
       </Section>
-      <WebPlayer
-        id={episodeId}
-        toggleDrawer={toggleDrawer}
-        displayStatus={displayStatus}
-      />
     </>
   );
 }

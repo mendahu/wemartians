@@ -4,17 +4,20 @@ import Section from "../../src/components/Section/Section";
 import styles from "../../src/pages/PodcastsPage/styles/PodcastsPage.module.css";
 import podcastsCopy from "../../copy/Podcasts/index.json";
 import PodcastListItem from "../../src/pages/PodcastsPage/PodcastListItem/PodcastListItem";
-import WebPlayer from "../../src/components/WebPlayer/WebPlayer";
-import usePlayerDrawer from "../../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
+
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
+import { useWebPlayer } from "../../src/contexts/webPlayerContext";
+import { useEffect } from "react";
 
 export default function PodcastsPage(props) {
-  const {
-    episodeId,
-    handleEpisodeClick,
-    displayStatus,
-    toggleDrawer,
-  } = usePlayerDrawer(props.episodes[0].id);
+  const { episodeId, setEpisodeId, handleEpisodeClick } = useWebPlayer();
+
+  useEffect(() => {
+    if (!episodeId) {
+      setEpisodeId(props.episodes[0].id);
+    }
+  }, []);
+
   return (
     <>
       <Section component="header" background="dark">
@@ -44,11 +47,6 @@ export default function PodcastsPage(props) {
       <Section component="footer" background="dark">
         <Footer />
       </Section>
-      <WebPlayer
-        id={episodeId}
-        displayStatus={displayStatus}
-        toggleDrawer={toggleDrawer}
-      />
     </>
   );
 }
