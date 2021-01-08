@@ -1,14 +1,14 @@
 {
   "header": {
     "title": "Episodes",
-    "breadcrumbs": [
-      {
-        "label": "Home",
-        "href": "/"
-      },
-      {
-        "label": "Episodes"
-      }
-    ]
+    "breadcrumbs": {
+      "crumbs": [
+        {
+          "label": "Home",
+          "href": "/"
+        }
+      ],
+      "currentLocation": "Episodes"
+    }
   }
 }

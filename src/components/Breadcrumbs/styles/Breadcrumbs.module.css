@@ -1,0 +1,12 @@
+.breadcrumbsContainer {
+  list-style-type: none;
+  display: flex;
+}
+
+.breadcrumbsContainer li {
+  margin-left: 0.5rem;
+}
+
+.breadcrumbsContainer li:first-of-type {
+  margin-left: 0rem;
+}
