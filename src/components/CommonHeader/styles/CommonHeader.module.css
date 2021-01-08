@@ -1,0 +1,19 @@
+.headerContainer {
+  display: flex;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.headerTitleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+.title {
+  text-transform: uppercase;
+}

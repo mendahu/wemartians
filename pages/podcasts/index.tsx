@@ -2,12 +2,11 @@ import { getShows } from "../../lib/getShows";
 import Footer from "../../src/components/Footer/Footer";
 import Section from "../../src/components/Section/Section";
 import styles from "../../src/pages/PodcastsPage/styles/PodcastsPage.module.css";
-import Image from "next/image";
 import podcastsCopy from "../../copy/Podcasts/index.json";
-import Breadcrumbs from "../../src/components/Breadcrumbs/Breadcrumbs";
 import PodcastListItem from "../../src/pages/PodcastsPage/PodcastListItem/PodcastListItem";
 import WebPlayer from "../../src/components/WebPlayer/WebPlayer";
 import usePlayerDrawer from "../../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
+import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
 
 export default function PodcastsPage(props) {
   const {
@@ -19,19 +18,10 @@ export default function PodcastsPage(props) {
   return (
     <>
       <Section component="header" background="dark">
-        <div className={styles.headerContainer}>
-          <div className={styles.logoContainer}>
-            <Image src={"/2021_logo-dark.png"} width={100} height={100} />
-          </div>
-          <div className={styles.headerTitleContainer}>
-            <h1 className={styles.title}>{podcastsCopy.header.title}</h1>
-
-            <Breadcrumbs
-              crumbs={podcastsCopy.header.breadcrumbs.crumbs}
-              currentLocation={podcastsCopy.header.breadcrumbs.currentLocation}
-            />
-          </div>
-        </div>
+        <CommonHeader
+          title={podcastsCopy.header.title}
+          breadcrumbs={podcastsCopy.header.breadcrumbs}
+        />
       </Section>
       <main>
         <Section component="section" background="light">
