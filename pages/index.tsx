@@ -21,17 +21,10 @@ export type HomeProps = {
 export default function Home(props: HomeProps) {
   const {
     episodeId,
-    setEpisodeId,
     displayStatus,
     toggleDrawer,
+    handleEpisodeClick,
   } = usePlayerDrawer(props.episodes[0].id);
-
-  const handleEpisodeClick = (epId: string) => {
-    setEpisodeId(epId);
-    if (displayStatus === DisplayStatus.invisible) {
-      toggleDrawer();
-    }
-  };
 
   return (
     <>

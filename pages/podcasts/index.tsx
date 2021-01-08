@@ -12,7 +12,7 @@ import usePlayerDrawer from "../../src/components/WebPlayer/usePlayerDrawer/useP
 export default function PodcastsPage(props) {
   const {
     episodeId,
-    setEpisodeId,
+    handleEpisodeClick,
     displayStatus,
     toggleDrawer,
   } = usePlayerDrawer(props.episodes[0].id);
@@ -42,6 +42,7 @@ export default function PodcastsPage(props) {
                 slug={episode.slug}
                 title={episode.title}
                 imageUrl={episode.image}
+                handlePlay={() => handleEpisodeClick(episode.id)}
               />
             );
           })}

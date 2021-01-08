@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export enum DisplayStatus {
-  visible = 'visible',
-  invisible = 'invisible',
-  slidingUp = 'slidingUp',
-  slidingDown = 'slidingDown',
+  visible = "visible",
+  invisible = "invisible",
+  slidingUp = "slidingUp",
+  slidingDown = "slidingDown",
 }
 
 export default function usePlayerDrawer(epId: string) {
@@ -30,10 +30,18 @@ export default function usePlayerDrawer(epId: string) {
     }
   };
 
+  const handleEpisodeClick = (epId: string) => {
+    setEpisodeId(epId);
+    if (displayStatus === DisplayStatus.invisible) {
+      toggleDrawer();
+    }
+  };
+
   return {
     episodeId,
     setEpisodeId,
     displayStatus,
     toggleDrawer,
+    handleEpisodeClick,
   };
 }

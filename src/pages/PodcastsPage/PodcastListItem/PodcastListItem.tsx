@@ -5,6 +5,7 @@ export type PodcastListItemProps = {
   slug: string;
   title: string;
   imageUrl: string;
+  handlePlay: () => void;
 };
 
 export default function PodcastListItem(props: PodcastListItemProps) {
@@ -13,6 +14,7 @@ export default function PodcastListItem(props: PodcastListItemProps) {
       <Image src={props.imageUrl} width={250} height={250} />
       <div>
         <a href={`/podcasts/${props.slug}`}>{props.title}</a>
+        <p onClick={props.handlePlay}>Play</p>
       </div>
     </div>
   );
