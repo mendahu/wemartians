@@ -5,8 +5,17 @@ import styles from "../../src/pages/PodcastsPage/styles/PodcastsPage.module.css"
 import Image from "next/image";
 import podcastsCopy from "../../copy/Podcasts/index.json";
 import Breadcrumbs from "../../src/components/Breadcrumbs/Breadcrumbs";
+import PodcastListItem from "../../src/pages/PodcastsPage/PodcastListItem/PodcastListItem";
+import WebPlayer from "../../src/components/WebPlayer/WebPlayer";
+import usePlayerDrawer from "../../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
 
 export default function PodcastsPage(props) {
+  const {
+    episodeId,
+    setEpisodeId,
+    displayStatus,
+    toggleDrawer,
+  } = usePlayerDrawer(props.episodes[0].id);
   return (
     <>
       <Section component="header" background="dark">
@@ -26,20 +35,26 @@ export default function PodcastsPage(props) {
       </Section>
       <main>
         <Section component="section" background="light">
-          <ul>
-            {props.episodes.map((episode, index) => {
-              return (
-                <li key={index}>
-                  <a href={`/podcasts/${episode.slug}`}>{episode.title}</a>
-                </li>
-              );
-            })}
-          </ul>
+          {props.episodes.map((episode, index) => {
+            return (
+              <PodcastListItem
+                key={index}
+                slug={episode.slug}
+                title={episode.title}
+                imageUrl={episode.image}
+              />
+            );
+          })}
         </Section>
       </main>
       <Section component="footer" background="dark">
         <Footer />
       </Section>
+      <WebPlayer
+        id={episodeId}
+        displayStatus={displayStatus}
+        toggleDrawer={toggleDrawer}
+      />
     </>
   );
 }

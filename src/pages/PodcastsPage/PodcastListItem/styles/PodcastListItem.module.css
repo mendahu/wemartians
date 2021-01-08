@@ -1,0 +1,6 @@
+.container {
+  background-color: var(--col-grey-6);
+  padding: 1rem;
+  display: flex;
+  margin-top: 1rem;
+}
