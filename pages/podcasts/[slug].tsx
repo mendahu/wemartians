@@ -30,7 +30,13 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const shows = await getShows(3);
+  let shows = [];
+
+  try {
+    shows = await getShows(3);
+  } catch (err) {
+    console.error(err);
+  }
 
   const paths = shows.map((show) => {
     return {

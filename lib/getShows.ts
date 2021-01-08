@@ -21,8 +21,7 @@ async function fetchShows() {
     });
     data = await res.json();
   } catch (err) {
-    console.error("Failed to fetch data from API.");
-    console.error(err);
+    throw err;
   }
 
   if (!data || !data.collection) {
@@ -38,26 +37,77 @@ async function fetchShows() {
   return shows;
 }
 
-export async function getShows(limit?: number) {
-  const shows = await fetchShows();
+async function fetchShow(id: string) {
+  let url = `https://${process.env.SIMPLECAST_API_URL}/episodes/${id}`;
 
-  const formattedShows: Episode[] = shows.map((episode) => {
+  let data;
+
+  try {
+    const res = await fetch(url, {
+      headers: new Headers({
+        Authorization: `Bearer ${process.env.SIMPLECAST_TOKEN}`,
+      }),
+    });
+    data = await res.json();
+  } catch (err) {
+    throw err;
+  }
+
+  if (!data) {
     return {
-      slug: episode.slug,
-      title: episode.title,
-      description: episode.description,
-      image: episode.image_url || "/album_Art_2021_500-01.png",
-      publishDate: episode.published_at,
-      id: episode.id,
-      duration: episode.duration,
+      notFound: true,
     };
-  });
+  }
+
+  return data;
+}
+
+const formatShow = (episode): Episode => {
+  return {
+    slug: episode.slug,
+    title: episode.title,
+    description: episode.description,
+    image: episode.image_url || "/album_Art_2021_500-01.png",
+    publishDate: episode.published_at,
+    id: episode.id,
+    duration: episode.duration,
+  };
+};
+
+const formatShows = (shows): Episode[] => {
+  return shows.map(formatShow);
+};
+
+export async function getShows(limit?: number) {
+  let shows = [];
+  try {
+    shows = await fetchShows();
+  } catch (err) {
+    throw err;
+  }
+
+  const formattedShows = formatShows(shows);
 
   return limit ? formattedShows.slice(0, limit) : formattedShows;
 }
 
 export async function getShow(slug: string) {
-  const shows = await fetchShows();
+  let shows = [];
+  try {
+    shows = await fetchShows();
+  } catch (err) {
+    throw err;
+  }
 
-  return shows.find((show) => show.slug === slug);
+  const showId = shows.find((show) => show.slug === slug).id;
+
+  let show;
+
+  try {
+    show = await fetchShow(showId);
+  } catch (err) {
+    throw err;
+  }
+
+  return formatShow(show);
 }

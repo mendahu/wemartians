@@ -5,4 +5,5 @@ export type Episode = {
   image?: string;
   publishDate: string;
   id: string;
+  duration: number;
 };
