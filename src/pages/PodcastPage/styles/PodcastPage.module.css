@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.statBox {
+  width: 100%;
+  margin-top: 2rem;
+  color: var(--col-grey-9);
+}
+
+.textContainer {
+  margin-top: 1rem;
+}
+
+.showNotes {
+  margin-top: 1rem;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 740px) {
+  .imageContainer {
+    flex-basis: 160px;
+    flex-grow: 1;
+  }
+  .textContainer {
+    margin-top: 0;
+    margin-left: 3rem;
+    flex-basis: 290px;
+    flex-grow: 1;
+  }
+}

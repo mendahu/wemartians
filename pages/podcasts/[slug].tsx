@@ -4,13 +4,18 @@ import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
 import Footer from "../../src/components/Footer/Footer";
 import Section from "../../src/components/Section/Section";
 import { Episode } from "../../src/types/common";
-import styles from "./styles/Podcast.module.css";
+import styles from "../../src/pages/PodcastPage/styles/PodcastPage.module.css";
+import PatreonCallToAction from "../../src/components/PatreonCallToAction/PatreonCallToAction";
+import MailingListCallToAction from "../../src/components/MailingListCallToAction/MailingListCallToAction";
+import ShopSection from "../../src/components/ShopSection/ShopSection";
+import { formatPublishDate } from "../../src/helpers/formatPublishDate";
+import { formatTimeAgo } from "../../src/helpers/formatTimeAgo";
 
 export type PodcastPageProps = {
   episode: Episode;
 };
 
-export default function PodcastPage({ episode }) {
+export default function PodcastPage({ episode }: PodcastPageProps) {
   const breadcrumbs = {
     crumbs: [
       {
@@ -30,7 +35,28 @@ export default function PodcastPage({ episode }) {
         <CommonHeader title={"Episode"} breadcrumbs={breadcrumbs} />
       </Section>
       <Section component="main" background="light">
-        <Image src={episode.image} width={500} height={500} />
+        <div className={styles.header}>
+          <div className={styles.imageContainer}>
+            <Image src={episode.image} width={500} height={500} />
+            <div className={styles.statBox}>
+              <h3>
+                {formatPublishDate(episode.publishDate)} (
+                {formatTimeAgo(episode.publishDate)})
+              </h3>
+            </div>
+          </div>
+          <div className={styles.textContainer}>
+            <h1 className={styles.episodeTitle}>{episode.title}</h1>
+            <p className={styles.showNotes}>{episode.longDescription}</p>
+          </div>
+        </div>
+      </Section>
+      <Section background="dark" className={styles.ctaContainer}>
+        <PatreonCallToAction />
+        <MailingListCallToAction />
+      </Section>
+      <Section background="light">
+        <ShopSection />
       </Section>
       <Section component="footer" background="dark">
         <Footer />

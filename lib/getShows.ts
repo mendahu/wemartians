@@ -71,6 +71,7 @@ const formatShow = (episode): Episode => {
     publishDate: episode.published_at,
     id: episode.id,
     duration: episode.duration,
+    longDescription: episode.long_description || "",
   };
 };
 
