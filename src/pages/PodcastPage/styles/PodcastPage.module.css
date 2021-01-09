@@ -21,6 +21,27 @@
   margin-top: 1rem;
 }
 
+.textContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.textContainer p,
+.textContainer h1,
+.textContainer h2,
+.textContainer h3,
+.textContainer ul {
+  margin-top: 1.6rem;
+}
+
+.textContainer li {
+  margin-left: 3rem;
+}
+
+.textContainer h1:first-of-type {
+  margin-top: 0;
+}
+
 .showNotes {
   margin-top: 1rem;
 }

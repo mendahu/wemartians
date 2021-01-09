@@ -12,6 +12,7 @@ import { formatPublishDate } from "../../src/helpers/formatPublishDate";
 import { formatTimeAgo } from "../../src/helpers/formatTimeAgo";
 import { useEffect } from "react";
 import { useWebPlayer } from "../../src/contexts/webPlayerContext";
+import parse from "html-react-parser";
 
 export type PodcastPageProps = {
   episode: Episode;
@@ -56,8 +57,8 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
             </div>
           </div>
           <div className={styles.textContainer}>
-            <h1 className={styles.episodeTitle}>{episode.title}</h1>
-            <p className={styles.showNotes}>{episode.longDescription}</p>
+            <h1>{episode.title}</h1>
+            {parse(episode.longDescription)}
           </div>
         </div>
       </Section>
