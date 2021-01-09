@@ -1,5 +1,6 @@
 import styles from "./styles/Button.module.css";
 import classNames from "classnames";
+import Link from "next/link";
 
 export type ButtonProps = {
   color: "light" | "dark";
@@ -14,7 +15,7 @@ export type ButtonProps = {
 export default function Button(props: ButtonProps) {
   const size = props.size || "lg";
 
-  return (
+  const button = (
     <a
       className={classNames(
         styles.button,
@@ -23,10 +24,11 @@ export default function Button(props: ButtonProps) {
         styles[size]
       )}
       onClick={props.onClick}
-      href={props.href}
     >
       {props.icon}
       <span>{props.label}</span>
     </a>
   );
+
+  return props.href ? <Link href={props.href}>{button}</Link> : button;
 }

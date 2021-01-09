@@ -3,6 +3,7 @@ import Image from "next/image";
 import PlayIcon from "../../../components/PlayIcon/PlayIcon";
 import { formatDuration } from "../../../helpers/formatDuration";
 import { formatTimeAgo } from "../../../helpers/formatTimeAgo";
+import Link from "next/link";
 
 export type PodcastListItemProps = {
   slug: string;
@@ -26,7 +27,9 @@ export default function PodcastListItem(props: PodcastListItemProps) {
         <div className={styles.headerContainer}>
           <div className={styles.titleContainer}>
             <h3 className={styles.episodeTitle}>
-              <a href={`/podcasts/${props.slug}`}>{props.title}</a>
+              <Link href={`/podcasts/${props.slug}`}>
+                <a>{props.title}</a>
+              </Link>
             </h3>
             <p className={styles.timeAgo}>{formatTimeAgo(props.publishDate)}</p>
           </div>
