@@ -2,24 +2,7 @@
   "header": {
     "titleA": "We",
     "titleB": "Martians Podcast",
-    "subtitle": "Exploring the solar system together",
-    "subscriptions": [
-      {
-        "label": "Apple Podcasts"
-      },
-      {
-        "label": "Spotify"
-      },
-      {
-        "label": "Google Podcasts"
-      },
-      {
-        "label": "Stitcher"
-      },
-      {
-        "label": "RSS"
-      }
-    ]
+    "subtitle": "Exploration stories of the Moon, Mars, and beyond, landing bi-weekly in your podcast feed."
   },
   "episodes": {
     "title": "Recent Episodes",

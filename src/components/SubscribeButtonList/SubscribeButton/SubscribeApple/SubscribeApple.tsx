@@ -13,7 +13,7 @@ export default function SubscribeApple(props: SubscribeAppleProps) {
       x="0px"
       y="0px"
       viewBox="0 0 164.8566 40"
-      enable-background="new 0 0 164.8566 40"
+      enableBackground="new 0 0 164.8566 40"
       xmlSpace="preserve"
       height={props.size}
     >
@@ -65,8 +65,8 @@ export default function SubscribeApple(props: SubscribeAppleProps) {
           </linearGradient>
           <path
             id="XMLID_662_"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="url(#XMLID_2_)"
             d="M32.1821,29.2281
 			c-0.2446,0.6213-0.809,1.4961-1.6094,2.1123c-0.4621,0.3559-1.0138,0.6961-1.7716,0.9206
@@ -80,8 +80,8 @@ export default function SubscribeApple(props: SubscribeAppleProps) {
           />
           <path
             id="XMLID_660_"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="none"
             d="M32.1821,29.2281
 			c-0.2446,0.6213-0.809,1.4961-1.6094,2.1123c-0.4621,0.3559-1.0138,0.6961-1.7716,0.9206

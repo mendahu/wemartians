@@ -20,7 +20,7 @@ export default function Header(props) {
           <span className={styles.accentTitle}>{headerCopy.titleA}</span>
           {headerCopy.titleB}
         </h1>
-        <h2 className={styles.subtitle}>{headerCopy.subtitle}</h2>
+        <p className={styles.subtitle}>{headerCopy.subtitle}</p>
       </div>
 
       <SubScribeButtonList size={50} className={styles.subscriptionList} />

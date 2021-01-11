@@ -42,16 +42,12 @@
 }
 
 .subtitle {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 @media screen and (min-width: 420px) {
   .title {
     font-size: 4rem;
-  }
-
-  .subtitle {
-    font-size: 2.4rem;
   }
 }
 
@@ -61,7 +57,11 @@
   }
 
   .subtitle {
-    font-size: 3.2rem;
+    font-size: 1.6rem;
+  }
+
+  .headerTextContainer {
+    max-width: 430px;
   }
 }
 
@@ -71,6 +71,7 @@
     margin-top: 0rem;
     margin-left: 1rem;
     text-align: left;
+    max-width: 100%;
   }
 
   .title {
@@ -78,7 +79,8 @@
   }
 
   .subtitle {
-    font-size: 3.2rem;
+    max-width: 500px;
+    font-size: 2.2rem;
   }
 }
 
@@ -86,9 +88,17 @@
   .headerTextContainer {
     margin-left: 4rem;
   }
+
+  .subtitle {
+    max-width: 580px;
+  }
 }
 
 /* SUBSCRIBE LIST */
+
+.subscriptionList {
+  margin-top: 4rem;
+}
 
 @media screen and (min-width: 800px) {
   .subscriptionList {

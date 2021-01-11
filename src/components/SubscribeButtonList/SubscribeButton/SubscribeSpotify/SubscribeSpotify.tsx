@@ -18,9 +18,9 @@ export default function SubscribeSpotify(props: SubscribeSpotifyProps) {
       <g
         id="spotify-podcast-badge-wht-grn-330x80"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g id="Group-2-Copy-3">
           <path
