@@ -3,6 +3,7 @@ import Image from "next/image";
 import { header as headerCopy } from "../../../../../copy/Home/index.json";
 import Button from "../../../../components/Button/Button";
 import SubscribeApple from "../../../../components/SubscribeApple/SubscribeApple";
+import SubscribeSpotify from "../../../../components/SubscribeSpotify/SubscribeSpotify";
 
 export default function Header(props) {
   return (
@@ -30,6 +31,10 @@ export default function Header(props) {
             url={
               "https://podcasts.apple.com/us/podcast/wemartians-podcast/id1097402685?itsct=podcast_box&itscg=30200"
             }
+          />
+          <SubscribeSpotify
+            size={58}
+            url={"https://open.spotify.com/show/31p0wkYFE2pdbaXnfhasoL"}
           />
           {headerCopy.subscriptions.map((sub, index) => (
             <li key={index} className={styles.button}>
