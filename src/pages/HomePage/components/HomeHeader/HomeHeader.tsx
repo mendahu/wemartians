@@ -2,6 +2,7 @@ import styles from "./styles/HomeHeader.module.css";
 import Image from "next/image";
 import { header as headerCopy } from "../../../../../copy/Home/index.json";
 import Button from "../../../../components/Button/Button";
+import SubscribeApple from "../../../../components/SubscribeApple/SubscribeApple";
 
 export default function Header(props) {
   return (
@@ -24,6 +25,12 @@ export default function Header(props) {
       </div>
       <div className={styles.subscribeContainer}>
         <ul className={styles.subscriptionList}>
+          <SubscribeApple
+            size={58}
+            url={
+              "https://podcasts.apple.com/us/podcast/wemartians-podcast/id1097402685?itsct=podcast_box&itscg=30200"
+            }
+          />
           {headerCopy.subscriptions.map((sub, index) => (
             <li key={index} className={styles.button}>
               <Button label={sub.label} color="light" />
