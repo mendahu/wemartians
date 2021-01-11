@@ -100,11 +100,11 @@
   flex-wrap: wrap;
 }
 
-.button {
+/* .button {
   margin-bottom: 1rem;
   margin-right: 1rem;
   flex-grow: 1;
-}
+} */
 
 @media screen and (min-width: 900px) {
   .subscribeContainer {
