@@ -2,6 +2,7 @@ import styles from "./styles/CommonHeader.module.css";
 import Image from "next/image";
 
 import Breadcrumbs, { Breadcrumb } from "../Breadcrumbs/Breadcrumbs";
+import Link from "next/link";
 
 export type CommonHeaderProps = {
   title: string;
@@ -15,12 +16,16 @@ export default function CommonHeader(props: CommonHeaderProps) {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.logoContainer}>
-        <Image
-          src={"/2021_logo-dark.png"}
-          width={100}
-          height={100}
-          layout="fixed"
-        />
+        <Link href="/">
+          <a>
+            <Image
+              src={"/2021_logo-dark.png"}
+              width={100}
+              height={100}
+              layout="fixed"
+            />
+          </a>
+        </Link>
       </div>
       <div className={styles.headerTitleContainer}>
         <h1 className={styles.title}>{props.title}</h1>
