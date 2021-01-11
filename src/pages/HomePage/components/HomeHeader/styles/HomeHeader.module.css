@@ -88,17 +88,7 @@
   }
 }
 
-/* SUBSCRIBE BOX */
-
-.subscriptionList {
-  flex-grow: 1;
-  margin-top: 2rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+/* SUBSCRIBE LIST */
 
 @media screen and (min-width: 800px) {
   .subscriptionList {

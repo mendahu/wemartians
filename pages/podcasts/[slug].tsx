@@ -13,6 +13,7 @@ import { formatTimeAgo } from "../../src/helpers/formatTimeAgo";
 import { useEffect } from "react";
 import { useWebPlayer } from "../../src/contexts/webPlayerContext";
 import parse from "html-react-parser";
+import SubscribeButtonList from "../../src/components/SubscribeButtonList/SubscribeButtonList";
 
 export type PodcastPageProps = {
   episode: Episode;
@@ -47,13 +48,16 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
       </Section>
       <Section component="main" background="light">
         <div className={styles.header}>
-          <div className={styles.imageContainer}>
+          <div className={styles.headerContainer}>
             <Image src={episode.image} width={500} height={500} />
             <div className={styles.statBox}>
               <h3>
                 {formatPublishDate(episode.publishDate)} (
                 {formatTimeAgo(episode.publishDate)})
               </h3>
+            </div>
+            <div>
+              <SubscribeButtonList size={50} />
             </div>
           </div>
           <div className={styles.textContainer}>

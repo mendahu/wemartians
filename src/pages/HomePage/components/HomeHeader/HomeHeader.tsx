@@ -1,17 +1,7 @@
 import styles from "./styles/HomeHeader.module.css";
 import Image from "next/image";
 import { header as headerCopy } from "../../../../../copy/Home/index.json";
-import SubscribeButton, {
-  SubscribeService,
-} from "../../../../components/SubscribeButton/SubscribeButton";
-
-export const subscribeServices: SubscribeService[] = [
-  SubscribeService.APPLE,
-  SubscribeService.SPOTIFY,
-  SubscribeService.GOOGLE,
-  SubscribeService.STITCHER,
-  SubscribeService.RSS,
-];
+import SubScribeButtonList from "../../../../components/SubscribeButtonList/SubscribeButtonList";
 
 export default function Header(props) {
   return (
@@ -33,15 +23,7 @@ export default function Header(props) {
         <h2 className={styles.subtitle}>{headerCopy.subtitle}</h2>
       </div>
 
-      <ul className={styles.subscriptionList}>
-        {subscribeServices.map((service) => {
-          return (
-            <li>
-              <SubscribeButton key={service} size={50} service={service} />
-            </li>
-          );
-        })}
-      </ul>
+      <SubScribeButtonList size={50} className={styles.subscriptionList} />
     </div>
   );
 }
