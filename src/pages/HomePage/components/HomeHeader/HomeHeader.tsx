@@ -32,17 +32,16 @@ export default function Header(props) {
         </h1>
         <h2 className={styles.subtitle}>{headerCopy.subtitle}</h2>
       </div>
-      <div className={styles.subscribeContainer}>
-        <ul className={styles.subscriptionList}>
-          {subscribeServices.map((service) => {
-            return (
-              <li>
-                <SubscribeButton key={service} size={50} service={service} />
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+
+      <ul className={styles.subscriptionList}>
+        {subscribeServices.map((service) => {
+          return (
+            <li>
+              <SubscribeButton key={service} size={50} service={service} />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

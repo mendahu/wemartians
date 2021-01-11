@@ -90,24 +90,30 @@
 
 /* SUBSCRIBE BOX */
 
-.subscribeContainer {
-  margin-top: 2rem;
-}
-
 .subscriptionList {
+  flex-grow: 1;
+  margin-top: 2rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-/* .button {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-  flex-grow: 1;
-} */
-
+@media screen and (min-width: 800px) {
+  .subscriptionList {
+    width: 800px;
+  }
+}
 @media screen and (min-width: 900px) {
-  .subscribeContainer {
-    flex-basis: 100%;
+  .subscriptionList {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .subscriptionList {
+    padding: 0px;
   }
 }
