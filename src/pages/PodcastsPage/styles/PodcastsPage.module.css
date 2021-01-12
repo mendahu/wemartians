@@ -1,0 +1,13 @@
+.inputContainer {
+  margin: 3rem 0rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.formInput {
+  padding: 1rem;
+  font-size: 1.8rem;
+  flex-grow: 1;
+  border: none;
+  border-radius: 5px;
+}
