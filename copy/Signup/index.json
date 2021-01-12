@@ -10,5 +10,14 @@
       ],
       "currentLocation": "Signup"
     }
+  },
+  "body": {
+    "listTitle": "Content Includes",
+    "listContents": [
+      "Special Event Notifications like livestreams, etc.",
+      "New Content or Projects from Jake",
+      "Patreon news",
+      "New Merchandise"
+    ]
   }
 }

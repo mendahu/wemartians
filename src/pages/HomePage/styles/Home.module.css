@@ -3,3 +3,16 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.mailingListCtaContainer,
+.patreonCtaContainer {
+  margin: 4rem 0rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .mailingListCtaContainer,
+  .patreonCtaContainer {
+    max-width: 48%;
+  }
+}

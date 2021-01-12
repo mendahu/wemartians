@@ -17,14 +17,20 @@ export default function index(props: SignupPageProps) {
         />
       </Section>
       <main>
-        <Section component="section" background="light">
-          <MailingListCallToAction color="light" />
-          <div>
-            <h3>Content Includes:</h3>
-            <ul>
-              <li>Special Event Notifications</li>
-              <li>New Merchandise Launches</li>
-              <li>New Content from Jake</li>
+        <Section
+          component="section"
+          background="light"
+          className={styles.container}
+        >
+          <div className={styles.sectionContainer}>
+            <MailingListCallToAction color="light" />
+          </div>
+          <div className={styles.sectionContainer}>
+            <h2>{signupCopy.body.listTitle}</h2>
+            <ul className={styles.list}>
+              {signupCopy.body.listContents.map((item, index) => {
+                return <li key={index}>{item}</li>;
+              })}
             </ul>
           </div>
         </Section>
