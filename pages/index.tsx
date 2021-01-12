@@ -28,9 +28,6 @@ export default function Home(props: HomeProps) {
 
   return (
     <>
-      <Head>
-        <title>WeMartians Podcast</title>
-      </Head>
       <Section component="header" background="map">
         <Header />
       </Section>

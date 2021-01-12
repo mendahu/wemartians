@@ -52,6 +52,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           }
           rel="stylesheet"
         />
+        <title>WeMartians Podcast</title>
       </Head>
       <Component {...pageProps} />
       <WebPlayer

@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "Page Not Found",
+    "breadcrumbs": {
+      "crumbs": [
+        {
+          "label": "Home",
+          "href": "/"
+        }
+      ],
+      "currentLocation": "404"
+    }
+  }
+}

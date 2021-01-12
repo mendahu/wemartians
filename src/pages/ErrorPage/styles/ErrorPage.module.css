@@ -1,0 +1,19 @@
+.title {
+  font-size: 10rem;
+  margin-top: 4rem;
+}
+
+.subtitle {
+  font-size: 3rem;
+}
+
+.paragraph {
+  margin: 4rem 0rem;
+}
+
+@media screen and (min-width: 450px) {
+  .container {
+    max-width: 80%;
+    margin: auto;
+  }
+}
