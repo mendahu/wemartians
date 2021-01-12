@@ -2,7 +2,7 @@ import { AppProps } from "next/dist/next-server/lib/router/router";
 import "../styles/reset.css";
 import "../styles/globals.css";
 import Head from "next/head";
-import WebPlayerProvider from "../src/contexts/webPlayerContext";
+import WebPlayerProvider from "../src/contexts/WebPlayerContext";
 import WebPlayer from "../src/components/WebPlayer/WebPlayer";
 import usePlayerDrawer from "../src/components/WebPlayer/usePlayerDrawer/usePlayerDrawer";
 

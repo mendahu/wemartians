@@ -11,7 +11,7 @@ import ShopSection from "../../src/components/ShopSection/ShopSection";
 import { formatPublishDate } from "../../src/helpers/formatPublishDate";
 import { formatTimeAgo } from "../../src/helpers/formatTimeAgo";
 import { useEffect } from "react";
-import { useWebPlayer } from "../../src/contexts/webPlayerContext";
+import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import parse from "html-react-parser";
 import SubscribeButtonList from "../../src/components/SubscribeButtonList/SubscribeButtonList";
 

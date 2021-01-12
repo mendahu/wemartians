@@ -10,7 +10,7 @@ import ShopSection from "../src/components/ShopSection/ShopSection";
 
 import styles from "../src/pages/HomePage/styles/Home.module.css";
 import { Episode } from "../src/types/common";
-import { useWebPlayer } from "../src/contexts/webPlayerContext";
+import { useWebPlayer } from "../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
 
 export type HomeProps = {

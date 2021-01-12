@@ -6,7 +6,7 @@ import podcastsCopy from "../../copy/Podcasts/index.json";
 import PodcastListItem from "../../src/pages/PodcastsPage/PodcastListItem/PodcastListItem";
 
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
-import { useWebPlayer } from "../../src/contexts/webPlayerContext";
+import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
 
 export default function PodcastsPage(props) {
