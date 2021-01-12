@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import parse from "html-react-parser";
 import SubscribeButtonList from "../../src/components/SubscribeButtonList/SubscribeButtonList";
+import Head from "next/head";
 
 export type PodcastPageProps = {
   episode: Episode;
@@ -43,6 +44,20 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
   };
   return (
     <>
+      <Head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta name="twitter:card" content="player" />
+        <meta name="twitter:site" content="@we_martians" />
+        <meta name="twitter:title" content={episode.title} />
+        <meta name="twitter:description" content={episode.description} />
+        <meta name="twitter:image" content={episode.image} />
+        <meta
+          name="twitter:player"
+          content={`https://player.simplecast.com/${episode.id}?dark=true`}
+        />
+        <meta name="twitter:player:width" content="480" />
+        <meta name="twitter:player:height" content="200" />
+      </Head>
       <Section component="header" background="map">
         <CommonHeader title={"Episode"} breadcrumbs={breadcrumbs} />
       </Section>
