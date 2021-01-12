@@ -43,7 +43,7 @@ export default function Home(props: HomeProps) {
         </Section>
         <Section background="dark" className={styles.ctaContainer}>
           <PatreonCallToAction />
-          <MailingListCallToAction />
+          <MailingListCallToAction color="dark" />
         </Section>
         <Section background="light">
           <ShopSection />

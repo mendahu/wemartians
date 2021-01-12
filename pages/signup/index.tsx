@@ -18,6 +18,7 @@ export default function index(props: SignupPageProps) {
       </Section>
       <main>
         <Section component="section" background="light">
+          <MailingListCallToAction color="light" />
           <div>
             <h3>Content Includes:</h3>
             <ul>
@@ -26,7 +27,6 @@ export default function index(props: SignupPageProps) {
               <li>New Content from Jake</li>
             </ul>
           </div>
-          <MailingListCallToAction />
         </Section>
       </main>
       <Section component="footer" background="dark">

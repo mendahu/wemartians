@@ -1,8 +1,11 @@
 import styles from "./styles/MailchimpForm.module.css";
 import { mailchimpForm as mailchimpFormCopy } from "../../../copy/Home/index.json";
 import { useState } from "react";
+import classNames from "classnames";
 
-export type MailchimpFormProps = {};
+export type MailchimpFormProps = {
+  color: "light" | "dark";
+};
 
 export default function MailchimpForm(props: MailchimpFormProps) {
   const [email, setEmail] = useState("");
@@ -42,7 +45,10 @@ export default function MailchimpForm(props: MailchimpFormProps) {
           </div>
           <div className={styles.subscribeButtonContainer}>
             <input
-              className={styles.subscribeButton}
+              className={classNames(
+                styles.subscribeButton,
+                styles[props.color]
+              )}
               type="submit"
               value={mailchimpFormCopy.cta.label}
               name="subscribe"
