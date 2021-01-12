@@ -68,7 +68,7 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
       </Section>
       <Section background="dark" className={styles.ctaContainer}>
         <PatreonCallToAction />
-        <MailingListCallToAction />
+        <MailingListCallToAction color="dark" />
       </Section>
       <Section background="light">
         <ShopSection />

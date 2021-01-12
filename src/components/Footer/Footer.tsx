@@ -4,6 +4,10 @@ import styles from "./styles/Footer.module.css";
 
 const twitterBaseUrl = "https://www.twitter.com/";
 
+const generateEmail = (handle: string, domain: string): string => {
+  return handle + "@" + domain;
+};
+
 export type FooterProps = {};
 
 export default function Footer(props: FooterProps) {
@@ -19,8 +23,8 @@ export default function Footer(props: FooterProps) {
                   <Image
                     layout={"fixed"}
                     src={account.profileImage}
-                    width={75}
-                    height={75}
+                    width={80}
+                    height={80}
                     className={styles.socialProfileImage}
                   />
                 </a>
@@ -36,6 +40,27 @@ export default function Footer(props: FooterProps) {
                       layout="fixed"
                     />
                     <h3>@{account.handle}</h3>
+                  </div>
+                </a>
+                <a
+                  href={`mailto:${generateEmail(
+                    account.email.handle,
+                    account.email.domain
+                  )}`}
+                >
+                  <div className={styles.handleContainer}>
+                    <Image
+                      src="/emailIcon.svg"
+                      width={20}
+                      height={20}
+                      layout="fixed"
+                    />
+                    <h3>
+                      {generateEmail(
+                        account.email.handle,
+                        account.email.domain
+                      )}
+                    </h3>
                   </div>
                 </a>
               </div>
