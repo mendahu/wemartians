@@ -1,7 +1,7 @@
 .inputContainer {
   margin: 3rem 0rem;
   display: flex;
-  gap: 1rem;
+  padding: 0.5rem 0rem;
 }
 
 .formInput {
@@ -10,4 +10,5 @@
   flex-grow: 1;
   border: none;
   border-radius: 5px;
+  margin-right: 1rem;
 }

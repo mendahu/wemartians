@@ -36,7 +36,7 @@ export default function PodcastsPage(props) {
               onChange={(e) => setSearchTerm(e.target.value)}
               value={searchTerm}
               name="search"
-              placeholder={"Search for an Episode"}
+              placeholder={"Search Episodes"}
               className={styles.formInput}
             />
             <Button
