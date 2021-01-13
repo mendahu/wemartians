@@ -24,7 +24,7 @@ export const subscribeServices: SubscribeService[] = [
   SubscribeService.RSS,
 ];
 
-export default function SubScribeButtonList({
+export default function SubscribeButtonList({
   size = 50,
   className,
   justifyContent = "flex-start",
