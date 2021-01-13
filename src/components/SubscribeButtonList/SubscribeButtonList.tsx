@@ -1,4 +1,4 @@
-import styles from "./styles/SubScribeButtonList.module.css";
+import styles from "./styles/SubscribeButtonList.module.css";
 import SubscribeButton from "./SubscribeButton/SubscribeButton";
 import classNames from "classnames";
 

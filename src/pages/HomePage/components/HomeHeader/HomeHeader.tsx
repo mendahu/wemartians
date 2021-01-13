@@ -1,7 +1,7 @@
 import styles from "./styles/HomeHeader.module.css";
 import Image from "next/image";
 import { header as headerCopy } from "../../../../../copy/Home/index.json";
-import SubScribeButtonList from "../../../../components/SubscribeButtonList/SubscribeButtonList";
+import SubscribeButtonList from "../../../../components/SubscribeButtonList/SubscribeButtonList";
 import Nav from "../../../../components/Nav/Nav";
 
 export default function Header(props) {
@@ -25,7 +25,7 @@ export default function Header(props) {
         <p className={styles.subtitle}>{headerCopy.subtitle}</p>
       </div>
 
-      <SubScribeButtonList
+      <SubscribeButtonList
         size={50}
         className={styles.subscriptionList}
         justifyContent="center"
