@@ -1,0 +1,38 @@
+.container {
+  padding: 1rem;
+  background-color: var(--col-grey-6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 280px;
+  max-width: 320px;
+  flex-grow: 1;
+  margin-top: 1rem;
+}
+
+.containerSection {
+}
+
+.handleContainer {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.socialProfileImage {
+  border-radius: 50%;
+}
+
+.textContainer {
+  margin-left: 1rem;
+  flex-grow: 1;
+}
+
+.handle {
+  font-size: 1.8rem;
+}
+
+.profileText {
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+}

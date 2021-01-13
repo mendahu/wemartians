@@ -1,35 +1,13 @@
+.title {
+  margin-top: 1rem;
+}
+
 .socialContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   color: var(--col-grey-10);
-}
-
-.socialCard {
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: var(--col-grey-6);
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-}
-
-.socialProfileImage {
-  border-radius: 50%;
-}
-
-.socialHandleContainer {
-  margin-left: 2rem;
-}
-
-.socialHandleContainer h3 {
-  margin-left: 1rem;
-  font-size: 1.6rem;
-}
-
-.handleContainer {
-  display: flex;
-  align-items: center;
+  margin-top: 1rem;
 }
 
 .copyright {
