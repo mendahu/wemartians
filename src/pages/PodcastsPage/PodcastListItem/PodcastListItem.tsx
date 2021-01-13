@@ -28,11 +28,11 @@ export default function PodcastListItem(props: PodcastListItemProps) {
       <div className={styles.textContainer}>
         <div className={styles.headerContainer}>
           <div className={styles.titleContainer}>
-            <h3 className={styles.episodeTitle}>
+            <h2 className={styles.episodeTitle}>
               <Link href={`/podcasts/${props.slug}`}>
                 <a>{props.title}</a>
               </Link>
-            </h3>
+            </h2>
             <p className={styles.timeAgo}>{formatTimeAgo(props.publishDate)}</p>
           </div>
           <div className={styles.playIconContainer}>

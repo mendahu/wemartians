@@ -10,13 +10,13 @@
   flex-basis: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-left: 2rem;
 }
 
 .duration {
   margin-top: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: var(--col-grey-10);
   text-align: center;
 }
