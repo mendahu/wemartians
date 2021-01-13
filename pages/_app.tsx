@@ -15,6 +15,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     handleEpisodeClick,
   } = usePlayerDrawer("");
 
+  const siteTitle = "WeMartians Podcast";
+
   return (
     <WebPlayerProvider
       value={{ episodeId, setEpisodeId, toggleDrawer, handleEpisodeClick }}
@@ -52,7 +54,19 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           }
           rel="stylesheet"
         />
-        <title>WeMartians Podcast</title>
+        <title>{siteTitle}</title>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@we_martians" />
+        <meta name="twitter:creator" content="@JakeOnOrbit" />
+        <meta name="twitter:title" content={siteTitle} />
+        <meta
+          name="twitter:description"
+          content="A biweekly podcast about the exploration and science of the Moon, Mars and beyond."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.wemartians.com/twitter_card_image_wemartians.png"
+        ></meta>
       </Head>
       <Component {...pageProps} />
       <WebPlayer
