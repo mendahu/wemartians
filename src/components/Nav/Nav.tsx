@@ -15,12 +15,20 @@ export default function Nav(props: NavProps) {
           </Link>
         </li>
         <li>
-          <a href="https://shop.wemartians.com" className={styles.link}>
+          <a
+            href="https://shop.wemartians.com"
+            className={styles.link}
+            target="_blank"
+          >
             Shop
           </a>
         </li>
         <li>
-          <a href="https://www.patreon.com/wemartians" className={styles.link}>
+          <a
+            href="https://www.patreon.com/wemartians"
+            className={styles.link}
+            target="_blank"
+          >
             Patreon
           </a>
         </li>
