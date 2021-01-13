@@ -19,9 +19,11 @@ export default function PodcastListItem(props: PodcastListItemProps) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <a href={`/podcasts/${props.slug}`}>
-          <Image src={props.imageUrl} width={500} height={500} />
-        </a>
+        <Link href={`/podcasts/${props.slug}`}>
+          <a>
+            <Image src={props.imageUrl} width={500} height={500} />
+          </a>
+        </Link>
       </div>
       <div className={styles.textContainer}>
         <div className={styles.headerContainer}>

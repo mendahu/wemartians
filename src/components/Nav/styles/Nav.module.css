@@ -1,0 +1,22 @@
+.list {
+  list-style: none;
+  display: flex;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+.list li {
+  margin: 0.5rem;
+}
+
+.link {
+  color: var(--col-grey-5);
+  font-family: "Fjalla One", sans-serif;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--col-orange);
+}

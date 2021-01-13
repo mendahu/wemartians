@@ -2,10 +2,12 @@ import styles from "./styles/HomeHeader.module.css";
 import Image from "next/image";
 import { header as headerCopy } from "../../../../../copy/Home/index.json";
 import SubScribeButtonList from "../../../../components/SubscribeButtonList/SubscribeButtonList";
+import Nav from "../../../../components/Nav/Nav";
 
 export default function Header(props) {
   return (
     <div className={styles.container}>
+      <Nav className={styles.nav} />
       <div className={styles.logoContainer}>
         <Image
           src="/2021_logo-dark.png"

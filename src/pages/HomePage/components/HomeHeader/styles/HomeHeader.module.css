@@ -1,13 +1,32 @@
 .container {
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 @media screen and (min-width: 900px) {
   .container {
+    padding-top: 2rem;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+
+/* NAV */
+
+.nav {
+  position: absolute;
+  top: 0rem;
+  right: auto;
+  left: auto;
+}
+
+@media screen and (min-width: 900px) {
+  .nav {
+    top: 0rem;
+    right: 2rem;
   }
 }
 
