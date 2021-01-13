@@ -25,7 +25,11 @@ export default function Header(props) {
         <p className={styles.subtitle}>{headerCopy.subtitle}</p>
       </div>
 
-      <SubScribeButtonList size={50} className={styles.subscriptionList} />
+      <SubScribeButtonList
+        size={50}
+        className={styles.subscriptionList}
+        justifyContent="center"
+      />
     </div>
   );
 }

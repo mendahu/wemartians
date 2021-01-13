@@ -15,13 +15,15 @@ import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import parse from "html-react-parser";
 import SubscribeButtonList from "../../src/components/SubscribeButtonList/SubscribeButtonList";
 import Head from "next/head";
+import PlayIcon from "../../src/components/PlayIcon/PlayIcon";
+import { formatDuration } from "../../src/helpers/formatDuration";
 
 export type PodcastPageProps = {
   episode: Episode;
 };
 
 export default function PodcastPage({ episode }: PodcastPageProps) {
-  const { episodeId, setEpisodeId } = useWebPlayer();
+  const { episodeId, setEpisodeId, handleEpisodeClick } = useWebPlayer();
 
   useEffect(() => {
     if (!episodeId) {
@@ -71,12 +73,18 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
                 {formatTimeAgo(episode.publishDate)})
               </h3>
             </div>
-            <div>
-              <SubscribeButtonList size={50} />
+            <div className={styles.subscribeListContainer}>
+              <SubscribeButtonList size={50} className={styles.leftAlign} />
             </div>
           </div>
           <div className={styles.textContainer}>
             <h1>{episode.title}</h1>
+            <h2 onClick={() => handleEpisodeClick(episode.id)}>
+              <PlayIcon color="dark" size={24} />
+              <span className={styles.playSpan}>
+                Play Episode ({formatDuration(episode.duration)})
+              </span>
+            </h2>
             {parse(episode.longDescription)}
           </div>
         </div>

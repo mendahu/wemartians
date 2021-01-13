@@ -6,8 +6,15 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   padding: 0.5rem;
+}
+
+.center {
+  justify-content: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
 }
 
 .subscriptionList li {

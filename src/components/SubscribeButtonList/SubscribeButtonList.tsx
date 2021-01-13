@@ -13,6 +13,7 @@ export enum SubscribeService {
 export type SubscribeButtonListProps = {
   className?: string;
   size: number;
+  justifyContent?: "center" | "flex-start";
 };
 
 export const subscribeServices: SubscribeService[] = [
@@ -26,9 +27,16 @@ export const subscribeServices: SubscribeService[] = [
 export default function SubScribeButtonList({
   size = 50,
   className,
+  justifyContent = "flex-start",
 }: SubscribeButtonListProps) {
   return (
-    <ul className={classNames(className, styles.subscriptionList)}>
+    <ul
+      className={classNames(
+        className,
+        styles.subscriptionList,
+        styles[justifyContent]
+      )}
+    >
       {subscribeServices.map((service) => {
         return (
           <li key={service}>

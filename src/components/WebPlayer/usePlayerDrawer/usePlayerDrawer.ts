@@ -31,7 +31,10 @@ export default function usePlayerDrawer(epId: string) {
   };
 
   const handleEpisodeClick = (epId: string) => {
-    setEpisodeId(epId);
+    console.log(displayStatus);
+    if (epId !== episodeId) {
+      setEpisodeId(epId);
+    }
     if (displayStatus === DisplayStatus.invisible) {
       toggleDrawer();
     }

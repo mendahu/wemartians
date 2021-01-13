@@ -17,6 +17,20 @@
   color: var(--col-grey-9);
 }
 
+.subscribeListContainer {
+  width: 100%;
+}
+
+.leftAlign {
+  flex-direction: column;
+}
+
+@media screen and (max-width: 740px) {
+  .subscribeListContainer {
+    display: none;
+  }
+}
+
 .textContainer {
   margin-top: 1rem;
 }
@@ -24,6 +38,11 @@
 .textContainer img {
   width: 100%;
   height: auto;
+}
+
+.playSpan {
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 .textContainer p,
