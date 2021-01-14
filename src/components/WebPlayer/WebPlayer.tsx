@@ -45,7 +45,7 @@ export default function WebPlayer(props: WebPlayerProps) {
           onClick={props.toggleDrawer}
           className={classNames(styles.toggleButton)}
         >
-          {generateDrawerCopy()}
+          <span>{generateDrawerCopy()}</span>
         </div>
       </div>
       <div className={styles.containerWidth}>

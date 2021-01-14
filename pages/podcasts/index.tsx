@@ -23,7 +23,7 @@ export default function PodcastsPage(props) {
 
   return (
     <>
-      <Section component="header" background="dark">
+      <Section component="header" background="map">
         <CommonHeader
           title={podcastsCopy.header.title}
           breadcrumbs={podcastsCopy.header.breadcrumbs}

@@ -18,11 +18,27 @@
 
 .toggleButton {
   color: var(--col-grey-2);
-  padding: 0.5rem 1rem;
+  padding: 2rem;
   background-color: var(--col-grey-9);
   border-radius: 5px 5px 0px 0px;
-  min-width: 80px;
+  min-width: 140px;
   text-align: center;
+  margin-right: 30px;
+  box-shadow: 0 1px 4px 0px var(--col-grey-11);
+}
+
+.toggleButton span {
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 600px) {
+  .toggleButton {
+    padding: 1rem;
+  }
+
+  .toggleButton span {
+    font-size: 1.4rem;
+  }
 }
 
 .drawerVisible {
