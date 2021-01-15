@@ -55,11 +55,6 @@ module.exports = {
         destination: "https://www.patreon.com/wemartians",
         permanent: false,
       },
-      {
-        source: "/episode001",
-        destination: "/podcasts/",
-        permanent: true,
-      },
       ...oldEpisodeRedirects,
     ];
   },
