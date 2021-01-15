@@ -8,7 +8,7 @@ import useSearch from "../../src/pages/PodcastsPage/useSearch/useSearch";
 
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
 import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
-import { ChangeEvent, useEffect } from "react";
+import { useEffect } from "react";
 import Button from "../../src/components/Button/Button";
 import Router, { useRouter } from "next/router";
 import queryString from "query-string";

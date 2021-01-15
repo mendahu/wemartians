@@ -1,3 +1,5 @@
+const { oldSlugs } = require("./config/redirects.json");
+
 module.exports = {
   images: {
     domains: ["pbs.twimg.com", "image.simplecastcdn.com"],
@@ -5,13 +7,13 @@ module.exports = {
   async redirects() {
     const oldEpisodeRedirects = [];
 
-    for (let i = 1; i < 100; i++) {
-      const episodeNumber = ("00" + i).slice(-3);
-      oldEpisodeRedirects.push({
-        source: `/episode${episodeNumber}`,
-        destination: "/podcasts/",
+    for (const slug in oldSlugs) {
+      const redirect = {
+        source: `/episode${slug}`,
+        destination: `/podcasts/${oldSlugs[slug]}`,
         permanent: true,
-      });
+      };
+      oldEpisodeRedirects.push(redirect);
     }
 
     return [
