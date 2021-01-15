@@ -8,10 +8,16 @@ import useSearch from "../../src/pages/PodcastsPage/useSearch/useSearch";
 
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
 import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
-import { useEffect } from "react";
+import { ChangeEvent, useEffect } from "react";
 import Button from "../../src/components/Button/Button";
+import Router, { useRouter } from "next/router";
+import queryString from "query-string";
 
 export default function PodcastsPage(props) {
+  const router = useRouter();
+  const path = router.asPath;
+  const { query } = queryString.parseUrl(path);
+
   const { episodeId, setEpisodeId, handleEpisodeClick } = useWebPlayer();
   const { results, searchTerm, setSearchTerm } = useSearch(props.episodes);
 
@@ -20,6 +26,24 @@ export default function PodcastsPage(props) {
       setEpisodeId(props.episodes[0].id);
     }
   }, []);
+
+  useEffect(() => {
+    if (query && query.q) {
+      const queryString = typeof query.q === "string" ? query.q : query.q[0];
+      setSearchTerm(queryString);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (searchTerm) {
+      Router.replace({
+        pathname: "/podcasts",
+        query: {
+          q: searchTerm,
+        },
+      });
+    }
+  }, [searchTerm]);
 
   return (
     <>
