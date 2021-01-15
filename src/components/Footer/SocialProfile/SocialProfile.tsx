@@ -35,7 +35,7 @@ export default function SocialProfile(props: SocialProfileProps) {
         className={classNames(styles.textContainer, styles.containerSection)}
       >
         <h2 className={styles.handle}>{props.name}</h2>
-        <p>
+        <div>
           <a target="_blank" href={`${twitterBaseUrl}${props.handle}`}>
             <div className={styles.handleContainer}>
               <Image
@@ -48,8 +48,8 @@ export default function SocialProfile(props: SocialProfileProps) {
               <span className={styles.profileText}>@{props.handle}</span>
             </div>
           </a>
-        </p>
-        <p>
+        </div>
+        <div>
           <a
             href={`mailto:${generateEmail(
               props.email.handle,
@@ -69,7 +69,7 @@ export default function SocialProfile(props: SocialProfileProps) {
               </span>
             </div>
           </a>
-        </p>
+        </div>
       </div>
     </div>
   );
