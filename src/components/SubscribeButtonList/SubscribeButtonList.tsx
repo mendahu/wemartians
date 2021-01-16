@@ -6,6 +6,9 @@ export enum SubscribeService {
   APPLE = "apple",
   SPOTIFY = "spotify",
   GOOGLE = "google",
+  OVERCAST = "overcast",
+  ADDICT = "addict",
+  castbox = "castbox",
   STITCHER = "stitcher",
   RSS = "rss",
 }
