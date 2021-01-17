@@ -23,6 +23,7 @@ export const subscribeServices: SubscribeService[] = [
   SubscribeService.APPLE,
   SubscribeService.SPOTIFY,
   SubscribeService.GOOGLE,
+  SubscribeService.OVERCAST,
   SubscribeService.STITCHER,
   SubscribeService.RSS,
 ];

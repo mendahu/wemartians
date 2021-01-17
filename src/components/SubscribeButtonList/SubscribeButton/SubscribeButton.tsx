@@ -2,6 +2,7 @@ import styles from "./styles/SubscribeButton.module.css";
 import SubscribeApple from "./SubscribeApple/SubscribeApple";
 import SubscribeSpotify from "./SubscribeSpotify/SubscribeSpotify";
 import SubscribeGoogle from "./SubscribeGoogle/SubscribeGoogle";
+import SubscribeOvercast from "./SubscribeOvercast/SubscribeOvercast";
 import SubscribeStitcher from "./SubscribeStitcher/SubscribeStitcher";
 import SubscribeRss from "./SubscribeRss/SubscribeRss";
 import { SubscribeService } from "../SubscribeButtonList";
@@ -19,6 +20,8 @@ export default function SubscribeButton(props: SubscribeButtonProps) {
       "https://open.spotify.com/show/31p0wkYFE2pdbaXnfhasoL",
     [SubscribeService.GOOGLE]:
       "https://podcasts.google.com/feed/aHR0cHM6Ly93ZW1hcnRpYW5zLmNvbS9mZWVkL3BvZGNhc3Qv",
+    [SubscribeService.OVERCAST]:
+      "overcast://x-callback-url/add?url=https://overcast.fm/itunes1097402685&x-success=https://www.wemartians.com",
     [SubscribeService.STITCHER]:
       "https://www.stitcher.com/podcast/wemartians-podcast",
     [SubscribeService.RSS]: "https://www.wemartians.com/feed/podcast",
@@ -32,6 +35,8 @@ export default function SubscribeButton(props: SubscribeButtonProps) {
         return <SubscribeSpotify size={props.size} />;
       case SubscribeService.GOOGLE:
         return <SubscribeGoogle size={props.size} />;
+      case SubscribeService.OVERCAST:
+        return <SubscribeOvercast size={props.size} />;
       case SubscribeService.STITCHER:
         return <SubscribeStitcher size={props.size} />;
       case SubscribeService.RSS:
