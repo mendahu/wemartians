@@ -1,5 +1,6 @@
 :root {
   --col-orange: #d15d27;
+  --col-orange-dark: #a74a1f;
   --col-grey-1: #faf9f9;
   --col-grey-2: #f0edec;
   --col-grey-3: #e5e0de;
@@ -51,8 +52,12 @@ h3 {
 }
 
 a {
-  color: var(--col-orange);
+  color: var(--col-orange-dark);
   text-decoration: underline;
+}
+
+a:hover {
+  color: var(--col-orange);
 }
 
 * {

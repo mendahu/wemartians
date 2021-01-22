@@ -16,13 +16,19 @@
   padding: 0.5em 1em;
 }
 
-.light {
+.lightText {
   color: var(--col-grey-11);
+}
+
+.darkText {
+  color: var(--col-grey-3);
+}
+
+.light {
   background-color: var(--col-grey-3);
 }
 
 .dark {
-  color: var(--col-grey-3);
   background-color: var(--col-grey-11);
 }
 
@@ -35,7 +41,3 @@
   background-color: var(--col-grey-10);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-
-/* .icon {
-  margin-right: 8px;
-} */

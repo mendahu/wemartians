@@ -41,7 +41,7 @@
 .date {
   text-align: right;
   flex-grow: 1;
-  color: var(--col-grey-9);
+  color: var(--col-grey-10);
 }
 
 .episodeContent p {
