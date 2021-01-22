@@ -21,8 +21,8 @@ export default function SubscribeRss(props: SubscribeOvercastProps) {
           y2="6.38"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#f47637" />
-          <stop offset="1" stop-color="#f89939" />
+          <stop offset="0" stopColor="#f47637" />
+          <stop offset="1" stopColor="#f89939" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-2"
@@ -32,8 +32,8 @@ export default function SubscribeRss(props: SubscribeOvercastProps) {
           y2="88.86"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#444e59" />
-          <stop offset="1" stop-color="#292e33" />
+          <stop offset="0" stopColor="#444e59" />
+          <stop offset="1" stopColor="#292e33" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-3"
@@ -43,8 +43,8 @@ export default function SubscribeRss(props: SubscribeOvercastProps) {
           y2="62.01"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.03" stop-color="#f89939" />
-          <stop offset="1" stop-color="#f89939" />
+          <stop offset="0.03" stopColor="#f89939" />
+          <stop offset="1" stopColor="#f89939" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-4"

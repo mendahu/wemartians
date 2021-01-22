@@ -26,7 +26,7 @@ export default function Header(props) {
       </div>
 
       <SubscribeButtonList
-        size={50}
+        size={40}
         className={styles.subscriptionList}
         justifyContent="center"
       />
