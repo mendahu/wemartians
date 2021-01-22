@@ -4,6 +4,10 @@ module.exports = {
   images: {
     domains: ["pbs.twimg.com", "image.simplecastcdn.com"],
   },
+  i18n: {
+    locales: ["en-US"],
+    defaultLocale: "en-US",
+  },
   async redirects() {
     const oldEpisodeRedirects = [];
 

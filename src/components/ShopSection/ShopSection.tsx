@@ -8,7 +8,7 @@ export type ShopSectionProps = {};
 export default function ShopSection(props: ShopSectionProps) {
   return (
     <div className={styles.container}>
-      <a href={shopCopy.cta.link} target="_blank">
+      <a href={shopCopy.cta.link} target="_blank" rel="noopener">
         <Image
           src="/shop_ad.png"
           height={350}

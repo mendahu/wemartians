@@ -41,6 +41,8 @@ export type SubscribeButtonProps = {
 
 export default function SubscribeButton(props: SubscribeButtonProps) {
   return (
-    <a href={props.url}>{generateServiceButton(props.service, props.size)}</a>
+    <a href={props.url} rel="noopener">
+      {generateServiceButton(props.service, props.size)}
+    </a>
   );
 }
