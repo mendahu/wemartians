@@ -47,7 +47,7 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
   return (
     <>
       <Head>
-        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta content="text/html; charset=UTF-8" httpEquiv="Content-Type" />
         <meta name="twitter:card" content="player" />
         <meta name="twitter:site" content="@we_martians" />
         <meta name="twitter:title" content={episode.title} />
