@@ -56,6 +56,7 @@ export default function WebPlayer(props: WebPlayerProps) {
             frameBorder="no"
             scrolling="no"
             seamless
+            title="WeMartians Podcast Web Audio Player"
             src={`https://player.simplecast.com/${props.id}?dark=true`}
           ></iframe>
         )}
