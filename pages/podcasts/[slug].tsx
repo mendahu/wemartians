@@ -73,10 +73,10 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
               alt={`${episode.title} Cover Art`}
             />
             <div className={styles.statBox}>
-              <h3>
+              <p>
                 {formatPublishDate(episode.publishDate)} (
                 {formatTimeAgo(episode.publishDate)})
-              </h3>
+              </p>
             </div>
             <div className={styles.subscribeListContainer}>
               <SubscribeButtonList size={50} className={styles.leftAlign} />
