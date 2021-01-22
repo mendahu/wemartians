@@ -4,7 +4,6 @@ import { header as headerCopy } from "../../../../../copy/Home/index.json";
 import SubscribeButtonList from "../../../../components/SubscribeButtonList/SubscribeButtonList";
 import Nav from "../../../../components/Nav/Nav";
 import { useState } from "react";
-import classNames from "classnames";
 
 export default function Header(props) {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +13,7 @@ export default function Header(props) {
       <Nav className={styles.nav} />
       <div className={styles.logoContainer}>
         <Image
-          src="/2021_logo-dark.png"
+          src="/2021_logo-dark_280.png"
           width={300}
           height={300}
           alt="WeMartians Podcast Logo"
@@ -38,14 +37,13 @@ export default function Header(props) {
             {isVisible ? String.fromCharCode(9650) : String.fromCharCode(9660)}
           </p>
         </div>
-        <SubscribeButtonList
-          size={40}
-          justifyContent="center"
-          className={classNames(
-            isVisible ? styles.visible : styles.invisible,
-            styles.buttonList
-          )}
-        />
+        <div className={isVisible ? styles.visible : styles.invisible}>
+          <SubscribeButtonList
+            size={40}
+            justifyContent="center"
+            className={styles.buttonList}
+          />
+        </div>
       </div>
     </div>
   );

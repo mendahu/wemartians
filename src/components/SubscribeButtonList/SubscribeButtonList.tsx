@@ -58,9 +58,9 @@ export default function SubscribeButtonList({
   return (
     <ul
       className={classNames(
-        className,
         styles.subscriptionList,
-        styles[justifyContent]
+        styles[justifyContent],
+        className
       )}
     >
       {subscribeServices.map((service) => {

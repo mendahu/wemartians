@@ -21,11 +21,11 @@ export default function SubscribeCastbox(props: SubscribeCastboxProps) {
           y2="99.7577903%"
           id="linearGradient-1"
         >
-          <stop stop-color="#FFB768" offset="0%"></stop>
-          <stop stop-color="#FF9953" offset="19.39%"></stop>
-          <stop stop-color="#FF652E" offset="56.55%"></stop>
-          <stop stop-color="#FF4518" offset="84.57%"></stop>
-          <stop stop-color="#FF390F" offset="100%"></stop>
+          <stop stopColor="#FFB768" offset="0%"></stop>
+          <stop stopColor="#FF9953" offset="19.39%"></stop>
+          <stop stopColor="#FF652E" offset="56.55%"></stop>
+          <stop stopColor="#FF4518" offset="84.57%"></stop>
+          <stop stopColor="#FF390F" offset="100%"></stop>
         </linearGradient>
       </defs>
       <g

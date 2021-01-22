@@ -116,7 +116,7 @@
 /* SUBSCRIBE LIST */
 
 .subscriptionList {
-  margin-top: 4rem;
+  margin: 4rem 0rem 3rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,6 +144,7 @@
 .invisible {
   display: none;
 }
+
 @media screen and (min-width: 550px) {
   .subscribeDropDownTextContainer {
     display: none;
