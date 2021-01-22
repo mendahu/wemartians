@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--col-grey-6);
+  background-color: var(--col-grey-4);
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +17,7 @@
 .duration {
   margin-top: 0.8rem;
   font-size: 1.6rem;
-  color: var(--col-grey-10);
+  color: var(--col-grey-11);
   text-align: center;
 }
 
@@ -37,7 +37,7 @@
 .timeAgo {
   margin-top: 0.5rem;
   font-size: 1.4rem;
-  color: var(--col-grey-9);
+  color: var(--col-grey-11);
 }
 
 .description {
