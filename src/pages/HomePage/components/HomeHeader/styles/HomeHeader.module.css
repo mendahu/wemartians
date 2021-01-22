@@ -1,5 +1,5 @@
 .container {
-  padding-top: 5rem;
+  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,13 +117,47 @@
 
 .subscriptionList {
   margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-@media screen and (min-width: 800px) {
-  .subscriptionList {
-    width: 800px;
+.buttonList {
+  margin-top: 2rem;
+}
+
+.subscribeDropDownTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid var(--col-grey-2);
+  border-radius: 5px;
+  padding: 1rem 0rem;
+  width: 260px;
+}
+
+.visible {
+  display: flex;
+}
+
+.invisible {
+  display: none;
+}
+@media screen and (min-width: 550px) {
+  .subscribeDropDownTextContainer {
+    display: none;
+  }
+
+  .invisible {
+    display: flex;
+  }
+
+  .buttonList {
+    margin-top: 0rem;
   }
 }
+
 @media screen and (min-width: 900px) {
   .subscriptionList {
     padding-left: 50px;

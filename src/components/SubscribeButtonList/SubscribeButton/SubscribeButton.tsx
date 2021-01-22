@@ -2,44 +2,45 @@ import styles from "./styles/SubscribeButton.module.css";
 import SubscribeApple from "./SubscribeApple/SubscribeApple";
 import SubscribeSpotify from "./SubscribeSpotify/SubscribeSpotify";
 import SubscribeGoogle from "./SubscribeGoogle/SubscribeGoogle";
+import SubscribeOvercast from "./SubscribeOvercast/SubscribeOvercast";
 import SubscribeStitcher from "./SubscribeStitcher/SubscribeStitcher";
 import SubscribeRss from "./SubscribeRss/SubscribeRss";
 import { SubscribeService } from "../SubscribeButtonList";
+import SubscribePocketCasts from "./SubscribePocketCasts/SubscribePocketCasts";
+import SubscribePodcastAddict from "./SubscribePodcastAddict/SubscribePodcastAddict";
+import SubscribeCastbox from "./SubscribeCastbox/SubscribeCastbox";
+
+const generateServiceButton = (service: SubscribeService, size: number) => {
+  switch (service) {
+    case SubscribeService.APPLE:
+      return <SubscribeApple size={size} />;
+    case SubscribeService.SPOTIFY:
+      return <SubscribeSpotify size={size} />;
+    case SubscribeService.GOOGLE:
+      return <SubscribeGoogle size={size} />;
+    case SubscribeService.OVERCAST:
+      return <SubscribeOvercast size={size} />;
+    case SubscribeService.ADDICT:
+      return <SubscribePodcastAddict size={size} />;
+    case SubscribeService.POCKET_CASTS:
+      return <SubscribePocketCasts size={size} />;
+    case SubscribeService.CASTBOX:
+      return <SubscribeCastbox size={size} />;
+    case SubscribeService.STITCHER:
+      return <SubscribeStitcher size={size} />;
+    case SubscribeService.RSS:
+      return <SubscribeRss size={size} />;
+  }
+};
 
 export type SubscribeButtonProps = {
   size: number;
   service: SubscribeService;
+  url: string;
 };
 
 export default function SubscribeButton(props: SubscribeButtonProps) {
-  const urls = {
-    [SubscribeService.APPLE]:
-      "https://podcasts.apple.com/us/podcast/wemartians-podcast/id1097402685?itsct=podcast_box&itscg=30200",
-    [SubscribeService.SPOTIFY]:
-      "https://open.spotify.com/show/31p0wkYFE2pdbaXnfhasoL",
-    [SubscribeService.GOOGLE]:
-      "https://podcasts.google.com/feed/aHR0cHM6Ly93ZW1hcnRpYW5zLmNvbS9mZWVkL3BvZGNhc3Qv",
-    [SubscribeService.STITCHER]:
-      "https://www.stitcher.com/podcast/wemartians-podcast",
-    [SubscribeService.RSS]: "https://www.wemartians.com/feed/podcast",
-  };
-
-  const generateServiceButton = (service: SubscribeService) => {
-    switch (service) {
-      case SubscribeService.APPLE:
-        return <SubscribeApple size={props.size} />;
-      case SubscribeService.SPOTIFY:
-        return <SubscribeSpotify size={props.size} />;
-      case SubscribeService.GOOGLE:
-        return <SubscribeGoogle size={props.size} />;
-      case SubscribeService.STITCHER:
-        return <SubscribeStitcher size={props.size} />;
-      case SubscribeService.RSS:
-        return <SubscribeRss size={props.size} />;
-    }
-  };
-
   return (
-    <a href={urls[props.service]}>{generateServiceButton(props.service)}</a>
+    <a href={props.url}>{generateServiceButton(props.service, props.size)}</a>
   );
 }
