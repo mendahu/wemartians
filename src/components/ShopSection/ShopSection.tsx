@@ -14,6 +14,7 @@ export default function ShopSection(props: ShopSectionProps) {
           height={350}
           width={350}
           className={styles.shopImage}
+          alt="Three Space-Themed WeMartians T-Shirts"
         />
       </a>
       <div className={styles.shopTextContainer}>

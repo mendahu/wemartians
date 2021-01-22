@@ -28,6 +28,7 @@ export default function SocialProfile(props: SocialProfileProps) {
             width={80}
             height={80}
             className={styles.socialProfileImage}
+            alt={`${props.handle} Profile Image`}
           />
         </a>
       </div>
@@ -43,6 +44,7 @@ export default function SocialProfile(props: SocialProfileProps) {
                 width={20}
                 height={20}
                 layout="fixed"
+                alt={"Twitter Logo"}
               />
 
               <span className={styles.profileText}>@{props.handle}</span>
@@ -62,6 +64,7 @@ export default function SocialProfile(props: SocialProfileProps) {
                 width={22}
                 height={22}
                 layout="fixed"
+                alt={"Email Icon"}
               />
 
               <span className={styles.profileText}>

@@ -23,6 +23,7 @@ export default function CommonHeader(props: CommonHeaderProps) {
               width={100}
               height={100}
               layout="fixed"
+              alt="Valles Marineris Wallpaper"
             />
           </a>
         </Link>

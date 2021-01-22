@@ -36,6 +36,7 @@ export default function EpisodeCarousel({
                       src={episode.image || "/album_Art_2021-01_400.png"}
                       width={515}
                       height={515}
+                      alt={`${episode.title} Cover Art`}
                     />
                   </a>
                 </Link>

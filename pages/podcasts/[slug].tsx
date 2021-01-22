@@ -66,7 +66,12 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
       <Section component="main" background="light">
         <div className={styles.header}>
           <div className={styles.headerContainer}>
-            <Image src={episode.image} width={500} height={500} />
+            <Image
+              src={episode.image}
+              width={500}
+              height={500}
+              alt={`${episode.title} Cover Art`}
+            />
             <div className={styles.statBox}>
               <h3>
                 {formatPublishDate(episode.publishDate)} (
