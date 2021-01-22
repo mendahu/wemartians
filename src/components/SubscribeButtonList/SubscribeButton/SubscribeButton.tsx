@@ -8,6 +8,7 @@ import SubscribeRss from "./SubscribeRss/SubscribeRss";
 import { SubscribeService } from "../SubscribeButtonList";
 import SubscribePocketCasts from "./SubscribePocketCasts/SubscribePocketCasts";
 import SubscribePodcastAddict from "./SubscribePodcastAddict/SubscribePodcastAddict";
+import SubscribeCastbox from "./SubscribeCastbox/SubscribeCastbox";
 
 const generateServiceButton = (service: SubscribeService, size: number) => {
   switch (service) {
@@ -23,6 +24,8 @@ const generateServiceButton = (service: SubscribeService, size: number) => {
       return <SubscribePodcastAddict size={size} />;
     case SubscribeService.POCKET_CASTS:
       return <SubscribePocketCasts size={size} />;
+    case SubscribeService.CASTBOX:
+      return <SubscribeCastbox size={size} />;
     case SubscribeService.STITCHER:
       return <SubscribeStitcher size={size} />;
     case SubscribeService.RSS:
