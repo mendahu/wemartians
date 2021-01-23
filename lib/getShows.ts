@@ -65,7 +65,7 @@ async function fetchShow(id: string) {
 }
 
 const formatShow = (episode): Episode => {
-  return {
+  const formattedShow = {
     slug: episode.slug,
     title: episode.title,
     description: episode.description,
@@ -75,6 +75,8 @@ const formatShow = (episode): Episode => {
     duration: episode.duration,
     longDescription: episode.long_description || "",
   };
+
+  return formattedShow;
 };
 
 const formatShows = (shows): Episode[] => {
@@ -111,6 +113,7 @@ export async function getShow(slug: string) {
   } catch (err) {
     throw err;
   }
+  console.log("Fetched show ", show.slug);
 
   return formatShow(show);
 }
