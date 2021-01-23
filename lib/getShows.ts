@@ -2,6 +2,8 @@ import { Episode } from "../src/types/common";
 
 let shows;
 
+const LIMIT = process.env.API_FETCH_LIMIT;
+
 async function fetchShows() {
   // Use Cache if Available
   if (shows) {
@@ -9,7 +11,7 @@ async function fetchShows() {
     return shows;
   }
 
-  let url = `https://${process.env.SIMPLECAST_API_URL}/podcasts/${process.env.PODCAST_ID}/episodes?limit=6`;
+  let url = `https://${process.env.SIMPLECAST_API_URL}/podcasts/${process.env.PODCAST_ID}/episodes?limit=${LIMIT}`;
 
   let data;
 

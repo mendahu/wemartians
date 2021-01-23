@@ -64,4 +64,12 @@ module.exports = {
       ...oldEpisodeRedirects,
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/feed/podcast",
+        destination: "https://feeds.simplecast.com/kCA68cgb",
+      },
+    ];
+  },
 };
