@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { Episode } from "../../../../types/common";
 import Link from "next/link";
 import Image from "next/image";
+import PlayIcon from "../../../../components/PlayIcon/PlayIcon";
 
 export type EpisodeCarouselProps = {
   episodes: Episode[];
@@ -35,6 +36,7 @@ export default function EpisodeCarousel({
                       src={episode.image || "/album_Art_2021-01_400.png"}
                       width={515}
                       height={515}
+                      alt={`${episode.title} Cover Art`}
                     />
                   </a>
                 </Link>
@@ -55,12 +57,12 @@ export default function EpisodeCarousel({
                 </p>
 
                 <div className={styles.footerContainer}>
-                  <Button
-                    onClick={() => handleClick(episode.id)}
+                  <PlayIcon
                     color="dark"
-                    label={String.fromCharCode(9658) + " Play"}
-                    size="sm"
+                    size={60}
+                    onClick={() => handleClick(episode.id)}
                   />
+
                   <p className={styles.date}>
                     {formatTimeAgo(episode.publishDate)}
                   </p>

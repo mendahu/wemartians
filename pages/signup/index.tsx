@@ -10,7 +10,7 @@ export type SignupPageProps = {};
 export default function index(props: SignupPageProps) {
   return (
     <>
-      <Section component="header" background="dark">
+      <Section component="header" background="map">
         <CommonHeader
           title={signupCopy.header.title}
           breadcrumbs={signupCopy.header.breadcrumbs}

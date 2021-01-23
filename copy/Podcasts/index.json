@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "Episodes",
+    "title": "Podcast Episodes",
     "breadcrumbs": {
       "crumbs": [
         {
@@ -8,7 +8,7 @@
           "href": "/"
         }
       ],
-      "currentLocation": "Episodes"
+      "currentLocation": "Podcasts"
     }
   }
 }

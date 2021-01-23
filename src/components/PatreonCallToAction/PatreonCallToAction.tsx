@@ -23,12 +23,14 @@ export default function PatreonCallToAction(props: PatreonCallToActionProps) {
           href={patreonCopy.cta.href}
           target="_blank"
           className={styles.patreonCTAButton}
+          rel="noopener"
         >
           <Image
             src="/Digital-Patreon-Logo_White.png"
             width={26}
             height={26}
             layout="fixed"
+            alt="Patreon Logo"
           />
           <h2 className={styles.patreonCTA}>{patreonCopy.cta.label}</h2>
         </a>

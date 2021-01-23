@@ -15,7 +15,7 @@
   justify-content: center;
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: var(--col-grey-5);
+  background-color: var(--col-grey-4);
   border-radius: 2px;
 }
 
@@ -41,7 +41,7 @@
 .date {
   text-align: right;
   flex-grow: 1;
-  color: var(--col-grey-9);
+  color: var(--col-grey-10);
 }
 
 .episodeContent p {

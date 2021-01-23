@@ -8,6 +8,10 @@
   width: 80%;
 }
 
+.label {
+  display: none;
+}
+
 .inputContainer {
   display: flex;
   flex-wrap: wrap;

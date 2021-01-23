@@ -19,6 +19,7 @@ export default function Nav(props: NavProps) {
             href="https://shop.wemartians.com"
             className={styles.link}
             target="_blank"
+            rel="noopener"
           >
             Shop
           </a>
@@ -28,6 +29,7 @@ export default function Nav(props: NavProps) {
             href="https://www.patreon.com/wemartians"
             className={styles.link}
             target="_blank"
+            rel="noopener"
           >
             Patreon
           </a>

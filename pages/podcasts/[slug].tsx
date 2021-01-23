@@ -47,7 +47,7 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
   return (
     <>
       <Head>
-        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta content="text/html; charset=UTF-8" httpEquiv="Content-Type" />
         <meta name="twitter:card" content="player" />
         <meta name="twitter:site" content="@we_martians" />
         <meta name="twitter:title" content={episode.title} />
@@ -66,12 +66,17 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
       <Section component="main" background="light">
         <div className={styles.header}>
           <div className={styles.headerContainer}>
-            <Image src={episode.image} width={500} height={500} />
+            <Image
+              src={episode.image}
+              width={500}
+              height={500}
+              alt={`${episode.title} Cover Art`}
+            />
             <div className={styles.statBox}>
-              <h3>
+              <p>
                 {formatPublishDate(episode.publishDate)} (
                 {formatTimeAgo(episode.publishDate)})
-              </h3>
+              </p>
             </div>
             <div className={styles.subscribeListContainer}>
               <SubscribeButtonList size={50} className={styles.leftAlign} />

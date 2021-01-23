@@ -21,13 +21,18 @@ export default function SocialProfile(props: SocialProfileProps) {
       <div
         className={classNames(styles.imageContainer, styles.containerSection)}
       >
-        <a target="_blank" href={`${twitterBaseUrl}${props.handle}`}>
+        <a
+          target="_blank"
+          href={`${twitterBaseUrl}${props.handle}`}
+          rel="noopener"
+        >
           <Image
             layout={"fixed"}
             src={props.profileImage}
             width={80}
             height={80}
             className={styles.socialProfileImage}
+            alt={`${props.handle} Profile Image`}
           />
         </a>
       </div>
@@ -36,13 +41,18 @@ export default function SocialProfile(props: SocialProfileProps) {
       >
         <h2 className={styles.handle}>{props.name}</h2>
         <div>
-          <a target="_blank" href={`${twitterBaseUrl}${props.handle}`}>
+          <a
+            target="_blank"
+            href={`${twitterBaseUrl}${props.handle}`}
+            rel="noopener"
+          >
             <div className={styles.handleContainer}>
               <Image
                 src="/Twitter_Social_Icon_Rounded_Square_Color.png"
                 width={20}
                 height={20}
                 layout="fixed"
+                alt={"Twitter Logo"}
               />
 
               <span className={styles.profileText}>@{props.handle}</span>
@@ -55,6 +65,7 @@ export default function SocialProfile(props: SocialProfileProps) {
               props.email.handle,
               props.email.domain
             )}`}
+            rel="noopener"
           >
             <div className={styles.handleContainer}>
               <Image
@@ -62,6 +73,7 @@ export default function SocialProfile(props: SocialProfileProps) {
                 width={22}
                 height={22}
                 layout="fixed"
+                alt={"Email Icon"}
               />
 
               <span className={styles.profileText}>

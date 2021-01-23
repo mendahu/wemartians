@@ -67,6 +67,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           name="twitter:image"
           content="https://www.wemartians.com/twitter_card_image_wemartians.png"
         ></meta>
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="description"
+          content="A biweekly podcast about the exploration and science of the Moon, Mars and beyond."
+        ></meta>
       </Head>
       <Component {...pageProps} />
       <WebPlayer

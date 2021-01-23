@@ -19,10 +19,11 @@ export default function CommonHeader(props: CommonHeaderProps) {
         <Link href="/">
           <a>
             <Image
-              src={"/2021_logo-dark.png"}
+              src={"/2021_logo-dark_280.png"}
               width={100}
               height={100}
               layout="fixed"
+              alt="Valles Marineris Wallpaper"
             />
           </a>
         </Link>

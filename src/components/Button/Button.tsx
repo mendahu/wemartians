@@ -26,7 +26,7 @@ export default function Button(props: ButtonProps) {
       onClick={props.onClick}
     >
       {props.icon}
-      <span>{props.label}</span>
+      <span className={styles[props.color + "Text"]}>{props.label}</span>
     </a>
   );
 
