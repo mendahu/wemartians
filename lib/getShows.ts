@@ -52,7 +52,7 @@ async function fetchShow(id: string) {
     });
     data = await res.json();
   } catch (err) {
-    throw err;
+    console.error(err);
   }
 
   if (!data) {
@@ -104,16 +104,12 @@ export async function getShow(slug: string) {
     throw err;
   }
 
-  const showId = shows.find((show) => show.slug === slug).id;
+  const { id, number } = shows.find((show) => show.slug === slug);
+  const timeout = (number + 1) * 50;
 
-  let show;
+  await new Promise((resolve) => setTimeout(resolve, timeout));
 
-  try {
-    show = await fetchShow(showId);
-  } catch (err) {
-    throw err;
-  }
-  console.log("Fetched show ", show.slug);
+  const show = await fetchShow(id);
 
   return formatShow(show);
 }
