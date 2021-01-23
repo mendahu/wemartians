@@ -126,7 +126,7 @@ export async function getStaticPaths() {
   let shows = [];
 
   try {
-    shows = await getShows(7);
+    shows = await getShows();
   } catch (err) {
     console.error(err);
   }
