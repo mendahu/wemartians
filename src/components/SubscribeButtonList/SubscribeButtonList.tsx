@@ -47,7 +47,7 @@ const urls = {
     "https://castbox.fm/channel/WeMartians-Podcast-id2839890",
   [SubscribeService.STITCHER]:
     "https://www.stitcher.com/podcast/wemartians-podcast",
-  [SubscribeService.RSS]: "https://www.wemartians.com/feed/podcast",
+  [SubscribeService.RSS]: "https://wemartians.com/feed/podcast",
 };
 
 export default function SubscribeButtonList({
