@@ -1,5 +1,5 @@
 import { footer as footerCopy } from "../../../copy/index.json";
-import SocialProfile from "./SocialProfile/SocialProfile";
+import SocialProfile, { BadgeType } from "./SocialProfile/SocialProfile";
 
 import styles from "./styles/Footer.module.css";
 
@@ -10,14 +10,13 @@ export default function Footer(props: FooterProps) {
     <>
       <h1 className={styles.title}>{footerCopy.title}</h1>
       <div className={styles.socialContainer}>
-        {footerCopy.twitterAccounts.map((account, index) => {
+        {footerCopy.badges.map((account, index) => {
           return (
             <SocialProfile
               key={index}
-              name={account.name}
+              type={account.type as BadgeType}
               handle={account.handle}
-              email={account.email}
-              profileImage={account.profileImage}
+              domain={account.domain}
             />
           );
         })}

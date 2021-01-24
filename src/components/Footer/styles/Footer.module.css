@@ -11,7 +11,7 @@
 }
 
 .copyright {
-  margin-top: 4rem;
+  margin: 4rem 0rem 6rem 0rem;
   text-align: center;
-  color: var(--col-grey-8);
+  color: var(--col-grey-4);
 }

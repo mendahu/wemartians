@@ -1,38 +1,18 @@
 .container {
+  text-decoration: none;
   padding: 1rem;
-  background-color: var(--col-grey-6);
+  background-color: var(--col-grey-4);
+  border-radius: 5px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
   width: 280px;
-  max-width: 320px;
-  flex-grow: 1;
   margin-top: 1rem;
 }
 
-.containerSection {
-}
-
-.handleContainer {
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.socialProfileImage {
-  border-radius: 50%;
-}
-
-.textContainer {
+.container p {
   margin-left: 1rem;
-  flex-grow: 1;
-}
-
-.handle {
   font-size: 1.8rem;
-}
-
-.profileText {
-  margin-left: 0.5rem;
-  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Fjalla One", sans-serif;
+  letter-spacing: 1px;
 }

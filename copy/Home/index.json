@@ -29,8 +29,8 @@
     }
   },
   "mailchimpForm": {
-    "formPlaceholder": "email address",
-    "label": "Subscribe to the WeMartians Mailing List",
+    "formPlaceholder": "email@email.com",
+    "label": "Email address",
     "cta": {
       "label": "Subscribe",
       "action": "https://wemartians.us18.list-manage.com/subscribe/post?u=5b308fe85dae4499e221bae6e&amp;id=3393e4d487"
