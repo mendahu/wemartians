@@ -1,24 +1,15 @@
 {
   "footer": {
-    "title": "Follow Us",
-    "twitterAccounts": [
+    "title": "Follow WeMartians",
+    "badges": [
       {
-        "handle": "We_Martians",
-        "name": "WeMartians Podcast",
-        "profileImage": "/2021_logo-light.png",
-        "email": {
-          "handle": "info",
-          "domain": "wemartians.com"
-        }
+        "type": "twitter",
+        "domain": "We_Martians"
       },
       {
-        "handle": "JakeOnOrbit",
-        "name": "Jake Robins",
-        "profileImage": "https://pbs.twimg.com/profile_images/1199552790541946880/8amz5UPa_400x400.jpg",
-        "email": {
-          "handle": "me",
-          "domain": "jakerobins.com"
-        }
+        "type": "email",
+        "handle": "info",
+        "domain": "wemartians.com"
       }
     ],
     "copyright": {

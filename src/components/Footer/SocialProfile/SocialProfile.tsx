@@ -1,88 +1,55 @@
 import styles from "./styles/SocialProfile.module.css";
 import Image from "next/image";
 import { generateEmail } from "../../../helpers/generateEmail";
-import classNames from "classnames";
 
 const twitterBaseUrl = "https://www.twitter.com/";
 
+export type BadgeType = "twitter" | "email";
+
 export type SocialProfileProps = {
-  name: string;
+  type: BadgeType;
   handle: string;
-  email: {
-    handle: string;
-    domain: string;
-  };
-  profileImage: string;
+  domain: string;
 };
 
-export default function SocialProfile(props: SocialProfileProps) {
+const generateImageProps = (type: BadgeType) => {
+  switch (type) {
+    case "twitter":
+      return {
+        src: "/Twitter_Social_Icon_Rounded_Square_Color.png",
+        alt: "Twitter Logo",
+      };
+    case "email":
+      return {
+        src: "/emailIcon.svg",
+        alt: "Email Icon",
+      };
+  }
+};
+
+const generateBadgeLink = (props: SocialProfileProps) => {
+  switch (props.type) {
+    case "twitter":
+      return twitterBaseUrl + props.handle;
+    case "email":
+      return "mailto:" + generateEmail(props.handle, props.domain);
+  }
+};
+
+export default function SocialProfile({
+  type,
+  domain,
+  handle = "",
+}: SocialProfileProps) {
+  const { src, alt } = generateImageProps(type);
+  const href = generateBadgeLink({ type, domain, handle });
+
   return (
-    <div className={styles.container}>
-      <div
-        className={classNames(styles.imageContainer, styles.containerSection)}
-      >
-        <a
-          target="_blank"
-          href={`${twitterBaseUrl}${props.handle}`}
-          rel="noopener"
-        >
-          <Image
-            layout={"fixed"}
-            src={props.profileImage}
-            width={80}
-            height={80}
-            className={styles.socialProfileImage}
-            alt={`${props.handle} Profile Image`}
-          />
-        </a>
+    <a href={href} rel="noopener" className={styles.link}>
+      <div className={styles.container}>
+        <Image src={src} width={50} height={50} layout="fixed" alt={alt} />
+        <p>{generateEmail(handle, domain)}</p>
       </div>
-      <div
-        className={classNames(styles.textContainer, styles.containerSection)}
-      >
-        <h2 className={styles.handle}>{props.name}</h2>
-        <div>
-          <a
-            target="_blank"
-            href={`${twitterBaseUrl}${props.handle}`}
-            rel="noopener"
-          >
-            <div className={styles.handleContainer}>
-              <Image
-                src="/Twitter_Social_Icon_Rounded_Square_Color.png"
-                width={20}
-                height={20}
-                layout="fixed"
-                alt={"Twitter Logo"}
-              />
-
-              <span className={styles.profileText}>@{props.handle}</span>
-            </div>
-          </a>
-        </div>
-        <div>
-          <a
-            href={`mailto:${generateEmail(
-              props.email.handle,
-              props.email.domain
-            )}`}
-            rel="noopener"
-          >
-            <div className={styles.handleContainer}>
-              <Image
-                src="/emailIcon.svg"
-                width={22}
-                height={22}
-                layout="fixed"
-                alt={"Email Icon"}
-              />
-
-              <span className={styles.profileText}>
-                {generateEmail(props.email.handle, props.email.domain)}
-              </span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+    </a>
   );
 }
