@@ -1,5 +1,5 @@
 import { footer as footerCopy } from "../../../copy/index.json";
-import SocialProfile from "./SocialProfile/SocialProfile";
+import SocialProfile, { BadgeType } from "./SocialProfile/SocialProfile";
 
 import styles from "./styles/Footer.module.css";
 
@@ -14,7 +14,7 @@ export default function Footer(props: FooterProps) {
           return (
             <SocialProfile
               key={index}
-              type={account.type}
+              type={account.type as BadgeType}
               handle={account.handle}
               domain={account.domain}
             />
