@@ -6,6 +6,10 @@
   margin-top: 1rem;
 }
 
+.textContainer {
+  flex-grow: 1;
+}
+
 .playIconContainer {
   flex-basis: 40px;
   display: flex;
