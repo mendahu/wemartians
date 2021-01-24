@@ -22,19 +22,18 @@ export default function MailchimpForm(props: MailchimpFormProps) {
         noValidate
       >
         <div className={styles.inputContainer}>
-          <label className={styles.label} htmlFor={"email"}>
+          <label className={styles.label}>
+            <input
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              name="EMAIL"
+              placeholder={mailchimpFormCopy.formPlaceholder}
+              required
+              className={styles.formInput}
+            />
             {mailchimpFormCopy.label}
           </label>
-          <input
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            name="EMAIL"
-            placeholder={mailchimpFormCopy.formPlaceholder}
-            required
-            className={styles.formInput}
-            id="email"
-          />
 
           <div
             style={{ position: "absolute", left: "-5000px" }}

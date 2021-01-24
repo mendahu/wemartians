@@ -9,7 +9,10 @@
 }
 
 .label {
-  display: none;
+  margin: 1rem 0.5rem 0rem 0.5rem;
+  font-size: 1.4rem;
+  flex-grow: 1;
+  color: var(--col-grey-2);
 }
 
 .inputContainer {
@@ -19,12 +22,12 @@
 }
 
 .formInput {
-  margin: 1rem 0.5rem 0rem 0.5rem;
   padding: 1rem;
   font-size: 1.8rem;
-  flex-grow: 1;
   border: none;
   border-radius: 5px;
+  width: 100%;
+  margin-bottom: 5px;
 }
 
 .subscribeButtonContainer {
