@@ -45,11 +45,9 @@ export default function SocialProfile({
   const href = generateBadgeLink({ type, domain, handle });
 
   return (
-    <a href={href} rel="noopener" className={styles.link}>
-      <div className={styles.container}>
-        <Image src={src} width={50} height={50} layout="fixed" alt={alt} />
-        <p>{generateEmail(handle, domain)}</p>
-      </div>
+    <a href={href} rel="noopener" className={styles.container}>
+      <Image src={src} width={50} height={50} layout="fixed" alt={alt} />
+      <p>{generateEmail(handle, domain)}</p>
     </a>
   );
 }
