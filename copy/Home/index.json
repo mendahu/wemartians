@@ -37,10 +37,10 @@
     }
   },
   "shop": {
-    "title": "Get Space Merch",
-    "description": "Get WeMartians-branded and other space merchandise at our shop.",
+    "title": "Wheels Down",
+    "description": "Pick up the new WHEELS DOWN shirt celebrating NASA's Perseverance Rover landing on February 18th. Order now to get it in time for touchdown!",
     "cta": {
-      "label": "Shop now",
+      "label": "Shop Merch",
       "link": "https://shop.wemartians.com"
     }
   }

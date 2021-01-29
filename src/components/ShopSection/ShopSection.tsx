@@ -10,11 +10,11 @@ export default function ShopSection(props: ShopSectionProps) {
     <div className={styles.container}>
       <a href={shopCopy.cta.link} target="_blank" rel="noopener">
         <Image
-          src="/shop_ad.png"
+          src="/wheels_down_ad.png"
           height={350}
           width={350}
           className={styles.shopImage}
-          alt="Three Space-Themed WeMartians T-Shirts"
+          alt="Wheels Down T-Shirt Design featuring three Perseverance Rover Wheels"
         />
       </a>
       <div className={styles.shopTextContainer}>
