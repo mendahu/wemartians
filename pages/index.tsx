@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { getShows } from "../lib/getShows";
 import EpisodeCarousel from "../src/pages/HomePage/components/EpisodeCarousel/EpisodeCarousel";
 import Footer from "../src/components/Footer/Footer";
@@ -12,6 +11,7 @@ import styles from "../src/pages/HomePage/styles/Home.module.css";
 import { Episode } from "../src/types/common";
 import { useWebPlayer } from "../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
+import EventBanner from "../src/components/EventBanner/EventBanner";
 
 export type HomeProps = {
   episodes: Episode[];
@@ -37,6 +37,7 @@ export default function Home(props: HomeProps) {
             episodes={props.episodes}
             handleClick={handleEpisodeClick}
           />
+          <EventBanner />
         </Section>
         <Section background="dark" className={styles.ctaContainer}>
           <div className={styles.patreonCtaContainer}>
