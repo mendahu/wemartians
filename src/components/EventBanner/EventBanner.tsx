@@ -16,7 +16,11 @@ export default function EventBanner(props: EventBannerProps) {
         <p>{props.desc}</p>
         <div className={styles.dateContainer}>
           <p className={styles.date}>
-            {format(new Date(props.date), "MMM do, YYY - h:m aa zzzz")}
+            {format(new Date(props.date), "MMM do, YYY")}
+            <br />
+            <span className={styles.time}>
+              {format(new Date(props.date), "h:m aa zzzz")}
+            </span>
           </p>
         </div>
       </div>
