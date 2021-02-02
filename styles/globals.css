@@ -25,6 +25,9 @@ body {
   height: 100%;
 }
 
+p {
+  margin-top: 1rem;
+}
 p,
 li {
   font-size: 1.6rem;
