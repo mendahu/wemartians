@@ -2,30 +2,36 @@
   margin: 8rem 0rem;
 }
 
-.dateContainer {
-  margin-top: 2rem;
+.infoContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.date {
+.dateContainer {
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
   background-color: var(--col-grey-10);
   padding: 1rem 3rem;
   border-radius: 5px;
-  text-align: center;
   font-weight: 600;
-  font-size: 2.6rem;
   color: var(--col-grey-3);
-  max-width: 90%;
+  max-width: 300px;
 }
 
-.date .time {
+.dateContainer p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.8rem;
 }
 
+.timeEmoji {
+  margin-right: 2rem;
+}
+
 .videoContainer {
-  margin-top: 2rem;
+  margin-top: 4rem;
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
@@ -39,18 +45,42 @@
   height: 100%;
 }
 
+@media screen and (min-width: 640px) {
+  .infoContainer {
+    align-items: flex-start;
+  }
+
+  .dateContainer {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
+  .textContainer {
+    flex: 1 1 50%;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .container {
     display: flex;
     flex-direction: row;
   }
 
-  .container div {
+  .container > div {
     flex: 1 1 50%;
   }
 
+  .infoContainer {
+    justify-content: flex-start;
+  }
+
   .textContainer {
-    margin-right: 1rem;
+    flex: 1 1 auto;
+  }
+
+  .dateContainer {
+    margin-left: 0;
+    margin-top: 2rem;
   }
 
   .videoContainer {

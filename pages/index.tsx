@@ -77,7 +77,7 @@ export async function getStaticProps(context) {
     videoLink: "https://www.youtube.com/embed/gXKNtv1Upzw",
     title: "Watch Perseverance Rover land live!",
     desc:
-      "Celebrate NASA's Perseverance Rover landing live on YouTube with Jake, co-host Tanya Harrison and special guests from NASA, Lockheed Martin and more!",
+      "Watch NASA's Perseverance Rover land live on YouTube with Jake, co-host Tanya Harrison and special guests from NASA, Lockheed Martin and more!",
   };
 
   return {

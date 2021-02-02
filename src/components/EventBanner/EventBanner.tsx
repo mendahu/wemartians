@@ -11,16 +11,19 @@ export type EventBannerProps = {
 export default function EventBanner(props: EventBannerProps) {
   return (
     <div className={styles.container}>
-      <div className={styles.textContainer}>
-        <h1>{props.title}</h1>
-        <p>{props.desc}</p>
+      <div className={styles.infoContainer}>
+        <div className={styles.textContainer}>
+          <h1>{props.title}</h1>
+          <p>{props.desc}</p>
+        </div>
         <div className={styles.dateContainer}>
-          <p className={styles.date}>
-            {format(new Date(props.date), "MMM do, YYY")}
-            <br />
-            <span className={styles.time}>
-              {format(new Date(props.date), "h:m aa zzzz")}
-            </span>
+          <p>
+            <span className={styles.timeEmoji}>&#128197;</span>
+            <span>{format(new Date(props.date), "MMM do, YYY")}</span>
+          </p>
+          <p>
+            <span className={styles.timeEmoji}>&#x23F0;</span>
+            <span>{format(new Date(props.date), "h:m aa ( z )")}</span>
           </p>
         </div>
       </div>
