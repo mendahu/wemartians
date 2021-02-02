@@ -75,9 +75,9 @@ export async function getStaticProps(context) {
   const event = {
     date: new Date(Date.UTC(2021, 1, 18, 19, 45, 0)).toString(),
     videoLink: "https://www.youtube.com/embed/gXKNtv1Upzw",
-    title: "Watch Perseverance Rover land live!",
+    title: "Watch Perseverance land with us!",
     desc:
-      "Watch NASA's Perseverance Rover land live on YouTube with Jake, co-host Tanya Harrison and special guests from NASA, Lockheed Martin and more!",
+      "Join Jake, co-host Tanya Harrison and special guests from NASA, Lockheed Martin and more to watch the landing live on YouTube!",
   };
 
   return {
