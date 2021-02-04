@@ -59,6 +59,18 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
         />
         <meta name="twitter:player:width" content="480" />
         <meta name="twitter:player:height" content="200" />
+
+        <meta
+          property="og:url"
+          content={`https://www.wemartians.com/podcasts/${episode.slug}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={episode.title} />
+        <meta property="og:description" content={episode.description} />
+        <meta property="og:image" content={episode.image} />
+        <meta property="og:image:width" content="1080" />
+        <meta property="og:image:height" content="1080" />
+        <meta property="og:image:type" content="image/png" />
       </Head>
       <Section component="header" background="map">
         <CommonHeader title={"Episode"} breadcrumbs={breadcrumbs} />
