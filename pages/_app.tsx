@@ -84,6 +84,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           property="og:image"
           content="https://www.wemartians.com/facebook_card_image_wemartians.png"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <meta property="og:image:type" content="image/png" />
       </Head>
       <Component {...pageProps} />
       <WebPlayer
