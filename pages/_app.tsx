@@ -72,6 +72,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="A biweekly podcast about the exploration and science of the Moon, Mars and beyond."
         ></meta>
+
+        <meta property="og:url" content="https://www.wemartians.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="WeMartians Podcast" />
+        <meta
+          property="og:description"
+          content="A biweekly podcast about the exploration and science of the Moon, Mars and beyond."
+        />
+        <meta
+          property="og:image"
+          content="https://www.wemartians.com/facebook_card_image_wemartians.png"
+        />
       </Head>
       <Component {...pageProps} />
       <WebPlayer
