@@ -35,13 +35,5 @@
       "label": "Subscribe",
       "action": "https://wemartians.us18.list-manage.com/subscribe/post?u=5b308fe85dae4499e221bae6e&amp;id=3393e4d487"
     }
-  },
-  "shop": {
-    "title": "Wheels Down",
-    "description": "Pick up the new WHEELS DOWN shirt celebrating NASA's Perseverance Rover landing on February 18th. Order now to get it in time for touchdown!",
-    "cta": {
-      "label": "Shop Merch",
-      "link": "https://shop.wemartians.com"
-    }
   }
 }
