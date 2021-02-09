@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const event = {
   date: new Date(Date.UTC(2021, 1, 18, 19, 45, 0)).toString(),
-  videoLink: "https://www.youtube.com/embed/gXKNtv1Upzw",
+  videoLink: "https://www.youtube.com/embed/6GlWMIPTguQ",
   title: "Watch Perseverance land with us!",
   desc:
     "Join Jake, co-host Tanya Harrison and special guests from NASA, Lockheed Martin and more to watch the landing live on YouTube!",
