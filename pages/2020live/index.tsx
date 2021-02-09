@@ -7,6 +7,7 @@ import PatreonAndMailingListSection from "../../src/components/PatreonAndMailing
 import ShopSection from "../../src/components/ShopSection/ShopSection";
 import EventBanner from "../../src/components/EventBanner/EventBanner";
 import Image from "next/image";
+import Head from "next/head";
 
 const event = {
   date: new Date(Date.UTC(2021, 1, 18, 19, 45, 0)).toString(),
@@ -21,6 +22,28 @@ export type TwentyTwentyliveProps = {};
 export default function index(props: TwentyTwentyliveProps) {
   return (
     <>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@we_martians" />
+        <meta name="twitter:creator" content="@JakeOnOrbit" />
+        <meta
+          name="twitter:title"
+          content="Mars2020 Perseverance Landing Live with WeMartians"
+        />
+        <meta
+          name="twitter:description"
+          content="Join Jake, co-host Tanya Harrison, and special guests for this live Mars event!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.wemartians.com/twitter_card_image_wemartians.png"
+        ></meta>
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="description"
+          content="Join Jake, co-host Tanya Harrison, and special guests for this live Mars event!"
+        ></meta>
+      </Head>
       <Section component="header" background="map">
         <CommonHeader
           title={copy.header.title}
