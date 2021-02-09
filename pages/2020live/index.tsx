@@ -23,9 +23,6 @@ export default function index(props: TwentyTwentyliveProps) {
   return (
     <>
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@we_martians" />
-        <meta name="twitter:creator" content="@JakeOnOrbit" />
         <meta
           name="twitter:title"
           content="Mars2020 Perseverance Landing Live with WeMartians"
@@ -38,11 +35,26 @@ export default function index(props: TwentyTwentyliveProps) {
           name="twitter:image"
           content="https://www.wemartians.com/twitter_card_image_wemartians.png"
         ></meta>
-        <meta name="robots" content="index, follow" />
         <meta
           name="description"
           content="Join Jake, co-host Tanya Harrison, and special guests for this live Mars event!"
         ></meta>
+        <meta property="og:url" content="https://www.wemartians.com/2020live" />
+        <meta
+          property="og:title"
+          content="Mars2020 Perseverance Landing Live with WeMartians"
+        />
+        <meta
+          property="og:description"
+          content="Join Jake, co-host Tanya Harrison, and special guests for this live Mars event!"
+        />
+        <meta
+          property="og:image"
+          content="https://www.wemartians.com/facebook_card_image_wemartians.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <meta property="og:image:type" content="image/png" />
       </Head>
       <Section component="header" background="map">
         <CommonHeader
