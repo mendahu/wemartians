@@ -122,7 +122,7 @@ export default function index(props: TwentyTwentyliveProps) {
               </div>
               <div className={styles.profileTextContainer}>
                 <h2>Tanya Harrison</h2>
-                <h3>Planet Labs</h3>
+                <h3>Professional Martian</h3>
                 <h3>
                   Twitter:{" "}
                   <a href="https://twitter.com/tanyaofmars">@tanyaofmars</a>
