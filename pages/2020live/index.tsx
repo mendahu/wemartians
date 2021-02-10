@@ -120,30 +120,6 @@ export default function index(props: TwentyTwentyliveProps) {
                 </p>
               </div>
             </div>
-            <div className={styles.profileContainer}>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src={"/bobak_400.png"}
-                  alt="Bobak Ferdowsi headshot"
-                  height={400}
-                  width={400}
-                />
-              </div>
-              <div className={styles.profileTextContainer}>
-                <h2>Bobak Ferdowsi</h2>
-                <h3>NASA Jet Propulsion Laboratory</h3>
-                <h3>
-                  Twitter:{" "}
-                  <a href="https://twitter.com/tweetsoutloud">@tweetsoutloud</a>
-                </h3>
-                <p>
-                  Bobak is the Fault Protection Lead on JPL's NISAR mission, and
-                  has been at the agency since 2003, having served on Cassini,
-                  Europa Clipper and most notably the Mars Curiosity Mission as
-                  a Flight Director.
-                </p>
-              </div>
-            </div>
 
             <h1 className={styles.marginTop}>Co-Host</h1>
             <div className={styles.profileContainer}>
