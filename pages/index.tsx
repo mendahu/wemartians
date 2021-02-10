@@ -77,7 +77,7 @@ export async function getStaticProps(context) {
     videoLink: "https://www.youtube.com/embed/6GlWMIPTguQ",
     title: "Watch Perseverance land with us!",
     desc:
-      "Join Jake, co-host Tanya Harrison and special guests from NASA, Lockheed Martin and more to watch the landing live on YouTube!",
+      "Join Jake, co-host Tanya Harrison and special guests to watch the landing live on YouTube!",
   };
 
   return {
