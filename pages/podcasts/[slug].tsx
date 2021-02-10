@@ -115,7 +115,17 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
         </div>
       </Section>
       <Section background="light">
-        <ShopSection />
+        <ShopSection
+          image={{
+            url: "/wheels_down_ad.png",
+            altText:
+              "WHEELS DOWN NASA Perseverance Rover Shirt Design with Three Rover Wheels",
+          }}
+          title={"Wheels Down"}
+          description={
+            "Pick up the new WHEELS DOWN shirt celebrating NASA's Perseverance Rover landing on February 18th. Order now to get it in time for touchdown!"
+          }
+        />
       </Section>
       <Section component="footer" background="dark">
         <Footer />
