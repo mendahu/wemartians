@@ -33,7 +33,7 @@ export default function index(props: TwentyTwentyliveProps) {
         />
         <meta
           name="twitter:image"
-          content="https://www.wemartians.com/twitter_card_image_wemartians.png"
+          content="https://www.wemartians.com/landing_promote_1200x608.png"
         ></meta>
         <meta
           name="description"
@@ -50,7 +50,7 @@ export default function index(props: TwentyTwentyliveProps) {
         />
         <meta
           property="og:image"
-          content="https://www.wemartians.com/facebook_card_image_wemartians.png"
+          content="https://www.wemartians.com/landing_promote_1200x628.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
