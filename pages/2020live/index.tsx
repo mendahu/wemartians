@@ -120,6 +120,29 @@ export default function index(props: TwentyTwentyliveProps) {
                 </p>
               </div>
             </div>
+            <div className={styles.profileContainer}>
+              <div className={styles.profileImageContainer}>
+                <Image
+                  src={"/mike_400.png"}
+                  alt="Mike Seibert headshot"
+                  height={400}
+                  width={400}
+                />
+              </div>
+              <div className={styles.profileTextContainer}>
+                <h2>Mike Seibert</h2>
+                <h3>Formerly NASA JPL</h3>
+                <h3>
+                  Twitter:{" "}
+                  <a href="https://twitter.com/MikeSeibert">@MikeSeibert</a>
+                </h3>
+                <p>
+                  Mike is an aerospace engineer and expert on planetary surface
+                  operations formerly of NASA JPL where he operated the Mars
+                  Exploration Rovers Spirit and Opportunity.
+                </p>
+              </div>
+            </div>
 
             <h1 className={styles.marginTop}>Co-Host</h1>
             <div className={styles.profileContainer}>

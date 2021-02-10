@@ -4,7 +4,6 @@ import Footer from "../src/components/Footer/Footer";
 import Header from "../src/pages/HomePage/components/HomeHeader/HomeHeader";
 import Section from "../src/components/Section/Section";
 import ShopSection from "../src/components/ShopSection/ShopSection";
-import styles from "../src/pages/HomePage/styles/Home.module.css";
 import { Episode } from "../src/types/common";
 import { useWebPlayer } from "../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
