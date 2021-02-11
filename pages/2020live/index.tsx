@@ -162,10 +162,11 @@ export default function index(props: TwentyTwentyliveProps) {
                   <a href="https://twitter.com/tanyaofmars">@tanyaofmars</a>
                 </h3>
                 <p>
-                  Tanya Harrison is the Manager of Science Programs at Planet
-                  Labs and a planetary scientist. She's served on a number of
-                  Mars missions including the Mars Reconnaissance Orbiter, the
-                  Opportunity Rover, and the Curiosity Rover.
+                  Tanya Harrison is the Director of Science Strategy for the
+                  federal arm of Planet Labs and a planetary scientist. She's
+                  served on a number of Mars missions including the Mars
+                  Reconnaissance Orbiter, the Opportunity Rover, and the
+                  Curiosity Rover.
                 </p>
               </div>
             </div>
