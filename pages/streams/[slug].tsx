@@ -2,13 +2,14 @@ import styles from "./styles/StreamPage.module.css";
 import Head from "next/head";
 import Section from "../../src/components/Section/Section";
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
-import PatreonCallToAction from "../../src/components/PatreonCallToAction/PatreonCallToAction";
-import MailingListCallToAction from "../../src/components/MailingListCallToAction/MailingListCallToAction";
 import ShopSection from "../../src/components/ShopSection/ShopSection";
 import Footer from "../../src/components/Footer/Footer";
 import PatreonAndMailingListSection from "../../src/components/PatreonAndMailingListSection/PatreonAndMailingListSection";
+import client from "../../lib/cmsClient";
 
-export type StreamPageProps = {};
+export type StreamPageProps = {
+  title: string;
+};
 
 export default function StreamPage(props: StreamPageProps) {
   const breadcrumbs = {
@@ -22,7 +23,7 @@ export default function StreamPage(props: StreamPageProps) {
         href: "/streams/",
       },
     ],
-    currentLocation: "Stream",
+    currentLocation: props.title,
   };
 
   return (
@@ -34,7 +35,7 @@ export default function StreamPage(props: StreamPageProps) {
         <CommonHeader title={"Stream"} breadcrumbs={breadcrumbs} />
       </Section>
       <Section component="main" background="light">
-        Hi
+        {props.title}
       </Section>
       <PatreonAndMailingListSection />
       <Section background="light">
@@ -65,9 +66,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  const query = '*[_type == "stream"] {title}';
+  const params = {};
+
+  const streamData = await client.fetch(query, params);
+
   return {
     props: {
       slug: context.params.slug,
+      title: streamData[0].title,
     },
   };
 }
