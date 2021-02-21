@@ -17,6 +17,7 @@ import SubscribeButtonList from "../../src/components/SubscribeButtonList/Subscr
 import Head from "next/head";
 import PlayIcon from "../../src/components/PlayIcon/PlayIcon";
 import { formatDuration } from "../../src/helpers/formatDuration";
+import PatreonAndMailingListSection from "../../src/components/PatreonAndMailingListSection/PatreonAndMailingListSection";
 
 export type PodcastPageProps = {
   episode: Episode;
@@ -106,14 +107,7 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
           </div>
         </div>
       </Section>
-      <Section background="dark" className={styles.ctaContainer}>
-        <div className={styles.patreonCtaContainer}>
-          <PatreonCallToAction />
-        </div>
-        <div className={styles.mailingListCtaContainer}>
-          <MailingListCallToAction color="dark" />
-        </div>
-      </Section>
+      <PatreonAndMailingListSection />
       <Section background="light">
         <ShopSection
           image={{
