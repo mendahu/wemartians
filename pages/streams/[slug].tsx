@@ -9,6 +9,12 @@ import client from "../../lib/cmsClient";
 
 export type StreamPageProps = {
   title: string;
+  ctaTitle: string;
+  ctaDesc: string;
+  desc: string;
+  url: string;
+  slug: string;
+  date: string;
 };
 
 export default function StreamPage(props: StreamPageProps) {
@@ -29,7 +35,7 @@ export default function StreamPage(props: StreamPageProps) {
   return (
     <>
       <Head>
-        <title>Streams</title>
+        <title>{props.title}</title>
       </Head>
       <Section component="header" background="map">
         <CommonHeader title={"Stream"} breadcrumbs={breadcrumbs} />
@@ -59,22 +65,32 @@ export default function StreamPage(props: StreamPageProps) {
 }
 
 export async function getStaticPaths() {
+  const query = '*[_type == "stream"] {slug}';
+  const params = {};
+
+  const streamsData = await client.fetch(query, params);
+
   return {
-    paths: [{ params: { slug: "1" } }],
+    paths: streamsData.map((stream) => {
+      return {
+        params: {
+          slug: stream.slug.current,
+        },
+      };
+    }),
     fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
-  const query = '*[_type == "stream"] {title}';
+  const query = `*[_type == "stream" && slug.current == "${context.params.slug}"] {slug, title, ctaTitle, ctaDesc, desc, url, date}`;
   const params = {};
 
   const streamData = await client.fetch(query, params);
 
+  const currentStream = streamData[0];
+
   return {
-    props: {
-      slug: context.params.slug,
-      title: streamData[0].title,
-    },
+    props: currentStream,
   };
 }
