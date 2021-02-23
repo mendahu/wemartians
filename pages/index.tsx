@@ -12,12 +12,6 @@ import PatreonAndMailingListSection from "../src/components/PatreonAndMailingLis
 
 export type HomeProps = {
   episodes: Episode[];
-  event: {
-    date: string;
-    videoLink: string;
-    title: string;
-    desc: string;
-  };
 };
 
 export default function Home(props: HomeProps) {
@@ -39,12 +33,6 @@ export default function Home(props: HomeProps) {
           <EpisodeCarousel
             episodes={props.episodes}
             handleClick={handleEpisodeClick}
-          />
-          <EventBanner
-            date={props.event.date}
-            videoLink={props.event.videoLink}
-            title={props.event.title}
-            desc={props.event.desc}
           />
         </Section>
         <PatreonAndMailingListSection />
@@ -72,18 +60,9 @@ export default function Home(props: HomeProps) {
 export async function getStaticProps(context) {
   const shows = await getShows();
 
-  const event = {
-    date: new Date(Date.UTC(2021, 1, 18, 19, 45, 0)).toString(),
-    videoLink: "https://www.youtube.com/embed/6GlWMIPTguQ",
-    title: "Watch Perseverance land with us!",
-    desc:
-      "Join Jake, co-host Tanya Harrison and special guests to watch the landing live on YouTube!",
-  };
-
   return {
     props: {
       episodes: shows.slice(0, 3),
-      event,
     },
   };
 }
