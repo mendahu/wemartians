@@ -11,6 +11,10 @@ import EventBanner from "../../src/components/EventBanner/EventBanner";
 import { useNextSanityImage } from "next-sanity-image";
 import { SanityImageAssetDocument } from "@sanity/client";
 import groq from "groq";
+import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
+import { useEffect } from "react";
+import { Episode } from "../../src/types/common";
+import { getShows } from "../../lib/getShows";
 
 export type Guest = {
   name: string;
@@ -25,6 +29,7 @@ export type Guest = {
 };
 
 export type StreamPageProps = {
+  defaultEpisode: Episode;
   title: string;
   slug: string;
   date: string;
@@ -43,6 +48,14 @@ export type StreamPageProps = {
 };
 
 export default function StreamPage(props: StreamPageProps) {
+  const { episodeId, setEpisodeId } = useWebPlayer();
+
+  useEffect(() => {
+    if (!episodeId) {
+      setEpisodeId(props.defaultEpisode.id);
+    }
+  }, []);
+
   const breadcrumbs = {
     crumbs: [
       {
@@ -173,7 +186,18 @@ export async function getStaticProps(context) {
 
   const currentStream = streamData[0];
 
+  let shows = [];
+  try {
+    shows = await getShows(1);
+  } catch (err) {
+    console.error(err);
+  }
+
   return {
-    props: { ...currentStream, slug: currentStream.slug.current },
+    props: {
+      ...currentStream,
+      slug: currentStream.slug.current,
+      defaultEpisode: shows[0],
+    },
   };
 }
