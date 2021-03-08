@@ -52,6 +52,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: "/2020live",
+        destination: "/streams/mars-2020-perseverance-rover-landing",
+        permanent: true,
+      },
+      {
         source: "/support",
         destination: "https://www.patreon.com/wemartians",
         permanent: false,
