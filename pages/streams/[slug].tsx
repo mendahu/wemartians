@@ -9,42 +9,15 @@ import client from "../../lib/cmsClient";
 import Image from "next/image";
 import EventBanner from "../../src/components/EventBanner/EventBanner";
 import { useNextSanityImage } from "next-sanity-image";
-import { SanityImageAssetDocument } from "@sanity/client";
-import groq from "groq";
 import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
-import { Episode } from "../../src/types/common";
+import { Episode, Guest, Stream } from "../../src/types/common";
 import { getShows } from "../../lib/getShows";
-
-export type Guest = {
-  name: string;
-  affiliation: string;
-  social: {
-    platform: string;
-    label: string;
-    url: string;
-  };
-  bio: string;
-  image: SanityImageAssetDocument;
-};
+import { getStreamQuery } from "../../src/queries/streams/streams";
 
 export type StreamPageProps = {
   defaultEpisode: Episode;
-  title: string;
-  slug: string;
-  date: string;
-  url: string;
-  cta: {
-    short: string;
-    long: string;
-  };
-  socialImages: {
-    square: SanityImageAssetDocument;
-    twitter: SanityImageAssetDocument;
-    facebook: SanityImageAssetDocument;
-  };
-  hosts: Guest[];
-  guests: Guest[];
+  stream: Stream;
 };
 
 export default function StreamPage(props: StreamPageProps) {
@@ -67,7 +40,7 @@ export default function StreamPage(props: StreamPageProps) {
         href: "/streams/",
       },
     ],
-    currentLocation: props.title,
+    currentLocation: props.stream.title,
   };
 
   const createGuestProfile = (guest: Guest, index: number) => {
@@ -93,48 +66,50 @@ export default function StreamPage(props: StreamPageProps) {
     );
   };
 
+  console.log(props.stream);
+
   return (
     <>
       <Head>
-        <meta name="twitter:title" content={props.title} />
-        <meta name="twitter:description" content={props.cta.long} />
+        <meta name="twitter:title" content={props.stream.title} />
+        <meta name="twitter:description" content={props.stream.cta.long} />
         <meta
           name="twitter:image"
-          content={props.socialImages.twitter.asset.url}
+          content={props.stream.socialImages.twitter.asset.url}
         ></meta>
-        <meta name="description" content={props.cta.long}></meta>
+        <meta name="description" content={props.stream.cta.long}></meta>
         <meta
           property="og:url"
-          content={`https://www.wemartians.com/streams/${props.slug}`}
+          content={`https://www.wemartians.com/streams/${props.stream.slug}`}
         />
-        <meta property="og:title" content={props.title} />
-        <meta property="og:description" content={props.cta.long} />
+        <meta property="og:title" content={props.stream.title} />
+        <meta property="og:description" content={props.stream.cta.long} />
         <meta
           property="og:image"
-          content={props.socialImages.facebook.asset.url}
+          content={props.stream.socialImages.facebook.asset.url}
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
         <meta property="og:image:type" content="image/png" />
-        <title>{props.title}</title>
+        <title>{props.stream.title}</title>
       </Head>
       <Section component="header" background="map">
-        <CommonHeader title={"Stream"} breadcrumbs={breadcrumbs} />
+        <CommonHeader title={props.stream.title} breadcrumbs={breadcrumbs} />
       </Section>
       <main>
         <Section component="section" background="light">
           <EventBanner
-            date={props.date}
-            videoLink={props.url}
-            title={props.cta.short}
-            desc={props.cta.long}
+            date={props.stream.date}
+            videoLink={props.stream.url}
+            title={props.stream.cta.short}
+            desc={props.stream.cta.long}
           />
           <section>
             <h1>Special Guests</h1>
-            {props.guests && props.guests.map(createGuestProfile)}
+            {props.stream.guests && props.stream.guests.map(createGuestProfile)}
 
             <h1 className={styles.marginTop}>Co-Hosts</h1>
-            {props.hosts && props.hosts.map(createGuestProfile)}
+            {props.stream.hosts && props.stream.hosts.map(createGuestProfile)}
           </section>
         </Section>
         <PatreonAndMailingListSection />
@@ -179,12 +154,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { slug } = context.params;
-  const query = groq`*[_type == "stream" && slug.current == "${slug}"] {slug, title, cta, url, date, "hosts": hosts[]->{name, affiliation, bio, social, image}, "guests": guests[]->{name, affiliation, bio, social, image}, socialImages}`;
+
+  const query = getStreamQuery(slug);
   const params = {};
 
   const streamData = await client.fetch(query, params);
-
-  const currentStream = streamData[0];
+  const stream = streamData[0];
 
   let shows = [];
   try {
@@ -195,8 +170,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      ...currentStream,
-      slug: currentStream.slug.current,
+      stream: { ...stream, slug: stream.slug.current },
       defaultEpisode: shows[0],
     },
   };

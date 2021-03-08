@@ -1,19 +1,16 @@
 import { getShows } from "../../lib/getShows";
 import Footer from "../../src/components/Footer/Footer";
 import Section from "../../src/components/Section/Section";
-import styles from "../../src/pages/PodcastsPage/styles/PodcastsPage.module.css";
-import podcastsCopy from "../../copy/Podcasts/index.json";
-import PodcastListItem from "../../src/pages/PodcastsPage/PodcastListItem/PodcastListItem";
-
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
 import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
-import Button from "../../src/components/Button/Button";
-import queryString from "query-string";
-import { Episode } from "../../src/types/common";
+import client from "../../lib/cmsClient";
+import { Episode, Stream } from "../../src/types/common";
+import { getStreamsQuery } from "../../src/queries/streams/streams";
 
 export type StreamsPageProps = {
   defaultEpisode: Episode;
+  streams: Stream;
 };
 
 const breadcrumbs = {
@@ -38,13 +35,12 @@ export default function StreamsPage(props: StreamsPageProps) {
   return (
     <>
       <Section component="header" background="map">
-        <CommonHeader
-          title={podcastsCopy.header.title}
-          breadcrumbs={podcastsCopy.header.breadcrumbs}
-        />
+        <CommonHeader title={"Streams"} breadcrumbs={breadcrumbs} />
       </Section>
       <main>
-        <Section component="section" background="light"></Section>
+        <Section component="section" background="light">
+          What's up
+        </Section>
       </main>
       <Section component="footer" background="dark">
         <Footer />
@@ -54,6 +50,11 @@ export default function StreamsPage(props: StreamsPageProps) {
 }
 
 export async function getStaticProps() {
+  const query = getStreamsQuery();
+  const params = {};
+
+  const streamData = await client.fetch(query, params);
+
   let shows = [];
   try {
     shows = await getShows(1);
@@ -64,6 +65,7 @@ export async function getStaticProps() {
   return {
     props: {
       defaultEpisode: shows[0],
+      streams: streamData,
     },
   };
 }
