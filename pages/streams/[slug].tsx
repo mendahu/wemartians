@@ -8,6 +8,21 @@ import PatreonAndMailingListSection from "../../src/components/PatreonAndMailing
 import client from "../../lib/cmsClient";
 import Image from "next/image";
 import EventBanner from "../../src/components/EventBanner/EventBanner";
+import { useNextSanityImage } from "next-sanity-image";
+import { SanityImageAssetDocument } from "@sanity/client";
+import groq from "groq";
+
+export type Guest = {
+  name: string;
+  affiliation: string;
+  social: {
+    platform: string;
+    label: string;
+    url: string;
+  };
+  bio: string;
+  image: SanityImageAssetDocument;
+};
 
 export type StreamPageProps = {
   title: string;
@@ -17,9 +32,13 @@ export type StreamPageProps = {
   url: string;
   slug: string;
   date: string;
-  imageSquare: string;
-  imageTwitter: string;
-  imageFacebook: string;
+  socialImages: {
+    square: SanityImageAssetDocument;
+    twitter: SanityImageAssetDocument;
+    facebook: SanityImageAssetDocument;
+  };
+  hosts: Guest[];
+  guests: Guest[];
 };
 
 export default function StreamPage(props: StreamPageProps) {
@@ -37,12 +56,38 @@ export default function StreamPage(props: StreamPageProps) {
     currentLocation: props.title,
   };
 
+  const createGuestProfile = (guest: Guest, index: number) => {
+    const imageProps = useNextSanityImage(client, guest.image);
+
+    return (
+      <div className={styles.profileContainer} key={index}>
+        <div className={styles.profileImageContainer}>
+          <Image {...imageProps} width={400} height={400} alt={guest.name} />
+        </div>
+        <div className={styles.profileTextContainer}>
+          <h2>{guest.name}</h2>
+          <h3>{guest.affiliation}</h3>
+          {guest.social && (
+            <h3>
+              {guest.social.platform}:{" "}
+              <a href={guest.social.url}>{guest.social.label}</a>
+            </h3>
+          )}
+          <p>{guest.bio}</p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <Head>
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.ctaDesc} />
-        <meta name="twitter:image" content={props.imageTwitter}></meta>
+        <meta
+          name="twitter:image"
+          content={props.socialImages.twitter.asset.url}
+        ></meta>
         <meta name="description" content={props.ctaDesc}></meta>
         <meta
           property="og:url"
@@ -50,7 +95,10 @@ export default function StreamPage(props: StreamPageProps) {
         />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.ctaDesc} />
-        <meta property="og:image" content={props.imageFacebook} />
+        <meta
+          property="og:image"
+          content={props.socialImages.facebook.asset.url}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
         <meta property="og:image:type" content="image/png" />
@@ -73,100 +121,10 @@ export default function StreamPage(props: StreamPageProps) {
           />
           <section>
             <h1>Special Guests</h1>
-            <div className={styles.profileContainer}>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src={"/debarati_400.png"}
-                  alt="Debarati Das headshot"
-                  height={400}
-                  width={400}
-                />
-              </div>
-              <div className={styles.profileTextContainer}>
-                <h2>Debarati Das</h2>
-                <h3>McGill University</h3>
-                <h3>
-                  Twitter:{" "}
-                  <a href="https://twitter.com/SpaceWicca">@SpaceWicca</a>
-                </h3>
-                <p>
-                  Debarati is a planetary scientist and member of the Curiosity
-                  Science Team. Her current research deals with analysis of data
-                  from the Laser Induced Breakdown Spectroscopy (LIBS)
-                  instrument on the ChemCham suite of the Curiosity Martian
-                  rover and study of Martian analogue sites using LIBS.
-                </p>
-              </div>
-            </div>
-            <div className={styles.profileContainer}>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src={"/dave_400.png"}
-                  alt="Dave Buecher headshot"
-                  height={400}
-                  width={400}
-                />
-              </div>
-              <div className={styles.profileTextContainer}>
-                <h2>Dave Buecher</h2>
-                <h3>Lockheed Martin</h3>
-                <p>
-                  Dave is the Mars 2020 Aeroshell Program Manager and works at
-                  Lockheed Martin which built the aeroshell and heatshield for
-                  the Mars 2020 Rover Perseverance.
-                </p>
-              </div>
-            </div>
-            <div className={styles.profileContainer}>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src={"/mike_400.png"}
-                  alt="Mike Seibert headshot"
-                  height={400}
-                  width={400}
-                />
-              </div>
-              <div className={styles.profileTextContainer}>
-                <h2>Mike Seibert</h2>
-                <h3>Formerly NASA JPL</h3>
-                <h3>
-                  Twitter:{" "}
-                  <a href="https://twitter.com/MikeSeibert">@MikeSeibert</a>
-                </h3>
-                <p>
-                  Mike is an aerospace engineer and expert on planetary surface
-                  operations formerly of NASA JPL where he operated the Mars
-                  Exploration Rovers Spirit and Opportunity.
-                </p>
-              </div>
-            </div>
+            {props.guests.map(createGuestProfile)}
 
-            <h1 className={styles.marginTop}>Co-Host</h1>
-            <div className={styles.profileContainer}>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src={"/tanya_400.png"}
-                  alt="Tanya Harrison headshot"
-                  height={400}
-                  width={400}
-                />
-              </div>
-              <div className={styles.profileTextContainer}>
-                <h2>Tanya Harrison</h2>
-                <h3>Professional Martian</h3>
-                <h3>
-                  Twitter:{" "}
-                  <a href="https://twitter.com/tanyaofmars">@tanyaofmars</a>
-                </h3>
-                <p>
-                  Tanya Harrison is the Director of Science Strategy for the
-                  federal arm of Planet Labs and a planetary scientist. She's
-                  served on a number of Mars missions including the Mars
-                  Reconnaissance Orbiter, the Opportunity Rover, and the
-                  Curiosity Rover.
-                </p>
-              </div>
-            </div>
+            <h1 className={styles.marginTop}>Co-Hosts</h1>
+            {props.hosts.map(createGuestProfile)}
           </section>
         </Section>
         <PatreonAndMailingListSection />
@@ -224,12 +182,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const query = `*[_type == "stream" && slug.current == "${context.params.slug}"] {slug, title, ctaTitle, ctaDesc, desc, url, date}`;
+  const { slug } = context.params;
+  const query = groq`*[_type == "stream" && slug.current == "${slug}"] {slug, title, ctaTitle, ctaDesc, desc, url, date, "hosts": hosts[]->{name, affiliation, bio, social, image}, "guests": guests[]->{name, affiliation, bio, social, image}, socialImages}`;
   const params = {};
 
   const streamData = await client.fetch(query, params);
 
   const currentStream = streamData[0];
+  console.log(currentStream);
 
   return {
     props: { ...currentStream, slug: currentStream.slug.current },

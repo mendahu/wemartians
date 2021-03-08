@@ -2,7 +2,7 @@ const { oldSlugs } = require("./config/redirects.json");
 
 module.exports = {
   images: {
-    domains: ["pbs.twimg.com", "image.simplecastcdn.com"],
+    domains: ["pbs.twimg.com", "image.simplecastcdn.com", "cdn.sanity.io"],
   },
   i18n: {
     locales: ["en-US"],
