@@ -1,5 +1,5 @@
 .container {
-  padding-top: 6rem;
+  padding-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +40,12 @@
 @media screen and (min-width: 420px) {
   .logoContainer {
     max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 444px) {
+  .container {
+    padding-top: 6rem;
   }
 }
 

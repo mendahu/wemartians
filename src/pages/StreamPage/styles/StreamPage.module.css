@@ -21,6 +21,11 @@
   margin-top: 0.5rem;
 }
 
+.profileImageContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
 @media screen and (min-width: 640px) {
   .profileContainer {
     flex-direction: row;

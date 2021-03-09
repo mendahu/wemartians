@@ -2,7 +2,7 @@ const { oldSlugs } = require("./config/redirects.json");
 
 module.exports = {
   images: {
-    domains: ["pbs.twimg.com", "image.simplecastcdn.com"],
+    domains: ["pbs.twimg.com", "image.simplecastcdn.com", "cdn.sanity.io"],
   },
   i18n: {
     locales: ["en-US"],
@@ -49,6 +49,11 @@ module.exports = {
       {
         source: "/contact",
         destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/2020live",
+        destination: "/streams/mars-2020-perseverance-rover-landing",
         permanent: true,
       },
       {

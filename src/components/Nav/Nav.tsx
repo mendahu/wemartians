@@ -15,6 +15,11 @@ export default function Nav(props: NavProps) {
           </Link>
         </li>
         <li>
+          <Link href="/streams">
+            <a className={styles.link}>Streams</a>
+          </Link>
+        </li>
+        <li>
           <a
             href="https://shop.wemartians.com"
             className={styles.link}
