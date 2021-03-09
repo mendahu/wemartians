@@ -31,7 +31,6 @@ export default function usePlayerDrawer(epId: string) {
   };
 
   const handleEpisodeClick = (epId: string) => {
-    console.log(displayStatus);
     if (epId !== episodeId) {
       setEpisodeId(epId);
     }

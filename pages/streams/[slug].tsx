@@ -66,8 +66,6 @@ export default function StreamPage(props: StreamPageProps) {
     );
   };
 
-  console.log(props.stream);
-
   return (
     <>
       <Head>

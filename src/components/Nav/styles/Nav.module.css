@@ -1,12 +1,20 @@
 .list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   padding: 0.5rem;
   text-transform: uppercase;
+  justify-content: space-between;
+  max-width: 405px;
 }
 
 .list li {
-  margin: 0.5rem;
+  margin: 0.8rem;
+}
+
+.list li:first-child,
+.list .li:nth-child(3) {
+  flex-basis: 40%;
 }
 
 .link {
@@ -19,4 +27,18 @@
 
 .link:hover {
   color: var(--col-orange);
+}
+
+@media screen and (min-width: 360px) {
+  .list li:first-child,
+  .list .li:nth-child(3) {
+    flex-basis: 56%;
+  }
+}
+
+@media screen and (min-width: 444px) {
+  .list li:first-child,
+  .list .li:nth-child(3) {
+    flex-basis: auto;
+  }
 }

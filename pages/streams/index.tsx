@@ -28,8 +28,6 @@ const breadcrumbs = {
 export default function StreamsPage(props: StreamsPageProps) {
   const { episodeId, setEpisodeId } = useWebPlayer();
 
-  console.log(props.streams);
-
   useEffect(() => {
     if (!episodeId) {
       setEpisodeId(props.defaultEpisode.id);
@@ -49,9 +47,6 @@ export default function StreamsPage(props: StreamsPageProps) {
       pastStreams.push(stream);
     }
   });
-
-  console.log(upcomingStreams);
-  console.log(pastStreams);
 
   const generateContentListItems = (stream: Stream) => {
     return (
