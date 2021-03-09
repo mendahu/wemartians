@@ -3,7 +3,7 @@ import Footer from "../../src/components/Footer/Footer";
 import Section from "../../src/components/Section/Section";
 import styles from "../../src/pages/PodcastsPage/styles/PodcastsPage.module.css";
 import podcastsCopy from "../../copy/Podcasts/index.json";
-import PodcastListItem from "../../src/pages/PodcastsPage/PodcastListItem/PodcastListItem";
+import ContentListItem from "../../src/components/ContentListItem/ContentListItem";
 import useSearch from "../../src/pages/PodcastsPage/useSearch/useSearch";
 
 import CommonHeader from "../../src/components/CommonHeader/CommonHeader";
@@ -71,14 +71,14 @@ export default function PodcastsPage(props) {
           </div>
           {results.map((episode, index) => {
             return (
-              <PodcastListItem
+              <ContentListItem
                 key={index}
                 slug={episode.slug}
                 title={episode.title}
                 imageUrl={episode.image}
                 description={episode.description.slice(0, 160) + "..."}
                 duration={episode.duration}
-                publishDate={episode.publishDate}
+                date={episode.publishDate}
                 handlePlay={() => handleEpisodeClick(episode.id)}
               />
             );

@@ -13,7 +13,7 @@ import { useWebPlayer } from "../../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
 import { Episode, Guest, Stream } from "../../src/types/common";
 import { getShows } from "../../lib/getShows";
-import { getStreamQuery } from "../../src/queries/streams/streams";
+import { streamQuery, streamsQuery } from "../../src/queries/streams/streams";
 
 export type StreamPageProps = {
   defaultEpisode: Episode;
@@ -135,7 +135,7 @@ export default function StreamPage(props: StreamPageProps) {
 }
 
 export async function getStaticPaths() {
-  const query = '*[_type == "stream"] {slug}';
+  const query = streamsQuery;
   const params = {};
 
   const streamsData = await client.fetch(query, params);
@@ -155,8 +155,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug } = context.params;
 
-  const query = getStreamQuery(slug);
-  const params = {};
+  const query = streamQuery;
+  const params = { slug };
 
   const streamData = await client.fetch(query, params);
   const stream = streamData[0];
