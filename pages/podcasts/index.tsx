@@ -73,7 +73,7 @@ export default function PodcastsPage(props) {
             return (
               <ContentListItem
                 key={index}
-                slug={episode.slug}
+                path={`/podcasts/${episode.slug}`}
                 title={episode.title}
                 imageUrl={episode.image}
                 description={episode.description.slice(0, 160) + "..."}

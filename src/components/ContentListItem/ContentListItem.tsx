@@ -9,7 +9,7 @@ import { useNextSanityImage } from "next-sanity-image";
 import client from "../../../lib/cmsClient";
 
 export type ContentListItemProps = {
-  slug: string;
+  path: string;
   title: string;
   imageUrl?: string;
   cmsImage?: SanityImageAssetDocument;
@@ -49,7 +49,7 @@ export default function ContentListItem(props: ContentListItemProps) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Link href={`/podcasts/${props.slug}`}>
+        <Link href={props.path}>
           <a>{getContentListItemThumbnail(props.cmsImage, props.imageUrl)}</a>
         </Link>
       </div>
@@ -57,7 +57,7 @@ export default function ContentListItem(props: ContentListItemProps) {
         <div className={styles.headerContainer}>
           <div className={styles.titleContainer}>
             <h2 className={styles.episodeTitle}>
-              <Link href={`/podcasts/${props.slug}`}>
+              <Link href={props.path}>
                 <a>{props.title}</a>
               </Link>
             </h2>

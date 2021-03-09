@@ -57,7 +57,7 @@ export default function StreamsPage(props: StreamsPageProps) {
     return (
       <ContentListItem
         key={stream.slug}
-        slug={stream.slug}
+        path={`/streams/${stream.slug}`}
         title={stream.title}
         cmsImage={stream.socialImages.square}
         description={stream.cta.long}
