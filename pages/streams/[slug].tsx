@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { Episode, Guest, Stream } from "../../src/types/common";
 import { getShows } from "../../lib/getShows";
 import { streamQuery, streamsQuery } from "../../src/queries/streams/streams";
+import CommonHead from "../../src/components/CommonHead/CommonHead";
 
 export type StreamPageProps = {
   defaultEpisode: Episode;
@@ -68,29 +69,21 @@ export default function StreamPage(props: StreamPageProps) {
 
   return (
     <>
-      <Head>
-        <meta name="twitter:title" content={props.stream.title} />
-        <meta name="twitter:description" content={props.stream.cta.long} />
-        <meta
-          name="twitter:image"
-          content={props.stream.socialImages.twitter.asset.url}
-        ></meta>
-        <meta name="description" content={props.stream.cta.long}></meta>
-        <meta
-          property="og:url"
-          content={`https://www.wemartians.com/streams/${props.stream.slug}`}
-        />
-        <meta property="og:title" content={props.stream.title} />
-        <meta property="og:description" content={props.stream.cta.long} />
-        <meta
-          property="og:image"
-          content={props.stream.socialImages.facebook.asset.url}
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="628" />
-        <meta property="og:image:type" content="image/png" />
-        <title>{props.stream.title}</title>
-      </Head>
+      <CommonHead
+        title={props.stream.title}
+        description={props.stream.cta.long}
+        url={`https://www.wemartians.com/streams/${props.stream.slug}`}
+        twitterCard={{
+          type: "summary_large_image",
+          url: props.stream.socialImages.twitter.asset.url,
+        }}
+        ogImage={{
+          url: props.stream.socialImages.facebook.asset.url,
+          width: "1200",
+          height: "628",
+          contentType: "image/png",
+        }}
+      />
       <Section component="header" background="map">
         <CommonHeader title={props.stream.title} breadcrumbs={breadcrumbs} />
       </Section>
