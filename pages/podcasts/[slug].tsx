@@ -5,8 +5,6 @@ import Footer from "../../src/components/Footer/Footer";
 import Section from "../../src/components/Section/Section";
 import { Episode } from "../../src/types/common";
 import styles from "../../src/pages/PodcastPage/styles/PodcastPage.module.css";
-import PatreonCallToAction from "../../src/components/PatreonCallToAction/PatreonCallToAction";
-import MailingListCallToAction from "../../src/components/MailingListCallToAction/MailingListCallToAction";
 import ShopSection from "../../src/components/ShopSection/ShopSection";
 import { formatPublishDate } from "../../src/helpers/formatPublishDate";
 import { formatTimeAgo } from "../../src/helpers/formatTimeAgo";
@@ -18,6 +16,7 @@ import Head from "next/head";
 import PlayIcon from "../../src/components/PlayIcon/PlayIcon";
 import { formatDuration } from "../../src/helpers/formatDuration";
 import PatreonAndMailingListSection from "../../src/components/PatreonAndMailingListSection/PatreonAndMailingListSection";
+import CommonHead from "../../src/components/CommonHead/CommonHead";
 
 export type PodcastPageProps = {
   episode: Episode;
@@ -47,32 +46,24 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
   };
   return (
     <>
-      <Head>
-        <meta content="text/html; charset=UTF-8" httpEquiv="Content-Type" />
-        <meta name="twitter:card" content="player" />
-        <meta name="twitter:site" content="@we_martians" />
-        <meta name="twitter:title" content={episode.title} />
-        <meta name="twitter:description" content={episode.description} />
-        <meta name="twitter:image" content={episode.image} />
-        <meta
-          name="twitter:player"
-          content={`https://player.simplecast.com/${episode.id}?dark=true`}
-        />
-        <meta name="twitter:player:width" content="480" />
-        <meta name="twitter:player:height" content="200" />
-
-        <meta
-          property="og:url"
-          content={`https://www.wemartians.com/podcasts/${episode.slug}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={episode.title} />
-        <meta property="og:description" content={episode.description} />
-        <meta property="og:image" content={episode.image} />
-        <meta property="og:image:width" content="1080" />
-        <meta property="og:image:height" content="1080" />
-        <meta property="og:image:type" content="image/png" />
-      </Head>
+      <CommonHead
+        title={episode.title}
+        description={episode.description}
+        url={`https://www.wemartians.com/podcasts/${episode.slug}`}
+        twitterCard={{
+          type: "player",
+          url: episode.image,
+          audioUrl: `https://player.simplecast.com/${episode.id}?dark=true`,
+          height: "200",
+          width: "480",
+        }}
+        ogImage={{
+          url: episode.image,
+          height: "1080",
+          width: "1080",
+          contentType: "image/png",
+        }}
+      />
       <Section component="header" background="map">
         <CommonHeader title={"Episode"} breadcrumbs={breadcrumbs} />
       </Section>

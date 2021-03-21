@@ -49,6 +49,10 @@
   margin-top: 2rem;
 }
 
+.imageContainer {
+  width: 100%;
+}
+
 @media screen and (min-width: 500px) {
   .container {
     flex-wrap: nowrap;
