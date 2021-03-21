@@ -11,3 +11,7 @@
 .breadcrumbsContainer li:last-of-type {
   margin-right: 0rem;
 }
+
+.link {
+  color: var(--col-orange);
+}

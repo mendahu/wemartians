@@ -18,7 +18,7 @@ export default function Breadcrumbs(props: BreadcrumbsProps) {
         return (
           <li key={index}>
             <Link href={breadcrumb.href}>
-              <a>{breadcrumb.label}</a>
+              <a className={styles.link}>{breadcrumb.label}</a>
             </Link>
             {" >"}
           </li>
