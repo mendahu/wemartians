@@ -7,7 +7,6 @@ import ShopSection from "../src/components/ShopSection/ShopSection";
 import { Episode } from "../src/types/common";
 import { useWebPlayer } from "../src/contexts/WebPlayerContext";
 import { useEffect } from "react";
-import EventBanner from "../src/components/EventBanner/EventBanner";
 import PatreonAndMailingListSection from "../src/components/PatreonAndMailingListSection/PatreonAndMailingListSection";
 
 export type HomeProps = {
@@ -39,13 +38,16 @@ export default function Home(props: HomeProps) {
         <Section background="light">
           <ShopSection
             image={{
-              url: "/wheels_down_ad.png",
+              url: "/ingenuity_mug.png",
               altText:
-                "WHEELS DOWN NASA Perseverance Rover Shirt Design with Three Rover Wheels",
+                "FIRST FLIGHT - Ingenuity Helicopter First Flight Commemorative Mug",
             }}
-            title={"Wheels Down"}
+            title={"First Flight"}
             description={
-              "Pick up the new WHEELS DOWN shirt celebrating NASA's Perseverance Rover landing on February 18th. Order now to get it in time for touchdown!"
+              "Pick up this commemorative coffee mug celebrating Ingenuity's historic first take off and landing on Mars."
+            }
+            shopLink={
+              "https://shop.wemartians.com/product/first-flight-ingenuity"
             }
           />
         </Section>
