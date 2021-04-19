@@ -102,13 +102,16 @@ export default function PodcastPage({ episode }: PodcastPageProps) {
       <Section background="light">
         <ShopSection
           image={{
-            url: "/wheels_down_ad.png",
+            url: "/ingenuity_mug.png",
             altText:
-              "WHEELS DOWN NASA Perseverance Rover Shirt Design with Three Rover Wheels",
+              "FIRST FLIGHT - Ingenuity Helicopter First Flight Commemorative Mug",
           }}
-          title={"Wheels Down"}
+          title={"First Flight"}
           description={
-            "Pick up the new WHEELS DOWN shirt celebrating NASA's Perseverance Rover landing on February 18th. Order now to get it in time for touchdown!"
+            "Pick up this commemorative coffee mug celebrating Ingenuity's historic first take off and landing on Mars."
+          }
+          shopLink={
+            "https://shop.wemartians.com/product/first-flight-ingenuity"
           }
         />
       </Section>
