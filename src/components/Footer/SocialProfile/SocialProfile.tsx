@@ -30,7 +30,7 @@ const generateImageProps = (type: BadgeType) => {
 const generateBadgeLink = (props: SocialProfileProps) => {
   switch (props.type) {
     case "twitter":
-      return twitterBaseUrl + props.handle;
+      return twitterBaseUrl + props.domain;
     case "email":
       return "mailto:" + generateEmail(props.handle, props.domain);
   }
